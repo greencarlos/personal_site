@@ -1,5 +1,16 @@
-
 img {
   width: 200px;
   height: 200px;
+}
+
+body {
+  background: black;
+}
+
+p {
+  color: white;
+}
+
+h1 {
+  color: white;
 }
