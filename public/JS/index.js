@@ -1,1 +1,1 @@
-console.log("This is a cool website yoo!");
+console.log("This is a cool console yoo!");
