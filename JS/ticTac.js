@@ -1,6 +1,12 @@
 'use strict'
 /** @jsx React.DOM */
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+console.log(React)
+console.log(ReactDOM)
+
 e = React.createElement;
 
 function Square(props) {
@@ -123,11 +129,6 @@ render() {
   )
 }
 
-
-const domContainer = document.querySelector('#root');
-ReactDOM.render(e(Game), domContainer);
-
-
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
@@ -147,3 +148,6 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+const domContainer = document.querySelector('#root2');
+ReactDOM.render(e(Game), domContainer);
