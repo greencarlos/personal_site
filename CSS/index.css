@@ -4,6 +4,8 @@ img {
 }
 
 body {
+  font: 14px "Centry Gothic", Futura, sans-serif;
+  margin: 20px;
   background: black;
 }
 
@@ -19,7 +21,17 @@ h2 {
   color: white;
 }
 
+ol, ul {
+  padding-left: 30px;
+}
+
 .img2 {
   width: 400px;
   height: 200px;
+}
+
+.board-row:after{
+  clear: both;
+  content: "";
+  display: table;
 }
