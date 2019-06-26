@@ -36,3 +36,40 @@ ol, ul {
   content: "";
   display: table;
 }
+
+.top {
+  text-align: center;
+}
+
+.salmon {
+  text-align: center;
+  color: lightsalmon;
+}
+
+.green {
+  text-align: center;
+  color: green;
+}
+
+.red {
+  text-align: center;
+  color: red
+}
+
+.cyan {
+  text-align: center;
+  color: cyan;
+}
+
+.orange {
+  text-align: center;
+  color: orange;
+}
+
+.white {
+  color: white;
+}
+
+
+
+
