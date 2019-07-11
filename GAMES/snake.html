@@ -17,6 +17,8 @@
   <!--https://pastebin.com/Z3zhb7cy -->
   <canvas id="gc" width="400" height="400"></canvas>
 
+  <p id="high">High Score: </p>
+
     <script>
 window.onload=function() {
   canv = document.getElementById("gc");
@@ -25,12 +27,16 @@ window.onload=function() {
   setInterval(game, 1000/15);
 }
 
-px=py=10;
-gs=tc=20;
-ax=ay=15;
-xv=yv=0;
+const high = document.getElementById("high");
+
+let px=py=10;
+let gs=tc=20;
+let ax=ay=15;
+let xv=yv=0;
 const trail = [];
-tail = 5;
+let tail = 5;
+let score = 0;
+let highScore = 0;
 
 function game() {
   px+=xv;
@@ -55,6 +61,14 @@ function game() {
     ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
     if (trail[i].x==px && trail[i].y==py) {
     tail=5;
+    score = 0;
+    if (score > highScore) {
+      score = highScore	    
+      high.innerHTML = highScore
+    }	    
+
+    console.log(score)	    
+    console.log(highScore)	    
     }
   }
   trail.push({x:px,y:py});
@@ -63,6 +77,8 @@ function game() {
   }
 
   if (ax==px && ay==py) {
+    score++;	  
+    console.log(score)	  
     tail++;
     ax=Math.floor(Math.random()*tc)
     ay=Math.floor(Math.random()*tc)
