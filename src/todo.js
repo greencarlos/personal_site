@@ -1,3 +1,13 @@
 "use strict"
+const React = require('react')
+const ReactDOM = require('react-dom')
 
-console.log("React todo app!")
+function App() {
+  return(
+  <div>	  
+    <h1>Hello Everyone!</h1>
+  </div>	  
+  )
+}
+
+ReactDOM.render(App, document.getElementById('root')
