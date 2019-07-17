@@ -10,7 +10,6 @@ class AddTodo extends React.Component {
     super(props)
     this.state = {
       content: '',
-      hasError: false,
     },
     this.handleChange = (e) => {
       this.setState({
@@ -19,26 +18,18 @@ class AddTodo extends React.Component {
     },
     this.handleSubmit = (e) => {
       e.preventDefault();
-      console.log(this.state)   
+      this.props.addTodo(this.state)	
+      console.log(state)   
+      console.log(props)
     }
   }
-
-  static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
-    return { hasError: true };
-  }
-
-  componentDidCatch(error, info) {
-    // You can also log the error to an error reporting service
-    logErrorToMyService(error, info);
-  }
-
+  
   render() {
     return(
     <div>
-  <form onSubmit={this.handleSumbit}>
-  <label style={style}>Add new todo:</label>	    
-  <input type="text" onChange={this.handleChange}></input>
+  <form onSubmit={this.handleSubmit}>
+    <label style={style}>Add new todo:</label>	    
+    <input type="text" onChange={this.handleChange} value={this.state.content}/>
   </form>
     </div>
     )

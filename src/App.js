@@ -21,13 +21,22 @@ class App extends React.Component {
     todos
       });
     }
+  this.addTodo = (todo) => {
+      console.log(this.state)
+  todo.id = Math.random()
+  let todos = [...this.state.todos, todo];
+  this.setState({
+      todos
+      })
+    }
   }
 
   render() {
     return(<div className="todo-app container">
   <h1 className="center">Todo List</h1>
+  <p>(Click on a TODO to delete it)</p>	    
   <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} createTodo={this.createTodo}/>  
-  <AddTodo />	    
+  <AddTodo addTodo={this.addTodo} />	    
   </div>)
   }
 }
