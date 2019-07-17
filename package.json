@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "personal portfolio webiste",
   "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
   "scripts": {
+    "create": "webpack", 	  
     "build": "babel src -d lib"
   },
   "repository": {
