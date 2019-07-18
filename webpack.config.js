@@ -1,11 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    TODO:'./src/TODO/todo_index.js',
+    TicTac: './src/TicTacToe/tic_index.js',
+  },
   output: {
     path: path.resolve(__dirname, 'lib'),
-    filename: 'index_bundle.js'
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -15,8 +19,8 @@ module.exports = {
   },
   mode: 'development',
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'front-end/todo.html'
-    })
+    new webpack.ProgressPlugin(),
+    new HtmlWebpackPlugin({template: 'front-end/todo.html'}),
+    new HtmlWebpackPlugin({template: 'front-end/tictac.html'})
   ]
 }
