@@ -21,16 +21,16 @@ changeSize.onclick = function(){
   }
 }
 
-function cell(row, coll) {
+function cell(row, col) {
   this.value = 0
-  this.x = coll * width + 5 * (coll + 1)
+  this.x = col * width + 5 * (col + 1)
   this.y = row * width + 5 * (row + 1)
 }
 
 function createCells() {
-  for (let i = 0; i < size; i++) {
+  for (var i = 0; i < size; i++) {
     cells[i] = [];
-    for(let j = 0; j < size; j++) {
+    for(var j = 0; j < size; j++) {
       cells[i][j] = new cell(i, j)
     }
   }
@@ -98,8 +98,8 @@ function finishGame() {
 }
 
 function drawAllCells() {
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
+  for (var i = 0; i < size; i++) {
+    for (var j = 0; j < size; j++) {
       drawCell(cells[i][j])	    
     } 
   }
@@ -107,8 +107,8 @@ function drawAllCells() {
 
 function pasteNewCell() {
   var countFree = 0
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
+  for (var i = 0; i < size; i++) {
+    for (var j = 0; j < size; j++) {
       if (!cells[i][j].value) {
         countFree++;
       }
@@ -120,9 +120,9 @@ function pasteNewCell() {
   }
   while(true) {
     var row = Math.floor(Math.random() * size)
-    var col1 = Math.floor(Math.random() * size)
-    if(!cells[row][col1].value) {
-      cells[row][col1].value = 2 * Math.ceil(Math.random() * 2)
+    var col = Math.floor(Math.random() * size)
+    if(!cells[row][col].value) {
+      cells[row][col].value = 2 * Math.ceil(Math.random() * 2)
       drawAllCells()
       return	    
     }
@@ -130,20 +130,20 @@ function pasteNewCell() {
 }
 
 function moveRight() {
-  var col1;
-  for (let i = 0; i < size; i++) { 
-    for (let j = size - 2; j >= 0; j--) {
+  var col;
+  for (var i = 0; i < size; i++) { 
+    for (var j = size - 2; j >= 0; j--) {
       if (cells[i][j].value) {
-        col1 = j;
-	while(col1 + 1 < size) {
-	  if (!cells[i][col1 + 1].value) {
-	  cells[i][col1 + 1].value = cells[i][col1].value;
-	  cells[i][col1].value = 0
-	  col1++;	  
-	  } else if (cells[i][col1].value == cells[i][col1 + 1].value) {
-	  cells[i][col1 + 1].value *= 2;
-	  score += cells[i][col1 + 1].value	  
-	  cells[i][col1].value = 0	  
+        col = j;
+	while(col + 1 < size) {
+	  if (!cells[i][col + 1].value) {
+	  cells[i][col + 1].value = cells[i][col1].value;
+	  cells[i][col].value = 0
+	  col++;	  
+	  } else if (cells[i][col].value == cells[i][col + 1].value) {
+	  cells[i][col + 1].value *= 2;
+	  score += cells[i][col + 1].value	  
+	  cells[i][col].value = 0	  
 	  break;	  
 	  } else {
 	  break;
@@ -156,20 +156,20 @@ function moveRight() {
 }
 
 function moveLeft() {
-  var col1;
-  for (let i = 0; i < size; i++) {
-    for (let j = 1; j < size; j++) {
+  var col;
+  for (var i = 0; i < size; i++) {
+    for (var j = 1; j < size; j++) {
       if (cells[i][j].value) {
-        col1 = j;
-	while(col1 - 1 >= 0) {
-	  if (!cells[i][col1 - 1].value) {
-	    cells[i][col1 - 1].value = cells[i][col1].value
-	    cells[i][col1].value = 0 
-	    col1--;	  
-	  } else if (cells[i][col1].value == cells[i][col1].value) {
-	    cells[i][col1 - 1].value *= 2
-	    score += cells[i][col1 - 1].value
-	    cells[i][col1].value = 0	  
+        col = j;
+	while(col - 1 >= 0) {
+	  if (!cells[i][col - 1].value) {
+	    cells[i][col - 1].value = cells[i][col].value
+	    cells[i][col].value = 0 
+	    col--;	  
+	  } else if (cells[i][col].value == cells[i][col].value) {
+	    cells[i][col - 1].value *= 2
+	    score += cells[i][col - 1].value
+	    cells[i][col].value = 0	  
 	    break	  
 	  } else {
 	    break
@@ -183,14 +183,14 @@ function moveLeft() {
 
 function moveUp() {
   var row;
-  for (let j = 0; j < size; j++) {
-    for (let i = 1; i < size;) {
+  for (var j = 0; j < size; j++) {
+    for (var i = 1; i < size;) {
       if (cells[i][j].value) {
         row = i
 	while (row > 0) {
-	  if (!coells[row - 1][j].value) {
+	  if (!cells[row - 1][j].value) {
 	    cells[row -1][j].value = cells[row][j].value
-	    cells[row1][j].value = 0 
+	    cells[row][j].value = 0 
 	    row--	  
 	  } else if (cells[row][j].value == cells[row - 1][j].value) {
 	    cells[row - 1][j].value *= 2 
@@ -209,8 +209,8 @@ function moveUp() {
 
 function moveDown() {
   var row;
-  for (let j = 0; j < size; j++) {
-    for (let i = size - 2; i >= 0; i--) {
+  for (var j = 0; j < size; j++) {
+    for (var i = size - 2; i >= 0; i--) {
       if (cells[i][j].value) {
         row = i
 	while(row + 1 < size) {
