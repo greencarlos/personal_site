@@ -40,20 +40,20 @@ function drawCell(cell) {
   ctx.beginPath();
   ctx.rect(cell.x, cell.y, width, width);
   switch(cell.value) {
-    case 0 : ctx.fillStyle = '#A9A9A9'; break;
-    case 2 : ctx.fillStyle = '#D2691E'; break;
-    case 4 : ctx.fillStyle = '#FF7F50'; break;
-    case 8 : ctx.fillStyle = '#ffbf00'; break;
-    case 16 : ctx.fillStyle = '#bfff00'; break;
-    case 32 : ctx.fillStyle = '#40ff00'; break;
-    case 64 : ctx.fillStyle = '#00bfff'; break;
-    case 128 : ctx.fillStyle = '#FF7F50'; break;
-    case 256 : ctx.fillStyle = '#0040ff'; break;
-    case 512 : ctx.fillStyle = '#ff0080'; break;
-    case 1024 : ctx.fillStyle = '#D2691E'; break;
-    case 2048 : ctx.fillStyle = '#FF7F50'; break;
-    case 4096 : ctx.fillStyle = '#ffbff00'; break;
-    default : ctx.fillStyle = '#ff0080';
+    case 0 : ctx.fillStyle = 'white'; break;
+    case 2 : ctx.fillStyle = 'maroon'; break;
+    case 4 : ctx.fillStyle = 'brown'; break;
+    case 8 : ctx.fillStyle = 'sienna'; break;
+    case 16 : ctx.fillStyle = 'saddlebrown'; break;
+    case 32 : ctx.fillStyle = 'chocolate'; break;
+    case 64 : ctx.fillStyle = 'peru'; break;
+    case 128 : ctx.fillStyle = 'darkgoldenrod'; break;
+    case 256 : ctx.fillStyle = 'goldenrod'; break;
+    case 512 : ctx.fillStyle = 'sandybrown'; break;
+    case 1024 : ctx.fillStyle = 'rosybrown'; break;
+    case 2048 : ctx.fillStyle = 'tan'; break;
+    case 4096 : ctx.fillStyle = 'burlywood'; break;
+    default : ctx.fillStyle = 'green';
   }
   ctx.fill()
   if (cell.value) {
