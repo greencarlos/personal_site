@@ -111,9 +111,10 @@ ball = {
 // calculate out-angle, higher/lower on y axis
 // steeper angle
     var phi = 0.1*pi*(1 - 2*r);
+// set velocity direction and magnitude
     this.vel = {
       x: side*this.speed*Math.cos(phi),
-      y:this.speed*Math.sin(phi)	    
+      y: this.speed*Math.sin(phi)	    
     }
   },
 
@@ -121,27 +122,27 @@ ball = {
   update: function() {
 
 // update position with current velocity
-  this.x += this.vel.x;
-  this.y += this.vel.y;
+    this.x += this.vel.x;
+    this.y += this.vel.y;
 
 // check if out of the canvas in the y direction
-  if (0 > this.y || this.y+this.side > HEIGHT) {
+    if (0 > this.y || this.y+this.side > HEIGHT) {
 
 // calculate and add the right offset,
-  var offset = this.vel.y < 0 ? 0 - this.y : HEIGHT	  
-  this.y += 2 * offset;
+      var offset = this.vel.y < 0 ? 0 - this.y : HEIGHT - (this.y+this.side)	  
+      this.y += 2 * offset;
 
 // mirror the y velocity
-  this.vel.y *= -1	  
+      this.vel.y *= -1	  
   }	  
 
 // helper function to check intersection 
   var AABBIntersect = function(ax, ay, aw, ah, bx, by, bw, bh) {
-    return ax < bx+bw && ay < by+bh && bx < ax+aw && by < ay+ah
+    return ax < bx+bw && ay < by+bh && bx < ax+aw && by < ay+ah;
   }	  
   
 // check againts target paddle direction
-    var pdle = this.vel.x < 0 ? player : ai
+    var pdle = this.vel.x < 0 ? player : ai;
   if (AABBIntersect(pdle.x, pdle.y, pdle.width, pdle.height, this.x, this.y, this.side, this.side)) {
 
 // set the x position and calculate reflection angle
