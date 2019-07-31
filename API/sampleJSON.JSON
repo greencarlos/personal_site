@@ -30,7 +30,7 @@
   "nested2": "{michael:1, peele:2, jordan:3}",
   "nested3": "[{a: 1}, {b: 2}, {c: 3}]",
   "nested4": "{a:[1,2,3], b:[4,5,6], c:[7,8,9]}",
-  "nested5": "() => {console.log('nested function')}",
+  "nested5": "() => {console.log(555)}",
   "hypernested": "object = {dragon : 10, ball: 20, Z: 30}"
 },
 {
@@ -48,7 +48,7 @@
   "nested3": "[{a: 1}, {b: 2}, {c: 3}]",
   "nested4": "{a:[1,2,3], b:[4,5,6], c:[7,8,9]}",
   "nested5": "()=> {console.log(9001)}",
-  "hypernested": "object = {'dragon' : 1, 'ball': 2, 'Z': 3}"
+  "hypernested": "object = {Yu: 1, Yu: 2, Hakusho: 3}"
 }
 ]
 
