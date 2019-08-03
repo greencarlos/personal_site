@@ -21,6 +21,6 @@ module.exports = {
   plugins: [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({template: 'front-end/todo.html'}),
-    new HtmlWebpackPlugin({template: 'front-end/tictac.html'})
+    new HtmlWebpackPlugin({template: 'GAMES/tictac.html'})
   ]
 }
