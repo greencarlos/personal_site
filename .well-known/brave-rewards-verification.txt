@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: carlosgreenpersonalsite.com
+Token: ac591787ca8c3f6df665f7241679a6710b4d6661a46871def5f6913845b3a268
