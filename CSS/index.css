@@ -6,7 +6,7 @@ img {
 body {
   font: 14px "Centry Gothic", Futura, sans-serif;
   margin: 20px;
-  background: darkgreen;
+  background: #003800;
 }
 
 p {
@@ -46,9 +46,8 @@ ol, ul {
   color: lightsalmon;
 }
 
-.red {
-  text-align: center;
-  color: red
+.goldenrod{
+  color: goldenrod; 
 }
 
 .cyan {
@@ -69,4 +68,35 @@ ol, ul {
 	color: darkblue;
 }
 
+.gold{
+	color: gold;
+}
 
+.yellow{
+	color: yellow;
+}
+
+.maroon{
+	color: maroon;
+}
+
+.brown{
+	color: brown;
+}
+
+.saddlebrown{
+	color: saddlebrown;
+}
+
+.chocolate{
+	color: chocolate;
+}
+
+.peru{
+  color: peru;
+}
+
+
+.tan{
+  color: tan;
+}
