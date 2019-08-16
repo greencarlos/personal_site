@@ -6,7 +6,7 @@ img {
 body {
   font: 14px "Centry Gothic", Futura, sans-serif;
   margin: 20px;
-  background: black;
+  background: darkgreen;
 }
 
 p {
@@ -46,11 +46,6 @@ ol, ul {
   color: lightsalmon;
 }
 
-.green {
-  text-align: center;
-  color: green;
-}
-
 .red {
   text-align: center;
   color: red
@@ -70,6 +65,8 @@ ol, ul {
   color: white;
 }
 
-
+.darkblue: {
+	color: darkblue;
+}
 
 
