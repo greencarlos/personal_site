@@ -41,65 +41,12 @@ ol, ul {
   text-align: center;
 }
 
-.salmon {
-  text-align: center;
-  color: lightsalmon;
+.white{
+	text-align: center;
+	color: white;
 }
 
-.goldenrod{
-  color: goldenrod; 
+.lightblue{
+	color: lightblue;
 }
 
-.cyan {
-  text-align: center;
-  color: cyan;
-}
-
-.orange {
-  text-align: center;
-  color: orange;
-}
-
-.white {
-  color: white;
-}
-
-.darkblue: {
-	color: darkblue;
-}
-
-.gold{
-	color: gold;
-}
-
-.yellow{
-	color: yellow;
-}
-
-.maroon{
-	color: maroon;
-}
-
-.brown{
-	color: brown;
-}
-
-.saddlebrown{
-	color: saddlebrown;
-}
-
-.chocolate{
-	color: chocolate;
-}
-
-.peru{
-  color: peru;
-}
-
-.tan{
-  color: tan;
-}
-
-.lightgrey{
-	color:lightgrey;
-}
