@@ -1,0 +1,181 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+
+	<style>
+
+body {
+	background-color: lightblue;
+	font: 18px arial, sans-serif;
+}
+
+#animals {
+	width: 70%;
+}
+
+.animal-item {
+	float: left;
+	padding: 10px;
+}
+
+form {
+	float: right;
+	width: 30%;
+	padding: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+input[type="text"] {
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+button, 
+input[type="submit"] {
+	padding: 5px 20px;
+	margin: 0 10px 10px 0;
+	font-size: 18px;
+	color: #fff;
+	cursor: pointer;
+	background: #659a98;
+	border: 0;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px #bbb;
+}
+
+button:hover,
+input[type="submit"]:hover {
+	background: #334e4d;
+}
+
+button.active{
+	background: #334e4d;
+}
+
+	</style>
+
+	<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+  <title>Gify API</title>
+</head>
+
+<body>
+
+	<a style="align:center" href="http://carlosgreenpersonalsite.com" target="_blank">
+		<p>Back to the homepage</p>
+	</a>
+
+	<br/>
+
+  <div id="animal-buttons"></div>
+
+	<h2>Click on animal name to display GIFs</h2>
+  <form id="animal-form">
+    <label for="animal-input">Type an animal add it</label>
+    <input type="text" id="animal-input"><br>
+    <input id="add-animal" type="submit" value="Submit">
+  </form>
+
+  <div id="animals"></div>
+
+
+	<script> 
+  $(document).ready(function () {
+
+  var animals = [
+		"lion", "tiger", "wolf", "cat", "dog", "frog"
+	]
+
+		function populateButtons(arrToUse, classToAdd, areaToAddTo) {
+			$(areaToAddTo).empty()
+
+			for (let i = 0; i < arrToUse.length; i++) {
+				var a = $("<button>")
+				a.addClass(classToAdd)
+				a.attr("data-type", arrToUse[i])
+				a.text(arrToUse[i])
+				$(areaToAddTo).append(a)
+			}
+		} 
+
+		$(document).on("click", ".animal-button", function() {
+			$("#animals").empty()
+			$(".animal-button").removeClass("active")
+			$(this).addClass("active")
+
+			var type = $(this).attr("data-type")
+			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10"
+
+			$.ajax({
+				url: queryURL,
+				method: "GET"
+			})
+				.then(function(res) {
+					var results = res.data
+
+					for (let i = 0; i < results.length; i++) {
+
+						console.log(results[i])
+						
+						var animalDiv = $("<div class=\"animal-item\">")
+
+						var rating = results[i].rating
+
+						var p = $("<p>").text("Rating: " + rating)
+
+						var animated = results[i].images.fixed_height_url
+						var still = results[i].images.fixed_height_still.url
+
+						var animalImage = $("<img>")
+						animalImage.attr("src", still)
+						animalImage.attr("data-still", still)
+						animalImage.attr("data-animate", still)
+						animalImage.attr("data-state", "still")
+						animalImage.addClass("animal-image")
+
+						animalDiv.append(p)
+						animalDiv.append(animalImage)
+
+							$("#animals").append(animalDiv)
+					}
+				})
+		})
+
+			$(document).on("click", ".animal-image", function() {
+
+				var state = $(this).attr("data-state")
+
+				if (state === "still") {
+					$(this).attr("src", $(this).attr("data-animate"))
+					$(this).attr("data-state", "animate")
+				} else {
+					$(this).attr("src", $(this).attr("data-still"))
+					$(this).attr("data-state", "still")
+				}
+			})
+
+			$("#add-animal").on("click", function(event){
+				event.preventDefault()
+				var newAnimal = $("input").eq(0).val()
+
+				if (newAnimal.length > 2) {
+					animals.push(newAnimal)
+				}
+
+				populateButtons(animals, "animal-button", "#animal-buttons")
+			})
+
+		populateButtons(animals, "animal-button", "#animal-buttons")
+	})
+
+	  </script>
+  </body>
+</html>
