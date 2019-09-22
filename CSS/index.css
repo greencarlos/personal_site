@@ -32,6 +32,11 @@ h2 {
 ol, ul {
   padding-left: 30px;
   color: white;
+	text-align: center;
+}
+
+li {
+	list-style-type: none;
 }
 
 .img2 {
