@@ -1,3 +1,6 @@
+//const firebase = require('firebase')
+//console.log(firebase)
+
 var config = {
   apiKey: "AIzaSyCcPFcbAjIsgXGQwE-A3AcOXkeD40qypE8",
   authDomain: "train-times-93583.firebaseapp.com",
