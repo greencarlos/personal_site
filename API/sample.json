@@ -1,54 +1,41 @@
 [
   {
-  "id": "1",
-  "key": "value",
-  "a": "1",
-  "b": "2",
-  "c": "3",
-  "d": "4",
-  "e": "5",
-  "array1": "[1, 2, 3, 4, 5]",
-  "obj": "{key1: val1, key2: val2, key3: val3}",
-  "nested1": "[1,2,3,4,5]",
-  "nested2": "{apple:1, orange:2, banana:3}",
-  "nested3": "[{a: 1}, {b: 2}, {c: 3}]",
-  "nested4": "{a:[1,2,3], b:[4,5,6], c:[7,8,9]}",
-  "nested5": "() => {console.log('I am a console log')}",
-  "hypernested": "const object = {dragon : 1, ball: 2, Z: 3}"
-},
-{
-  "id": "2",
-  "key": "value",
-  "a": "1",
-  "b": "2",
-  "c": "3",
-  "d": "4",
-  "e": "5",
-  "array2": "[6, 7, 8, 9, 0]",
-  "obj": "{key1: val1, key2: val2, key3: val3}",
-  "nested1": "['a', 'b', 'c']",
-  "nested2": "{michael:1, peele:2, jordan:3}",
-  "nested3": "[{a: 1}, {b: 2}, {c: 3}]",
-  "nested4": "{a:[1,2,3], b:[4,5,6], c:[7,8,9]}",
-  "nested5": "() => {console.log(555)}",
-  "hypernested": "const object = {dragon : 10, ball: 20, Z: 30}"
-},
-{
-  "id": "3",
-  "key": "value",
-  "a": "1",
-  "b": "2",
-  "c": "3",
-  "d": "4",
-  "e": "5",
-  "array3": "[10, 11, 12, 13",
-  "obj": "{key1: val1, key2: val2, key3: val3}",
-  "nested1": "['1', '2', '3']",
-  "nested2": "{kim:1, jon:2, un:3}",
-  "nested3": "[{a: 1}, {b: 2}, {c: 3}]",
-  "nested4": "{a:[1,2,3], b:[4,5,6], c:[7,8,9]}",
-  "nested5": "()=> {console.log(9001)}",
-  "hypernested": "const object = {Yu: 1, Yu: 2, Hakusho: 3}"
-}
+    "Title": "Remember the Titans",
+    "Year": "2000",
+    "Rated": "PG",
+    "Released": "29 Sep 2000",
+    "Runtime": "113 min",
+    "Genre": "Biography, Drama, Sport",
+    "Director": "Boaz Yakin",
+    "Writer": "Gregory Allen Howard",
+    "Actors": "Denzel Washington, Will Patton, Wood Harris, Ryan Hurst",
+    "Plot": "The true story of a newly appointed African-American coach and his high school team on their first season as a racially integrated unit.",
+    "Language": "English",
+    "Country": "USA",
+    "Awards": "8 wins & 17 nominations.",
+    "Ratings": [
+      {
+        "Source": "Internet Movie Database",
+        "Value": "7.8/10"
+      },
+      {
+        "Source": "Rotten Tomatoes",
+        "Value": "73%"
+      },
+      {
+        "Source": "Metacritic",
+        "Value": "48/100"
+      }
+    ],
+    "Metascore": "48",
+    "imdbRating": "7.8",
+    "imdbVotes": "186,166",
+    "imdbID": "tt0210945",
+    "Type": "movie",
+    "DVD": "20 Mar 2001",
+    "BoxOffice": "$114,297,071",
+    "Production": "Walt Disney Pictures",
+    "Website": "http://disney.go.com/disneypictures/rememberthetitans/index.html",
+    "Response": "True"
+  },
 ]
-
