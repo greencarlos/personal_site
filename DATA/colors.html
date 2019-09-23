@@ -1,0 +1,93 @@
+
+<!-- D3 -->
+<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.9.7/d3.min.js"></script> 
+
+  <title>colors.html</title>
+</head>
+<body>
+	<br/>
+
+	<p style="text-align:left;">
+     <a align="center" href="http://carlosgreenpersonalsite.com">
+	  	 Back to the homepage
+	   </a>
+   </p>
+
+	<h1 id="para"></h1>
+
+	<svg width="400" height="180">
+  <rect x="50" y="20" width="150" height="150" style="fill:pink;stroke:red;stroke-width:5;" />
+  </svg>
+
+<svg width="400" height="180">
+  <rect x="50" y="20" width="150" height="150" style="fill:lightblue;stroke:blue;stroke-width:5;" />
+</svg>
+
+<svg width="400" height="180">
+  <rect x="50" y="20" width="150" height="150" style="fill:yellow;stroke:gold;stroke-width:5;" />
+</svg>
+
+<svg width="400" height="180">
+  <rect x="50" y="20" width="150" height="150" style="fill:lightgreen;stroke:green;stroke-width:5;" />
+</svg>
+
+<svg width="400" height="180">
+  <rect x="50" y="20" width="150" height="150" style="fill:white;stroke:black;stroke-width:5;" />
+</svg>
+
+
+<svg width="400" height="180">
+  <rect x="50" y="20" width="150" height="150" style="fill:#B695C0;stroke:purple;stroke-width:5;" />
+</svg>
+
+
+
+		<script>
+const para = document.getElementById("para")
+
+const color1 = setTimeout(() => {
+	para.innerHTML = Date()
+  d3.select("body").transition()
+    .style("background-color", "lightblue")
+}, 5000)
+
+const color2 = setTimeout(() => {
+	para.innerHTML = Date()
+	d3.select("body").transition()
+	  .style("background-color", "lightgreen")
+}, 10000)
+
+const color3 = setTimeout(() => {
+	para.innerHTML = Date()
+	d3.select("body").transition()
+	  .style("background-color", "gold")
+}, 15000)
+
+const color4 = setTimeout(() => {
+	para.innerHTML = Date()
+	d3.select("body").transition()
+		.style("background-color", "#B695C0")
+}, 20000)
+
+const color5 = setTimeout(() => {
+	para.innerHTML = Date()
+	d3.select("body").transition()
+		.style("background-color", "#FFC0CB")
+}, 25000)
+
+const color6 = setTimeout(() => {
+	para.innerHTML = Date()
+	d3.select("body").transition()
+		.style("background-color", "#A67B5B")
+}, 30000)
+
+const color = setTimeout(() => {
+	para.innerHTML = Date()
+	d3.select("body").transition()
+	.style("background-color", "white")
+}, 50000)
+
+
+		</script>
+</body>
+
