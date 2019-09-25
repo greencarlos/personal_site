@@ -6,6 +6,8 @@ module.exports = {
   entry: {
     TODO:'./src/TODO/todo_index.js',
     TicTac: './src/TicTacToe/tic_index.js',
+    likeButton: './src/likeButton.js'
+    sum: './src/sum.js'
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
