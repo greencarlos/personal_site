@@ -13,3 +13,5 @@ Compiling:
 npm run build
 npm run deploy
 
+HacktoberFest!!!
+https://hacktoberfest.digitalocean.com/details
