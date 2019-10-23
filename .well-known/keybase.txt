@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/greenc123
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://carlosgreenpersonalsite.com
+  * I am greenc123 (https://keybase.io/greenc123) on keybase.
+  * I have a public key ASAZp_zcgoCppGhcLIQSqF7Il8CwzNXhv4_FbCmLx9T5vwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e6dcd472a887b4f66793ece5d897f9f180b30e39707df4b94d948edd2c3353190a",
+      "host": "keybase.io",
+      "kid": "012019a7fcdc8280a9a4685c2c8412a85ec897c0b0ccd5e1bf8fc56c298bc7d4f9bf0a",
+      "uid": "e551a9ac6cc57b624cafec68fe551419",
+      "username": "greenc123"
+    },
+    "merkle_root": {
+      "ctime": 1571835042,
+      "hash": "e2fb60779f9b2f0dd09a15cff9dd975ebac16748f9c19d65f2293428a873cb7c37e896730b6b7b689ed932c2f85a2f0556710790a25d641a116e578d8d3f2ea2",
+      "hash_meta": "310f51110a4214e1839ceb89af09da5571a43a80544bbddf40ea9ee29dc9f159",
+      "seqno": 8338183
+    },
+    "service": {
+      "entropy": "OeBPajnQAyKFLD7wKtV9ous7",
+      "hostname": "carlosgreenpersonalsite.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.7.0"
+  },
+  "ctime": 1571835053,
+  "expire_in": 504576000,
+  "prev": "e0c136a2109541f7016155713739ddfa601244b3d201c46c23218767e9c6345e",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgGaf83IKAqaRoXCyEEqheyJfAsMzV4b+PxWwpi8fU+b8Kp3BheWxvYWTESpcCCMQg4ME2ohCVQfcBYVVxNznd+mASRLPSAcRsIyGHZ+nGNF7EIAeFCEsMU9mTLPB//vRPlnusxVKwjWTCHZtXDhCCdDhvAgHCo3NpZ8RAbOSGhoyKJxkcsFQd2c9TWX2JpvQvgLOD9mGlHrVDeCQ+GNdyt5oVOo9JK4CW8HYcILaP+eezgBiD4zsQhu6oBqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKnzJGYOy4BQYOBmsb7WEJdw3/yNKLXcSF6XDw4WnSGFo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/greenc123
+
+==================================================================
