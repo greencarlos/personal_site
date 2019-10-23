@@ -43,6 +43,10 @@ li {
   height: 200px;
 }
 
+.row {
+	justify-content: center;
+}
+
 .img1 {
 	width: 200px;
 	height: 200px;
