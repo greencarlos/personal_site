@@ -71,3 +71,7 @@ li {
 .lightblue{
 	color: lightblue;
 }
+
+.col-md-2 {
+	width: 200px;
+}
