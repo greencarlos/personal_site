@@ -1,6 +1,5 @@
 "use strict"
 const React = require('react')
-//import './App.css'; 
 
 function Square(props) {
   return (
