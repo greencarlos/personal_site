@@ -4,10 +4,13 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" 
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- personal meta tags -->
   <meta name="keywords" content="carlos, green, carlos green, carlosgreen, website, personal, site, portfolio">
@@ -43,84 +46,87 @@
   </head>
   <body>
 
-    <div class="top">
     <h1>Carlos Green</h1>
 
 		<!-- Profile Image & Picture of the MERN stack-->
-    <img class="img1" src="IMAGES/profile2.png" alt="profile picture">
-    <img class="img2" src="IMAGES/mern.png" alt="M.E.R.N. image">
+    <img class="img1" 
+		src="IMAGES/profile2.png" alt="profile picture">
+    <img class="img2" 
+		src="IMAGES/mern.png" alt="M.E.R.N. image">
 		<br/>
 		<br/>
-
 
 		<!-- Short Description and links to MERN -->
     <p>
-    Currently living in the San Francisco Bay Area and I'm passionate about the web and front-end technologies.<br/>
-    I'm proficient in Javascript, HTML, CSS and the M.E.R.N. tech stack. 
-      (<a style="color:green" href="https://www.mongodb.com/" target="_blank">MongoDB</a>, 
+    Currently living in the San Francisco Bay Area and 
+		I'm passionate about the web and front-end technologies.
+		<br/>
+    I'm proficient in Javascript, HTML, CSS and the M.E.R.N. 
+		tech stack. 
 
-      <a style="color:coral" href="https://expressjs.com/" target="_blank">Express</a>, 
+      (<a class="Mongo" 
+				href="https://www.mongodb.com/" 
+				target="_blank">MongoDB</a>, 
 
-      <a href="https://reactjs.org/" target="_blank">React</a>, 
+      <a class="Express" 
+				href="https://expressjs.com/" 
+				target="_blank">Express</a>, 
 
-      <a style="color:lightgreen" href="https://nodejs.org/en/" target="_blank">NodeJS</a>) 
+      <a href="https://reactjs.org/" 
+				target="_blank">React</a>, 
+
+      <a class="Node" 
+				href="https://nodejs.org/en/" 
+				target="_blank">NodeJS</a>) 
     </p>
 
   <br/>
 	<br/>
 
-	</div>
-
 	<!-- Like button -->
-  <div class="white" id="like" align="center"></div>
+	<div class="white" id="like"></div>
 	<br />
 
 <!-- Contact Info: -->
-<table align="center">
-  <tr>
-    <td>
+ <div class="container">
+	<div class="row">
+
+		<div class="col-md-1">
       <a class="white" href="PDFS/Resume.pdf" target="_blank">
 		  Resume
-			</a>|<br/>
-    </td>
+			</a>
+		</div>
   
-	  <td>
-      <a class="white" href="https://www.linkedin.com/in/carlos-green-4ba9b8169" target="_blank">
+		<div class="col-md-1">
+      <a class="white" 
+				href="https://www.linkedin.com/in/carlos-green-4ba9b8169" 
+				target="_blank">
       LinkedIn
-	  	</a>|<br/>
-    </td>
+	  	</a>
+		</div>
   
-  	<td>
-      <a class="white" href="https://github.com/greenc123" target="_blank">
-      Github</a><br/>
-    </td>
-  
-  </tr>
-</table>
+		<div class="col-md-1">
+      <a class="white" 
+				href="https://github.com/greenc123" target="_blank">
+      Github
+			</a>
+			<br/>
+		</div>
 
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-
+	</div> <!-- row -->
+ </div> <!-- container -->
+ <br/>
+ <br/>
 
 	<!-- Brave Browser -->
-	<p align="center">
+	<p>
 	Sick of Ads?<br/>
 	  <a href="https://brave.com/uqz305" target="_blank">
 			Try The Brave Browser (It's Free)
 		</a>
 	</p>
 
-
-  <!-- https://codeincomplete.com/games/ -->  
-  <h1 style="color:white">Games:</h1>
-	<br />
-	<br />
-  
 	<!-- Tic Tac Toe -->
-  <!-- https://codepen.io/gaearon/pen/gWWZgR -->
   <br/>
 
  <div class="container">
@@ -133,7 +139,6 @@
 		</div>
 
   <!-- Snake -->
-  <!-- https://www.youtube.com/watch?v=xGmXxpIj6vs -->
 	<div class="col-md-2">
     <a class="lightblue" href="GAMES/snake.html">
 			Snake
@@ -142,7 +147,6 @@
 	</div>
 
   <!-- Tetris -->
-  <!-- https://www.youtube.com/watch?v=-loQsPYMnk4 -->
 	<div class="col-md-2">
     <a class="lightblue" href="GAMES/tetris.html">
 			Tetris
@@ -160,7 +164,6 @@
 	</div>
 
   <!-- Breakout -->
-  <!-- https://github.com/jakesgordon/javascript-breakout/ -->
 	<div class="row">
 	<div class="col-md-2">
     <a class="lightblue" href="GAMES/breakout.html">
@@ -170,7 +173,6 @@
 	</div>
 
   <!-- Minesweeper -->
-  <!-- https://www.101computing.net/minesweeper-in-javascript/ -->
 	<div class="col-md-2">
     <a class="lightblue" href="GAMES/mine.html">
 			MineSweeper
@@ -179,7 +181,6 @@
 		</div>
 
   <!-- Slider -->
-  <!-- https://www.w3schools.com/graphics/game_intro.asp -->
 	<div class="col-md-2">
     <a class="lightblue" href="GAMES/slider.html">
 			Slider
@@ -188,13 +189,13 @@
 	</div>
 
   <!-- 2048 -->
-  <!-- https://github.com/amadevBox/2048  -->
 	<div class="col-md-2">
     <a class="lightblue" href="GAMES/2048.html">
 			2048
       <img src="IMAGES/2048.png" alt="2048">
     </a>
 	</div>
+
 	</div> <!-- row -->
  </div> <!-- Container -->
 
@@ -204,19 +205,13 @@
   <br/>
   <br/>
   
-  
-  <h2>Projects:</h2>
-  <br />
-	<br />
-	<br />
-
   <ul>
 
-  <!-- Tribute Page -->
-  <h4 align="center">
+  <h4>
 		Responsive Web Design (HTML/CSS)
 	</h4>
 
+  <!-- Tribute Page -->
   <li>
     <a href="DESIGN/tribute.html" target="_blank">
 		  Marcus Aurelius Tribute Page
@@ -228,11 +223,6 @@
     <a href="DESIGN/form.html" target="_blank">
 		  Survey Form
 		</a>
-  </li>
-
-  <!-- Landing Page -->
-  <li>
-			(Fake) Dog Adpotion Landing Page
   </li>
 
   <!-- Technical Documentation -->
@@ -248,7 +238,6 @@
 		</a>
 	</li>
 
-
   <br />
   <br />
   <br />
@@ -257,38 +246,16 @@
   
   <!-- Front-End Libraries-->
   <!-- Random Quote Machine -->
-  <h4 align="center">Front End Libraries <br/></h4>
-  <p align="center">(<a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>, 
+  <h4>Front End Libraries ( 
+	<a href="https://getbootstrap.com/" target="_blank">
+		Bootstrap
+	</a>, 
   <a href="https://jquery.com/" target="_blank">JQuery</a>, 
   <a href="https://sass-lang.com/" target="_blank">Sass</a>, 
   <a href="https://reactjs.org/" target="_blank">React</a> and 
-  <a href="https://redux.js.org/" target="_blank">Redux</a>)</p>
+  <a href="https://redux.js.org/" target="_blank">Redux</a>)
+	</h4>
 
-  <li>
-    Random Quote Machine
-  </li>
-
-  <!--Markdown Previewer -->
-  <li>
-    Markdown Previewer
-  </li>
-
-  <!-- Drum Machine-->
-  <li>
-    Drum Machine
-  </li>
-  
-  <!-- Javascript Calculator-->
-  <li>
-    Javascript Calculator
-  </li>
-  
-  <!-- Pomodoro Clock-->
-  <li>
-    Pomodoro Clock
-  </li>
-  
- 
    <li>
      <a href="front-end/todo.html" target="_blank">
 			 Todo App
@@ -305,7 +272,6 @@
 		 <a href="front-end/rockpaper.html" target="_blank">
 			 Rock Paper Scissors
 		 </a>
-		 (Multiplayer so use a private tab)
 	 </li>
 
 	 <li>
@@ -322,36 +288,13 @@
   
   <!-- Data Visualization FreeCodeCamp -->
   <!-- FreeCodeCamp Bar Chart-->
-  <h4 align="center">Data Visualization</h4> 
-  <p align="center">(<a href="https://d3js.org/" target="_blank">D3</a>, 
+  <h4>Data Visualization (
+	<a href="https://d3js.org/" target="_blank">D3</a>, 
   <a href="https://www.json.org/" target="_blank">JSON</a>, 
-  <a href="https://en.wikipedia.org/wiki/Ajax_(programming)" target="_blank">Ajax</a>)
-  </p>
+  <a href="https://en.wikipedia.org/wiki/Ajax_(programming)"
+		target="_blank">Ajax</a>)
+	</h4>
   
-  <li>
-			Bar Chart
-  </li>
-  
-  <!-- Scatterplot Graph -->
-  <li>
-			Scatterplot Graph
-  </li>
-  
-  <!-- Heat Map -->
-  <li>
-			Heat Map
-  </li>
-  
-  <!-- Choropleth Map -->
-  <li>
-			Choropleth Map
-  </li>
-  
-  <!-- Tree Diagram -->
-  <li>
-			Tree Diagram
-  </li>
-
 	<!-- Random color visualization -->
 	<li>
 		<a href="DATA/colors.html" target="_blank">
@@ -359,231 +302,53 @@
 		</a>
 	</li>
 
-  
-
-
 	<br /> 
 	<br /> 
 	<br /> 
 	<br /> 
 	<br /> 
-
-  
 
   <!-- APIS AND MICROSERVICES --> 
   <!-- Timestamp Microservice -->
-  <h4 align="center">APIs and Microservices <br/></h4> 
-  <p align="center">(<a href="https://www.npmjs.com/" target="_blank">Npm</a>, 
-  <a href="https://nodejs.org/en/" target="_blank">Node</a>, 
-  <a href="https://expressjs.com" target="_blank">Express</a>, 
-  <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>, 
-  <a href="https://mongoosejs.com/" target="_blank">Mongoose</a>)</p>
+  <h4>
+		APIs and Microservices( 
+	<a href="https://www.npmjs.com/" target="_blank">Npm</a>, 
+  <a class="Node" 
+		href="https://nodejs.org/en/" target="_blank">Node</a>, 
+  <a class="Express" 
+		href="https://expressjs.com" target="_blank">Express</a>, 
+  <a class="Mongo"
+		href="https://www.mongodb.com/" target="_blank">MongoDB</a>, 
+  <a href="https://mongoosejs.com/" target="_blank">Mongoose</a>
+	)
+	</h4> 
 
-  <li>
-    <a>
-			Timestamp Microservice
-		</a>
-  </li>
-
-  <!-- Request Header Parser Microservice-->
-  <li>
-    <a>
-			Request Header Parser Mircroservice
-		</a>
-  </li>
-
-  <!-- URL Shortener Microservice-->
-  <li>
-		<a>
-			URL Shortener Microservice
-		</a>
-  </li>
-
-  <!-- Exercise Tracker -->
-  <li>
-    <a>
-			Exercise Tracker
-		</a>
-  </li>
-
-  <!-- File Metadata Microservice-->
-  <li>
-    <a>
-			File Metadata Microservice
-		</a>
-  </li>
-
-
- 
-  
 	<br /> 
 	<br /> 
 	<br /> 
 	<br /> 
 	<br /> 
   
-
-
   <!-- Information Security and Quality Assurance Projects -->
   <!-- -Metric-Imperial Converter -->
-  <h4 align="center">Information Security and Quality Assurance<br/></h4>
-  <p align="center">(<a href="https://helmetjs.github.io/" target="_blank">HelmetJS</a> and 
-  <a href="https://www.chaijs.com/" target="_blank">Chai</a>)</p>
-
-  <li>
-		<a>
-			Metric Imperial Converter
-	  </a>
-  </li>
-
-  <!-- Issue Tracker -->
-  <li>
-		<a>
-			Issue Tracker
-		</a>
-  </li>
-
-  <!-- Personal Library -->
-  <li>
-		<a>
-			Personal Library
-		</a>
-  </li>
-
-  <!-- Stock Price Tracker -->
-  <li>
-		<a>
-			Stock Price Tracker
-		</a>
-  </li>
-
-  <!-- Anonymous Message Board-->
-  <li>
-		<a>
-			Anonymous Message Board
-		</a>
-  </li>
-  <br />
-
- 
+  <h4 align="center">
+		Information Security and Quality Assurance (
+	<a href="https://helmetjs.github.io/" 
+		target="_blank">HelmetJS</a> and 
+  <a href="https://www.chaijs.com/" target="_blank">Chai</a>
+	)
+	</h4>
   
 	<br /> 
 	<br /> 
 	<br /> 
 	<br /> 
 	<br /> 
-  
-  
-	<!-- Explanation of Computer Science Concepts -->
-  <h4 align="center">Basic Computer Science,<br/>
-  Algorithms and Data Structures<br/></h4>
-  <p align="center">
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">(In Javascript)</a>
-  </p>
-
-	<!-- Amount of Time and Space for an algorithm to run-->
-  <li>
-		<a>
-			Big O Time and Space Complexity
-		<a/>
-  </li>
-
-	<!-- Primary memory, Secondary memory and Cached Memory on a Computer -->
-	<!-- When Programming, Heap Memory and Stack Memory -->
-  <li>
-		<a>
-			Computer Memory
-		<a/>
-  </li>
-
-	<!-- Reference to Strings and Javascript Methods -->
-  <li>
-    <a>
-			String Methods
-		<a/>
-  </li>
-
-	<!-- Reference to Array Data Type and javascript methods -->
-  <li>
-    <a>
-			Array Methods (Stacks and Queues)
-		<a/>
-  </li>
-
-	<!-- Objects and Javascript methods -->
-  <li>
-		<a>
-			Object Methods (Hashing/Hash Tables)
-		<a/>
-  </li>
-
-	<!-- Top Down/Memoization/Recursion and Iterative looping -->
-  <li>
-    <a>
-			Dynamic Programming and Recursion
-		<a/>
-  </li>
-
-	<!-- Linked Lists and traversal methods (forward, reverse)-->
-  <li>
-    <a>
-			Linked Lists
-		<a/>
-  </li>
-
-	<!-- DFS, BFS and Real World example of HTML DOM -->
-  <li>
-		<a>
-			Trees
-		<a/>
-  </li>
-
-	<!-- DFS, BFS and real world example of friends list -->
-  <li> 
-		<a>
-			Graphs
-		<a/>
-  </li>
-
-	<!-- Heap, Quick, Insertion, Bubble, Selection, Radix, Counting -->
-  <li>
-		<a>
-			Algorithmic Sorting
-		<a/>
-  </li>
-
-	<!-- Binary, Linear -->
-  <li>
-    <a>
-	  	Algorithmic Searching
-		<a/>
-  </li>
-
-	<!-- AND, OR, XOR, NOT, left shift, sign-propigating right shift, zero-fill
-	 right shift-->
-  <li>
-		<a>
-			Bit Manipulation
-		</a>
-  </li>
-
-  <br>
-
- 
-  
-	<br /> 
-	<br /> 
-	<br /> 
-	<br /> 
-	<br /> 
-  
   
 	<!-- Random projects -->
-  <h4 align="center">
+  <h4>
 		Miscellaneous:
 	</h4>
-
-  <br />
 
   <li>
     <a href="MISC/kismet.html" target="_blank">
@@ -598,53 +363,15 @@
   </li>
 
   <li>
-    <a>
-			Hangman
-		</a>
-  </li>
-
-  <li>
-    <a>
-			Coin Flip
-		</a>
-  </li>
-
-  <li>
-    <a>
-			Stopwatch
-		</a>
-  </li>
-
-  <li>
-    <a>
-			Lottery Number Generator
-		</a>
-  </li>
-
-  <li>
-    <a href="https://fast-bastion-05200.herokuapp.com/api/sample" target="_blank">
+    <a 
+			href="https://fast-bastion-05200.herokuapp.com/api/sample" 
+			target="_blank">
 			API (sample JSON data)
 		</a>
   </li>
 
-
-	<!-- 
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
-  <li><a></a></li>
- -->
-
-
   </ul>
+
   <br/>
   <br/>
   <br/>
@@ -654,6 +381,5 @@
   <!-- npm run build -->
 	<!-- npm run create -->
   <script src="lib/likeButton.js" type="text/javascript" async></script>
-
  </body>
 </html>

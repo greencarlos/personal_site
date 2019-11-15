@@ -6,7 +6,8 @@ img {
 body {
   font: 14px "Centry Gothic", Futura, sans-serif;
   margin: 20px;
-  background: #003800;
+  background: seagreen;
+	text-align: center;
 }
 
 p {
@@ -16,6 +17,7 @@ p {
 
 a {
 	font-size: 18px;
+	color: darkblue;
 }
 
 h1 {
@@ -38,6 +40,18 @@ li {
 	list-style-type: none;
 }
 
+.Mongo {
+	color: darkgreen;
+}
+
+.Express {
+	color: coral;
+}
+
+.Node {
+	color: lightgreen;
+}
+
 .img2 {
   width: 400px;
   height: 200px;
@@ -56,10 +70,6 @@ li {
   clear: both;
   content: "";
   display: table;
-}
-
-.top {
-  text-align: center;
 }
 
 .white{
