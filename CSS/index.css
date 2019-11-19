@@ -25,9 +25,7 @@ h1 {
 	text-align: center;
 }
 
-h2 {
-  color: white;
-	text-align: center;
+h2 { color: white; text-align: center;
 }
 
 ol, ul {
@@ -42,6 +40,7 @@ li {
 
 .Mongo {
 	color: darkgreen;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .Express {
@@ -50,6 +49,7 @@ li {
 
 .Node {
 	color: lightgreen;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .img2 {
