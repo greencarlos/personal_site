@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Magnets</title>
-	</head>
+
+		<!-- JQuery Library -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!-- CSS Styles -->
 <style>
@@ -14,7 +16,7 @@ img {
 }
 
 body {
-	background: lightblue url(fridge2.png) no-repeat fixed;
+	background: lightblue url(IMAGES/fridge2.png) no-repeat fixed;
 	background-color: lightblue;
 	background-size: auto;
 }
@@ -64,30 +66,28 @@ a {
 }
 
 </style>
+</head>
 
 <body>
 
-  <a style="align:center" href="http://carlosgreenpersonalsite.com" target="_blank">
+  <a href="http://carlosgreenpersonalsite.com" target="_blank">
     <p>
   	  Back to the homepage
 	  </p>
   </a>
- 
-
 
 	<h1>Add some buttons to the fridge!</h1>
 
 	<div id="display"></div>
 	<div id="buttons"></div>
-	<br/>
 	<button id="clear">Clear Fridge</button>
-
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<script type="text/javascript">
 
 		$(document).ready(function(){
-var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
+var letters = [
+"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"
+];
 
 			// Create Buttons
 			for (var i = 0; i < letters.length; i++) {
