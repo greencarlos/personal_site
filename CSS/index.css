@@ -40,16 +40,59 @@ li {
 	list-style-type: none;
 }
 
-.Mongo {
+.MongoDB {
+	color: darkgreen;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+} .Express {
+	color: coral;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.NodeJS {
+	color: lightgreen;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.ReactJS {
+	color: #61dafb;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.Npm {
+	color: red;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.mongoose {
+	color: rgb(136, 0, 0);
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.D3 {
+	color: orange;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.Black {
 	color: black;
 }
 
-.Express {
-	color: coral;
+.Gray {
+	color: grey;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.Node {
-	color: lightgreen;
+.Bootstrap {
+	color: #563d7c;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.Sass {
+	color: pink;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.Redux {
+	color: #764abc;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -81,6 +124,7 @@ li {
 
 .lightblue{
 	color: lightblue;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .col-md-2 {
