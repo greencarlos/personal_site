@@ -27,8 +27,7 @@ h1 {
 
 h2 { 
 	color: white; 
-	text-align: center;
-}
+	text-align: center; }
 
 ol, ul {
   padding-left: 30px;
@@ -40,19 +39,22 @@ li {
 	list-style-type: none;
 }
 
-.MongoDB {
+.Mongo {
 	color: darkgreen;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-} .Express {
+} 
+
+.Express {
 	color: coral;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.NodeJS {
+.Node {
 	color: lightgreen;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.ReactJS {
+
+.React {
 	color: #61dafb;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -62,7 +64,7 @@ li {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.mongoose {
+.Mongoose {
 	color: rgb(136, 0, 0);
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -74,6 +76,7 @@ li {
 
 .Black {
 	color: black;
+	font-weight: bold;
 }
 
 .Gray {
@@ -81,7 +84,7 @@ li {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.Bootstrap {
+.Boot {
 	color: #563d7c;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
