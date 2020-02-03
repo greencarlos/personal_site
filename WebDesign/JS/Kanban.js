@@ -5,15 +5,17 @@ let boardData = JSON.parse(boardStr)
 const Boards = []
 const undoData = []
 
-const getItem = (arr) => {
-  const result = arr.map((e) => {
+const updateStorage = () => {
+  if (!Boards) {return}
+  const result = Boards.map((e) => {
     return e.getData()
   })
   return localStorage.setItem('kanban', JSON.stringify(result))
 }
 
-const setUndo = (arr) => {
-  const result = arr.map((e) => {
+const setUndo = () => {
+  if (!Boards) {return}
+  const result = Boards.map((e) => {
     return e.getData()
   })
   return undoData.push(result)
@@ -32,12 +34,7 @@ undoButton.addEventListener('click', (e) => {
 })
 
 function loadApp() {
-	Boards.pop()
-	Boards.pop()
-	Boards.pop()
-	Boards.pop()
   app.innerHTML = ''
-
   Boards.push( 
   new Board('To-Do', 'lightblue', 0),
   new Board('Doing', 'lightgreen', 1),
@@ -72,13 +69,13 @@ function Board(title, color, index) {
   const midContainer = div.querySelector('.midContainer');
 	
   submit.addEventListener('click', () => {
-    setUndo(Boards)
+    setUndo()
     const value = type.value;
     if (value.trim() === '') {
       return
     } 
     this.data.push(new Item(value, midContainer, index));
-    getItem(Boards)
+    updateStorage()
   });
 
   this.getData = function() {
@@ -92,7 +89,6 @@ function Board(title, color, index) {
 
 	this.addTodo = function(value) {
     this.data.push(new Item(value, midContainer, index))
-    getItem(Boards)
   }
 
   app.append(div);
@@ -138,7 +134,7 @@ function Item(string, element, index) {
   const right = div.querySelector('.right');
 
   left.onclick = () => {
-    setUndo(Boards)
+    setUndo()
     if (index === 0) {
       return
     }
@@ -146,11 +142,11 @@ function Item(string, element, index) {
     leftBoard.addTodo(string)
     div.remove()
     string = ''
-    getItem(Boards)
+    updateStorage()
   };
 
   right.onclick = () => {
-    setUndo(Boards)
+    setUndo()
     if (index === 3) {
       return
     }
@@ -158,7 +154,7 @@ function Item(string, element, index) {
     rightBoard.addTodo(string)
     div.remove()
     string = ''
-    getItem(Boards)
+    updateStorage()
   };
 
   this.getData = function() {
@@ -170,9 +166,10 @@ function Item(string, element, index) {
   title.addEventListener('click', () => {
 		const todoDelete = confirm(`Are you sure you want to delete "${string}"?`)
 		if (todoDelete === true) {
+      setUndo()
       div.remove();
       string = ''
-      getItem(Boards)
+      updateStorage()
 		}
     return;
   });
