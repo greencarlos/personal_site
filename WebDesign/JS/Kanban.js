@@ -1,30 +1,29 @@
 const app = document.querySelector('.app')
 const boardStr = localStorage.getItem('kanban') || '[]'
+const undoButton = document.querySelector('.undoDiv') 
+
+const undoData = []
+let Boards = []
 let boardData = JSON.parse(boardStr)
 
-const Boards = []
-const undoData = []
-
-const updateStorage = () => {
-  if (!Boards) {return}
-  const result = Boards.map((e) => {
+const getItemList = () => {
+  if (!Boards.length) {return}
+  return Boards.map((e) => {
     return e.getData()
   })
+}
+
+const updateStorage = () => {
+  const result = getItemList()
   return localStorage.setItem('kanban', JSON.stringify(result))
 }
 
 const setUndo = () => {
-  if (!Boards) {return}
-  const result = Boards.map((e) => {
-    return e.getData()
-  })
+  const result = getItemList()
   return undoData.push(result)
 }
 
-const undoButton = document.querySelector('.undoDiv') 
-
-undoButton.addEventListener('click', (e) => {
-	e.preventDefault()
+undoButton.addEventListener('click', () => {
 	const undone = undoData.pop()
 	if (!undone) {return}
 
@@ -35,27 +34,24 @@ undoButton.addEventListener('click', (e) => {
 
 function loadApp() {
   app.innerHTML = ''
-  Boards.push( 
+
+  Boards = [
   new Board('To-Do', 'lightblue', 0),
   new Board('Doing', 'lightgreen', 1),
   new Board('Done', 'violet', 2),
-  new Board('Approved', 'orange', 3))
-  return
+  new Board('Approved', 'orange', 3)
+  ]
 }
 
 loadApp()
 
 function Board(title, color, index) {
-  this.title = title
-  this.index = index
-
+  let itemList = []
   const div = document.createElement('div');
   div.setAttribute('class', 'outerContainer')
 
   div.innerHTML = `
-	<h1 style="background:${color};" class="outer${title}">
-	${title}
-	</h1>
+	<h1 style="background:${color};">${title}</h1>
 	<div class="midContainer"></div>
 	<div class="lowerContainer">
 	<textarea class="type" type="text"></textarea>
@@ -63,98 +59,73 @@ function Board(title, color, index) {
 	</div>
 	`;
 
-  const submit = div.querySelector('.submit');
+  const midContainer = div.querySelector('.midContainer');
   const lowerContainer = div.querySelector('.lowerContainer');
   const type = div.querySelector('.type')
-  const midContainer = div.querySelector('.midContainer');
+  const submit = div.querySelector('.submit');
 	
   submit.addEventListener('click', () => {
-    setUndo()
     const value = type.value;
-    if (value.trim() === '') {
-      return
-    } 
-    this.data.push(new Item(value, midContainer, index));
+    if (value.trim() === '') {return} 
+
+    setUndo()
+    itemList.push(new Item(value, midContainer, index));
     updateStorage()
   });
 
   this.getData = function() {
-    const dataArray = this.data.map((e) => {
+    const result = itemList.map((e) => {
       return e.getData()
     })
-    return dataArray.filter((e) => {
+    return result.filter((e) => {
       return e !== ""
     })
   }
 
 	this.addTodo = function(value) {
-    this.data.push(new Item(value, midContainer, index))
+    itemList.push(new Item(value, midContainer, index))
   }
 
   app.append(div);
 
   const dataArr = boardData[index] || []
-  this.data = dataArr.map((str) => {
+  itemList = dataArr.map((str) => {
     return new Item(str, midContainer, index)
   })
 }
 
 function Item(string, element, index) {
 	const div = document.createElement('div')
-  div.className = `todo${index}`
+  const left = index === 0 ? '' : '<';
+  const right = index === 3 ? '' : '>';
 
-	if (index === 0) {
   div.innerHTML = `
-	<div class="left"></div>
-	<div class="right" style="float:right;">></div>
-	<div class="title" style="text-align:center;">
-  ${string}
-  </div>
-  `; 
-	} else if (index === 3) {
-		div.innerHTML = `
-	<div class="left" style="float:left;"><</div>
-	<div class="right"></div>
-	<div class="title" style="text-align:center;">
-	${string}
-	</div>
-	`
-	} else {
-		div.innerHTML = `
-	<div class="left" style="float:left;"><</div>
-	<div class="right" style="float:right;">></div>
-	<div class="title" style="text-align:center;">
-	${string}
-	</div>
-	`
-	}
+	<div class="left">${left}</div>
+	<div class="right">${right}</div>
+	<div class="title">${string}</div>`; 
 
   const title = div.querySelector('.title')
-  const left = div.querySelector('.left');
-  const right = div.querySelector('.right');
+  const leftButton = div.querySelector('.left');
+  const rightButton = div.querySelector('.right');
 
-  left.onclick = () => {
+  const handleClick = (board) => {
     setUndo()
-    if (index === 0) {
-      return
-    }
-    const leftBoard = Boards[index - 1]
-    leftBoard.addTodo(string)
+    board.addTodo(string)
     div.remove()
     string = ''
     updateStorage()
+  }
+
+  leftButton.onclick = () => {
+    if (index === 0) {return}
+    const leftBoard = Boards[index - 1]
+    handleClick(leftBoard)
   };
 
-  right.onclick = () => {
-    setUndo()
-    if (index === 3) {
-      return
-    }
+  rightButton.onclick = () => {
+    if (index === 3) {return}
     const rightBoard = Boards[index + 1]
-    rightBoard.addTodo(string)
-    div.remove()
-    string = ''
-    updateStorage()
+    handleClick(rightBoard)
   };
 
   this.getData = function() {

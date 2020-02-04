@@ -1,8 +1,4 @@
 :root {
-  --todo0: lightblue;
-  --todo1: lightgreen;
-  --todo2: violet;
-  --todo3: orange;
 }
 
 div {
@@ -40,19 +36,23 @@ textarea {
   position: relative;
 	text-align: justify;
 }
+
 .midContainer {
   margin: 5px;
 }
+
 .outerContainer {
   margin: 15px;
   width: 25%;
   text-align: center;
 }
+
 .left {
   float: left;
 	display: flex;
 	justify-content: center;
 }
+
 .right {
   float: right;
 	display: flex;
@@ -62,7 +62,10 @@ textarea {
 .todo {
   padding: 5px 0px 0px 5px;
   border-spacing: 50px 5px;
+  background: whitesmoke;
+  border: 2.5px solid white;
 }
+/*
 
 .todo0 {
   background: whitesmoke;
@@ -80,16 +83,17 @@ textarea {
   background: whitesmoke;
   border: 2.5px solid white;
 }
+*/
 
 .todo0:hover {
-  background: var(--todo0);
+  background: lightblue;
 }
 .todo1:hover {
-  background: var(--todo1);
+  background: lightgreen;
 }
 .todo2:hover {
-  background: var(--todo2);
+  background: violet;
 }
 .todo3:hover {
-  background: var(--todo3);
+  background: orange;
 }
