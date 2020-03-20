@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Chat messages</title>
+  </head>
+  <body>
+    <input class="type" type="text" />
+    <button class="submit">Submit</button>
+    <h1 class="message"></h1>
+
+    <script>
+      const type = document.querySelector('.type');
+      const submit = document.querySelector('.submit');
+      const message = document.querySelector('.message');
+
+      submit.addEventListener('click', () => {
+        const value = type.value;
+        if (value) {
+          message.innerHTML += value + '<br/>';
+        }
+      });
+    </script>
+  </body>
+</html>

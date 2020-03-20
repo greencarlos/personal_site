@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<style>
+.canvas {
+	border: 1px solid black;
+}
+
+		</style>
+
+    <title>canvas.html</title>
+  </head>
+  <body>
+
+		<canvas class="canvas" width="800" height="500"></canvas>
+
+		<script>
+const canvas = document.querySelector('.canvas')
+const context = canvas.getContext("2d")
+
+console.log('context', context)
+
+context.fillStyle = "#FF0000";
+context.fillRect(200, 200, 100, 100)
+context.beginPath()
+
+context.arc(200, 100, 100, 0, 3 * Math.PI)
+context.stroke()
+context.font = "20px Comic Sans MS"
+
+context.fillStyle = "black"
+context.fillText("Nice Pants", 10, 50)
+
+		</script>
+  </body>
+</html>

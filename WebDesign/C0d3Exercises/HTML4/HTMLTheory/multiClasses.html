@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<style>
+div {
+	border: 1px solid black;
+	height: 50px;
+	width: 50px;
+}
+
+.block {
+	background-color: lightgreen;
+}
+
+.section1 {
+	background-color: lightblue;
+}
+
+.div4 {
+	background-color: purple;
+}
+		</style>
+    <title>multiClasses.html</title>
+  </head>
+  <body>
+		<div class="block div1 section1"></div>
+		<div class="block div2 section1"></div>
+		<div class="block div3 section1"></div>
+		<div class="block div4 section2"></div>
+		<div class="block div5 section2"></div>
+		<div class="block div6 section2"></div>
+		<script>
+			const blocks = document.querySelectorAll('.block')
+      const blocks2 = document.querySelectorAll('.section1')
+      const blocks3 = document.querySelectorAll('.div4')
+
+console.log('Blocks', blocks)
+console.log('Blocks 2', blocks2)
+console.log('Blocks 3', blocks3)
+		</script>
+  </body>
+</html>
+

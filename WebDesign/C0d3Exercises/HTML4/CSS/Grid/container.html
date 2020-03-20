@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <style>
+      .container1 {
+        display: inline-grid;
+				height: 50px;
+				width: 50px;
+				grid-template-columns: 50px 50px auto 50px 50px; 
+				grid-template-rows: 25% 100px auto;
+				border: 1px solid green;
+      }
+      .container2 {
+        display: grid;
+				height: 50px;
+				width: 50px;
+		    /*	
+				grid-template-columns: 50px 50px auto 50px 50px; 
+				*/
+				grid-template-columns: repeat(5, 50px, auto)
+				grid-template-rows: 25% 100px auto;
+
+				border: 1px solid blue;
+			}
+			.inline {
+				display: inline;
+				color: green;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="container1"></div>
+    <div class="container1"></div>
+    <div class="container1"></div>
+    <div class="container1"></div>
+		<h1 class="inline"> Inline </h1>
+
+    <div class="container2"></div>
+    <div class="container2"></div>
+    <div class="container2"></div>
+    <div class="container2"></div>
+  </body>
+</html>

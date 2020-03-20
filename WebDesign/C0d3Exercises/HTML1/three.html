@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>exercise3.html</title>
+  </head>
+  <body>
+    <h1>UI for challenge 3</h1>
+		<input class="type" type="text" >
+		<button class="submit">Submit</submit>
+
+		<script>
+const type = document.querySelector('.type')
+const submit = document.querySelector('.submit')
+
+submit.addEventListener('click', () => {
+	const num = +type.value
+	if (num > 5) {
+		alert("Big")
+	}
+})
+		</script>
+  </body>
+</html>

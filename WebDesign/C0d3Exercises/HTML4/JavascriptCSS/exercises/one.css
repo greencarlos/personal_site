@@ -1,0 +1,28 @@
+.upperContainer {
+  width: 102%;
+	right: 10px;
+  bottom: 15px;
+  text-align: center;
+  position: relative;
+  background: darkblue;
+}
+
+.last {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.lowerContainer {
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid blue;
+}
+
+.captionInput {
+	width: 48%;
+}
+
+input {
+  display: inline-block;
+}

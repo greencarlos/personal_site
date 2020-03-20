@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Stopwatch</title>
+  </head>
+  <body>
+    <h1 class="watch">00:00</h1>
+    <button class="start">Start</button>
+
+    <script>
+      const watch = document.querySelector('.watch');
+      const startButton = document.querySelector('.start');
+      let timeVal = 0;
+      let start = false
+
+      startButton.addEventListener('click', () => {
+        if (start) {
+          return;
+        }
+        start = true;
+        startTimer();
+      });
+
+      const startTimer = () => {
+        setTimeout(() => {
+          timeVal = timeVal + 10;
+          display(timeVal);
+          startTimer();
+        }, 10);
+      };
+
+      const display = num => {
+        const sec = Math.floor(num / 1000);
+        const mili = Math.floor(num / 60);
+        const secs = sec > 9 ? `${sec}` : `0${sec}`;
+        const milis = mili > 9 ? `${mili}` : `0${mili}`;
+        watch.innerText = `${secs}:${milis}`;
+      };
+    </script>
+  </body>
+</html>

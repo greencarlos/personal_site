@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>exercise6.html</title>
+  </head>
+  <body>
+    <h1>UI for JS0 challenge 9</h1>
+		<input class="num1" placeholder="number" type="number">
+		<input class="num2" placeholder="number" type="number">
+		<button class="generate">Generate</button>
+		<input class="num3" placeholder="number" type="number">
+		<button class="submit">Submit</button>
+
+		<script>
+const num1 = document.querySelector('.num1')
+const num2 = document.querySelector('.num2')
+const num3 = document.querySelector('.num3')
+const generate = document.querySelector('.generate')
+const submit = document.querySelector('.submit')
+
+generate.addEventListener('click', () => {
+	const val1 = num1.value
+	const val2 = num2.value
+	
+	submit.addEventListener('click', () => {
+		const val3 = num3.value
+		const result = +val1 + +val2 + +val3
+		alert('' + result)
+	})
+})
+		</script>
+  </body>
+</html>

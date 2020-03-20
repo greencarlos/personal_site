@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Countdown</title>
+  </head>
+  <body>
+    <h1>Countdown timer</h1>
+    <input class="num" type="number" />
+    <button class="start">Start</button>
+    <p class="message">Enter a number and press start</p>
+
+    <script>
+      const message = document.querySelector('.message')
+      const num = document.querySelector('.num')
+      const start = document.querySelector('.start')
+
+      const solution = (num) => {
+      	if (num <= -1) 	{
+      		message.innerText = 0;
+      		return;
+      	} 
+
+      	setTimeout(() => {
+      		message.innerText = num
+      	  return solution(num - 1)
+      	}, 1000)
+      }
+
+      start.addEventListener('click', () => {
+      	const value = num.value
+
+      	solution(value)
+      })
+    </script>
+  </body>
+</html>

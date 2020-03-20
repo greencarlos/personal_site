@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>classes.html</title>
+  </head>
+  <body>
+    <div class="circle active"></div>
+    <style>
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: rgba(255, 0, 0, 1);
+      }
+
+      .circle.active {
+        background: rgba(0, 255, 0, 1);
+      }
+
+    </style>
+    <script>
+      const circle = document.querySelector('.circle');
+      circle.addEventListener('click', () => {
+        if (circle.classList.contains('active')) {
+          return circle.classList.remove('active');
+        }
+				circle.classList.add('active')
+      });
+
+const nice = document.createElement('div')
+nice.innerHTML = `<h1>Nice</h1>`
+nice.classList.add('nice')
+nice.classList.add('NICE')
+nice.classList.add('nicee')
+nice.classList.add('niceee')
+
+nice.classList.remove('nice')
+
+console.log(nice.classList.contains('nice'))
+console.log(nice.classList.contains('NICE'))
+
+circle.append(nice)
+
+    </script>
+  </body>
+</html>

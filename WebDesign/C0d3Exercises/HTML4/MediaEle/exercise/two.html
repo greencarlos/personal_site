@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>two.html</title>
+  </head>
+  <body>
+    <input class="type" type="text" />
+    <h1 class="timer">Input an MP3 URL and hit Enter</h1>
+    <audio class="aud" src=""></audio>
+
+    <script>
+      const type = document.querySelector('.type');
+      const h1 = document.querySelector('.timer');
+      const audio = document.querySelector('.aud');
+
+      const solution = () => {
+        setTimeout(() => {
+          const curr = audio.currentTime;
+          const min = Math.floor(curr / 60);
+          const sec = Math.floor(curr % 60);
+          const mins = curr / 60 < 10 ? `0${min}` : `${min}`;
+          const secs = curr % 60 < 10 ? `0${sec}` : `${sec}`;
+          h1.innerHTML = `${mins}:${secs}`;
+          solution();
+        }, 1000);
+      };
+
+      type.addEventListener('keyup', e => {
+        if (e.key === 'Enter') {
+          const value = type.value;
+          if (value.trim() !== '') {
+            audio.src = value;
+          }
+        }
+
+        h1.addEventListener('mouseenter', () => {
+          audio.play();
+          solution();
+        });
+
+        h1.addEventListener('mouseleave', () => {
+          audio.pause();
+        });
+      });
+    </script>
+  </body>
+</html>

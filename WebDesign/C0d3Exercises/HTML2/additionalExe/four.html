@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>five.html</title>
+  </head>
+  <body>
+		<button class="add">add 1</button>
+    <h1 class="value">0</h1>
+
+		<script>
+const add = document.querySelector('.add')
+const value = document.querySelector('.value')
+let num = 0
+
+add.addEventListener('click', () => {
+	num += 1
+	value.innerText = num
+})
+
+		</script>
+  </body>
+</html>

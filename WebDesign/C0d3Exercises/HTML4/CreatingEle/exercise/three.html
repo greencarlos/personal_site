@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>three.html</title>
+  </head>
+  <body>
+		<button class="add">Add Person</button>
+		<div class="names"></div>
+		<hr/>
+		<h1>Registered</h1>
+		<div class="registered"></div>
+
+		<script>
+const add = document.querySelector('.add')
+const names = document.querySelector('.names')
+const registeredList = document.querySelector('.registered')
+
+add.addEventListener('click', () => {
+	const div = document.createElement('div')
+	div.innerHTML = `
+	FirstName: <input class="first" type="text"/>
+	LastName: <input class="last" type="text"/>
+	<button class="register">Register</button>
+	`
+	const first = div.querySelector('.first')
+	const last = div.querySelector('.last')
+	const register = div.querySelector('.register') 
+
+	register.addEventListener('click', () => {
+		const firstVal = first.value
+		const lastVal = last.value
+		registeredList.innerHTML += `${firstVal} ${lastVal}, `
+		div.remove()
+	})
+
+	names.append(div)
+})
+		</script>
+  </body>
+</html>

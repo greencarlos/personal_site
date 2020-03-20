@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>chance.html</title>
+		<script src="https://chancejs.com/chance.min.js"></script>
+  </head>
+  <body>
+		<h1 class="name"></h1>
+		<p class="story"></p>
+
+		<script>
+			const randomName = `${chance.first()} ${chance.last()}`
+document.querySelector('.name').innerText = `The story of ${randomName}`
+
+const types = ['child', 'teen', 'adult', 'senior']
+const randomTypeIndex = Math.floor(Math.random()*types.length)
+const randomType = types[randomTypeIndex]
+const randomAddress = chance.address()
+
+document.querySelector('.story').innerText = `
+${randomName} is a ${chance.age({type: randomType})} year old ${chance.gender()} ${randomType} who lives at ${randomAddress} in ${chance.country({full: true})}
+`
+		</script>
+  </body>
+</html>

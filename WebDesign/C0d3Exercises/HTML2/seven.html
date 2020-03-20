@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Delayed Typing</title>
+  </head>
+  <body>
+    <h1 class="message"></h1>
+    <input class="type" type="text" />
+    <button class="start">Start</button>
+
+    <script>
+      const type = document.querySelector('.type');
+      const start = document.querySelector('.start');
+      const message = document.querySelector('.message');
+
+      const solution = (str, fun, i = 0) => {
+        if (i === str.length) return;
+        if (str) {
+          setTimeout(() => {
+            fun(str[i]);
+            return solution(str, fun, i + 1);
+          }, 1000);
+        }
+      };
+
+      const delay = letter => {
+        message.innerText += letter;
+        return;
+      };
+
+      start.addEventListener('click', () => {
+        const value = type.value;
+        message.innerText = '';
+        if (value) {
+          solution(value, delay);
+        }
+      });
+    </script>
+  </body>
+</html>

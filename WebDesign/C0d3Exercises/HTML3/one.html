@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>one.html</title>
+  </head>
+  <body>
+    <h1>Add Option</h1>
+		<input class="type" type="text" />
+		<button class="add">Add</button>
+		<select class="selectContainer"></select>
+
+		<script>
+const type = document.querySelector('.type')
+const add = document.querySelector('.add')
+const selectContainer = document.querySelector('.selectContainer')
+
+add.addEventListener('click', () => {
+	const value = type.value
+	if (value.trim() !== '') {
+		selectContainer.innerHTML += `<option>${value}</option>`
+	}
+})
+		</script>
+  </body>
+</html>

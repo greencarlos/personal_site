@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class="hello">HELLO WORLD</h1>
+</div>
+
+	<script>
+		const container = document.querySelector('.container')
+    const hello = document.querySelector('.hello') 
+
+container.addEventListener('mouseenter', (e) => {
+	console.log("Mouse enters")
+	hello.innerText = `X: ${e.clientX} Y: ${e.clientY}`
+})
+
+container.addEventListener('mousemove', (e) => {
+	console.log("Mouse moving")
+	hello.innerText = `X: ${e.clientX} Y: ${e.clientY}`
+})
+
+container.addEventListener('mouseleave', (e) => {
+	console.log("Mouse leaves")
+	hello.innerText = 'HELLO WORLD'
+})
+	</script>

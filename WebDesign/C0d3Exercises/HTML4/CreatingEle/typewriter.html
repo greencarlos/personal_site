@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>typewriter.html</title>
+  </head>
+  <body>
+		<input class="type" type="text" /> 
+		<div class="typeDisplay"></div>
+		<div class="display"></div>
+
+	<script>
+const typeDisplay = document.querySelector('.typeDisplay')
+const typeInput = document.querySelector('.type')
+const display = document.querySelector('.display')
+
+typeInput.addEventListener('keyup', (e) => {
+	if (e.key === "Enter") {
+		const newElement = document.createElement('h1')
+		newElement.innerText = typeInput.value
+		display.prepend(newElement)
+		typeInput.value = ''
+	}
+	typeDisplay.innerText = typeInput.value
+})
+	</script>
+  </body>
+</html>

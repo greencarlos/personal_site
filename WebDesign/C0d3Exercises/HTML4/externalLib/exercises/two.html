@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=EkvRMLec"></script>
+    <style>
+      textarea {
+        height: 200px;
+        width: 250px;
+      }
+    </style>
+
+    <title>two.html</title>
+  </head>
+  <body>
+    <textarea class="type"></textarea>
+    <select class="voice"></select>
+
+    <script>
+      const type = document.querySelector('.type');
+      const voice = document.querySelector('.voice');
+      const voicelist = responsiveVoice.getVoices();
+
+      voicelist.forEach(e => {
+        const option = document.createElement('option');
+        option.innerText = e.name;
+
+        option.addEventListener('click', () => {
+          responsiveVoice.setDefaultVoice(e.name);
+        });
+
+        voice.append(option);
+      });
+
+      type.addEventListener('keyup', e => {
+        const value = type.value;
+
+        responsiveVoice.speak(`${value}`);
+      });
+    </script>
+  </body>
+</html>

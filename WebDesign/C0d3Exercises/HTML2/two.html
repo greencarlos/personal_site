@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Start Button</title>
+  </head>
+  <body>
+    <h1>Start with a button called start</h1>
+		<div class="container">
+			<button class="start">Start</button>
+		</div>
+
+		<script>
+const container = document.querySelector('.container')
+
+const render = () => {
+const start = document.querySelector('.start')
+
+start.addEventListener('click', () => {
+	container.innerHTML = `
+	<input />
+	<button class="cancel">cancel</button>
+	`
+
+	const cancel = document.querySelector('.cancel')
+
+	cancel.addEventListener('click', () => {
+		container.innerHTML = `
+		<button class="start">Start</button>
+		`
+		render()
+	  })
+  })
+}
+
+render()
+
+		</script>
+
+  </body>
+</html>

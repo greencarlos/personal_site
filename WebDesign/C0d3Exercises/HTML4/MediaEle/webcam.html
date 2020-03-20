@@ -1,0 +1,13 @@
+<video class="video" controls></video>
+
+<script>
+  navigator.mediaDevices.getUserMedia({
+		video: true,
+		audio: true,
+	}).then((stream) => {
+		videoElement.srcObject = stream
+		videoElement.play()
+	})
+
+const videoElement = document.querySelector('.video')
+</script>

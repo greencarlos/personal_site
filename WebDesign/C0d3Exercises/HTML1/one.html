@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>exercise1.html</title>
+  </head>
+  <body>
+    <h1>Create an HTML page</h1>
+    <!-- 
+1. [Create an HTML page](https://songz.c0d3.com/js0/2.html) with an input box and a button. When you click on the button, if the input value is divisible by 2, set the value (contents) of the input box to 0. Otherwise, do nothing.
+		-->
+    <input class="type" type="text" />
+    <button class="submit">Submit</button>
+
+    <script>
+      const type = document.querySelector('.type');
+      const submit = document.querySelector('.submit');
+
+      submit.addEventListener('click', () => {
+				const num = type.value
+        console.log('num', num);
+				if (+num % 2 === 0) {
+					type.value = 0
+				}
+      });
+    </script>
+  </body>
+</html>

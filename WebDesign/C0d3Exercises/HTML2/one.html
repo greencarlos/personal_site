@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>change me</title>
+  </head>
+  <body>
+    <h1 class="change">change me</h1>
+		<input class="type" />
+		<button class="submit">Submit</button>
+
+		<script>
+const type = document.querySelector('.type')
+const submit = document.querySelector('.submit')
+const change = document.querySelector('.change')
+
+submit.addEventListener('click', () => {
+	const value = type.value
+
+	change.innerText = value
+})
+		</script>
+  </body>
+</html>

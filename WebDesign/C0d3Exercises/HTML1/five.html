@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>exercise5.html</title>
+  </head>
+  <body>
+    <h1>UI for JS0 challenge 8</h1>
+
+		<input class="num1" type="number">
+		<input class="num2" type="number">
+		<button class="generate">Generate</button>
+		<button class="submit">Submit</button>
+
+		<script>
+const num1 = document.querySelector('.num1')
+const num2 = document.querySelector('.num2')
+const generate = document.querySelector('.generate')
+const submit = document.querySelector('.submit')
+
+generate.addEventListener('click', () => {
+	const val1 = num1.value
+	const val2 = num2.value
+
+	submit.addEventListener('click', () => {
+		const result = +val1 + +val2
+		alert(`${result}`)
+	})
+})
+		</script>
+  </body>
+</html>

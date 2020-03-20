@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>String Breaker</title>
+  </head>
+  <body>
+		<input class="type" type="text"/>
+		<button class="gen">Generate</button>
+    <h1 class="message"></h1>
+
+		<script>
+const type = document.querySelector('.type')
+const gen = document.querySelector('.gen')
+const message = document.querySelector('.message')
+
+gen.addEventListener('click', () => {
+	const value = type.value.split('')
+
+	if (value) {
+	value.forEach((e) => {
+		message.innerText += e + "\n"
+	})
+	}
+})
+		</script>
+  </body>
+</html>

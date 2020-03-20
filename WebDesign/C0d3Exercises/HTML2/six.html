@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>House of primes</title>
+  </head>
+  <body>
+		<input class="text" type="number" />
+		<button class="start">Start</button>
+    <div class="primes"></div>
+
+		<script>
+			const num = document.querySelector('.text')
+      const start = document.querySelector('.start')
+      const primes = document.querySelector('.primes') 
+
+      const isPrime = (num, i=2, res = '<h1>2... </h1>') => {
+				if (i === num) return res
+				console.log(i, 'i')
+				if (num < 2) { return }
+				if (i % 2 !== 0) { res += `<h1>${i}... <h1/>`}
+				return isPrime(num, i+1, res)
+			}
+
+      start.addEventListener('click', () => {
+				const value = num.value
+				//primes.innerText = isPrime(+value)
+				primes.innerHTML = isPrime(+value) 
+			})
+		</script>
+  </body>
+</html>

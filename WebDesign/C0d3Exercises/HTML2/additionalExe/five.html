@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>five.html</title>
+  </head>
+  <body>
+    <button class="toggle">Toggle</button>
+    <h1 class="hello"></h1>
+
+    <script>
+      const toggle = document.querySelector('.toggle');
+      const hello = document.querySelector('.hello');
+      let display = false;
+
+      toggle.addEventListener('click', () => {
+        if (!display) {
+          display = true;
+          hello.innerText = 'HELLO WORLD';
+          return;
+        } else {
+          display = false;
+          hello.innerText = '';
+					return
+        }
+      });
+    </script>
+  </body>
+</html>

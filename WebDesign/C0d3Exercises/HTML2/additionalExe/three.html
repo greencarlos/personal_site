@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>three.html</title>
+  </head>
+  <body>
+
+    <h1 class="upper">Type a letter and then, click start</h1>
+    <div class="container">
+      <input class="submitType" type="text" />
+      <button class="start">Start</button>
+    </div>
+    <h1 class="lower"></h1>
+
+    <script>
+      const upper = document.querySelector('.upper');
+      const lower = document.querySelector('.lower');
+      const container = document.querySelector('.container')
+      let filterValue;
+
+      const render = () => {
+        const start = document.querySelector('.start');
+        const submitType = document.querySelector('.submitType');
+
+        start.addEventListener('click', () => {
+          const sValue = submitType.value;
+          if (sValue.trim() !== '') {
+            upper.innerText = `Filtering out: ${sValue}`;
+						filterValue = sValue
+          }
+
+					container.innerHTML = `
+					<input class="type" type="text" />
+					<button class="filter">Filter</button>
+					<button class="back">Back</button>
+					`
+
+					const filterType = container.querySelector('.type')
+					const filter = container.querySelector('.filter')
+					const back = container.querySelector('.back')
+
+					filter.addEventListener('click', () => {
+						const fValue = filterType.value
+						if (fValue.trim() !== '') {
+							const arrChars = fValue.split('')
+							const words = arrChars.filter((e) => {
+								return e !== filterValue
+							})
+
+							console.log('words', words)
+
+							const result = words.join('') 
+							lower.innerText = `${result}`
+						}
+					})
+
+					back.addEventListener('click', () => {
+            upper.innerText = 'Type a letter and then, click start'
+
+						container.innerHTML = `
+						<input class="submitType" type="text" />
+						<button class="start">Start</button>
+						`
+						render()
+					})
+        });
+      };
+
+      render();
+    </script>
+  </body>
+</html>

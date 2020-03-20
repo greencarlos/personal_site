@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>list2.html</title>
+  </head>
+  <body>
+    <h1>Friends List</h1>
+		Name: <input class="name" type="text" />
+		Age: <input class="age" type="number" />
+		<button class="add">Add</button>
+		<div class="container"></div>
+
+		<script>
+const name = document.querySelector('.name')
+const age = document.querySelector('.age')
+const add = document.querySelector('.add')
+const container = document.querySelector('.container')
+const storage = localStorage.getItem('names') || '[]'
+const names = JSON.parse(storage)
+
+const render = () => {
+	container.innerHTML = ''
+	names.forEach((e, i) => {
+		const div = document.createElement('div')
+		div.innerHTML = `<h2>${e}</h2>`
+
+		div.addEventListener('click', () => {
+			div.remove()
+			names.splice(i, 1)
+			render()
+		})
+
+		container.append(div)
+	})
+}
+
+add.addEventListener('click', () => {
+	const nameVal = name.value
+
+	names.push(nameVal)
+	const newNames = JSON.stringify(names)
+	localStorage.setItem('names', newNames)
+	render()
+})
+
+render()
+		</script>
+  </body>
+</html>

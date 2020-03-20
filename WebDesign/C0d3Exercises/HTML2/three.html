@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Closure UI</title>
+  </head>
+  <body>
+		<div class="container">
+			<input type="number" class="type"/>
+			<button class="start">Start</button>
+		</div>
+    <h1 class="sum"></h1>
+
+		<script>
+const container = document.querySelector('.container')
+const sum = document.querySelector('.sum')
+
+const render = () => {
+	const type = document.querySelector('.type')
+	const start = document.querySelector('.start')
+
+	start.addEventListener('click', () => {
+		let num1 = type.value
+
+		sum.innerText = num1.trim() === '' ?
+		  num1 = 0 :
+			num1 = type.value
+
+
+		sum.innerText = ''
+		sum.innerText = `${num1} + ` 
+
+		container.innerHTML = `
+		<input type="number" class="type"/>
+		<button class="add">add</button>
+		<button class="back">go back</button>
+		`
+		const add = document.querySelector('.add')
+		const back = document.querySelector('.back')
+
+		add.addEventListener('click' , () => {
+			const num2 = document.querySelector('.type').value
+			const total = +num1 + +num2
+			sum.innerText =  `${num1} + ${num2} = ${total}`
+		})
+		back.addEventListener('click', () => {
+			container.innerHTML =  `
+			<input type="number" class="type"/>
+			<button class="start">Start</button>
+			`
+			render()
+		})
+	})
+}
+
+render()
+
+		</script>
+  </body>
+</html>

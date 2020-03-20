@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>three.html</title>
+  </head>
+  <body>
+		<input class="type" type="text" />
+		<div class="container"></div>
+
+		<script>
+const type = document.querySelector('.type')
+const container = document.querySelector('.container')
+
+type.addEventListener('keyup', () => {
+	const value = type.value
+	container.innerText = value
+
+})
+		</script>
+  </body>
+</html>

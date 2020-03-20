@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      .container {
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid black;
+      }
+      .vid {
+        background-image: url('../bobby.jpeg');
+        width: 500px;
+        height: 300px;
+      }
+      .container:hover {
+        background-color: lightblue;
+      }
+    </style>
+
+    <title>bobby.html</title>
+  </head>
+  <body>
+    <div class="container"></div>
+
+    <script>
+      const container = document.querySelector('.container');
+
+      function Video() {
+        const video = document.createElement('video');
+        video.classList.add('vid');
+        video.src = '../bobby.mp3';
+        video.play();
+        video.pause();
+        video.controls = true;
+        container.append(video);
+      }
+
+        new Video();
+    </script>
+  </body>
+</html>

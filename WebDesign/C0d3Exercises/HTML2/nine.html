@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Blinker</title>
+  </head>
+  <body>
+    <input type="text" class="textVal" />
+    <input type="number" class="numberVal" />Times per Second
+    <p class="message">Flashing Lights</p>
+
+    <script>
+      const num = document.querySelector('.numberVal');
+      const text = document.querySelector('.textVal');
+      const message = document.querySelector('.message');
+
+      const solution = () => {
+        setTimeout(() => {
+          if (message.innerText) {
+            message.innerText = '';
+          } else {
+            message.innerText = text.value;
+          }
+          solution();
+        }, 1000 / (+num.value || 1));
+      };
+
+      solution();
+    </script>
+  </body>
+</html>

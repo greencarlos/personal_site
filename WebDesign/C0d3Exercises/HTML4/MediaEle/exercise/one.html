@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>one.html</title>
+  </head>
+  <body>
+    <input class="type" type="text" />
+    <h1 class="title">Input an MP3 URL and hit Enter</h1>
+    <video class="vid"></video>
+
+    <script>
+      const type = document.querySelector('.type');
+      const video = document.querySelector('.vid');
+      const h1 = document.querySelector('.title');
+
+      type.addEventListener('keyup', e => {
+        if (e.key === 'Enter') {
+          const value = type.value;
+          if (value.trim() !== '') {
+            video.src = value;
+          }
+        }
+
+        h1.addEventListener('mouseenter', () => {
+          h1.innerText = 'Playing';
+          video.play();
+        });
+
+        h1.addEventListener('mouseleave', () => {
+          h1.innerText = 'Paused...';
+          video.pause();
+        });
+      });
+    </script>
+  </body>
+</html>

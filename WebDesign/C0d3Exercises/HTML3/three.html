@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>three.html</title>
+  </head>
+  <body>
+    <button class="prev">Previous</button>
+    <button class="next">Next</button>
+    <hr />
+    <div class="story"></div>
+    <hr />
+    <textarea class="essay"></textarea>
+    <button class="submit">Submit</button>
+    <div class="stories"></div>
+
+    <script>
+      const prev = document.querySelector('.prev');
+      const next = document.querySelector('.next');
+      const story = document.querySelector('.story');
+      const essay = document.querySelector('.essay');
+      const submit = document.querySelector('.submit');
+      const stories = document.querySelector('.stories');
+
+	    const getStories = localStorage.getItem('allStories') || '[]' 
+      const allStories = JSON.parse(getStories) 
+      let index = 0;
+
+      story.innerText = allStories[index];
+
+      const render = () => {
+        stories.innerHTML = '';
+        allStories.forEach((e, i) => {
+					const div = document.createElement('div')
+					div.innerHTML += `<b>${e}</b><br/><br/>` 
+
+					div.addEventListener('click', () => {
+						div.remove()
+						allStories.splice(i, 1)
+						render()
+					})
+
+					stories.append(div)
+        });
+      };
+
+      prev.addEventListener('click', () => {
+        if (index === 0) {
+          return;
+        }
+        index -= 1;
+        story.innerText = allStories[index];
+      });
+
+      next.addEventListener('click', () => {
+        if (index === allStories.length - 1) {
+          return;
+        }
+        index += 1;
+        story.innerText = allStories[index];
+      });
+
+      submit.addEventListener('click', () => {
+        const value = essay.value;
+        allStories.push(value);
+			  const storage = JSON.stringify(allStories)
+			  localStorage.setItem('allStories', storage)
+        render();
+      });
+
+      render();
+    </script>
+  </body>
+</html>

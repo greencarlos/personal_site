@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>exercise2.html</title>
+  </head>
+  <body>
+    <h1>User Interface for JS0 Challenge 1</h1>
+		<input class="num1" type="number" >
+		<input class="num2" type="number" >
+		<button class="submit">Submit</button>
+
+		<script>
+const num1 = document.querySelector('.num1')
+const num2 = document.querySelector('.num2')
+const submit = document.querySelector('.submit')
+
+submit.addEventListener('click', () => {
+	const val1 = num1.value
+	const val2 = num2.value
+	const result = +val1 + +val2
+	alert(`${result}`)
+})
+		</script>
+
+  </body>
+</html>
