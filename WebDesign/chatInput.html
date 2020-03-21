@@ -7,12 +7,20 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <style>
+      body {
+        background: lightblue;
+        text-align: center;
+      }
+    </style>
+
     <title>Chat messages</title>
   </head>
   <body>
+		<h1>Type a message</h1>
     <input class="type" type="text" />
     <button class="submit">Submit</button>
-    <h1 class="message"></h1>
+    <h3 class="message"></h3>
 
     <script>
       const type = document.querySelector('.type');
@@ -22,7 +30,7 @@
       submit.addEventListener('click', () => {
         const value = type.value;
         if (value) {
-          message.innerHTML += value + '<br/>';
+          message.innerHTML += 'Anonymous: '+ value + '<br/>';
         }
       });
     </script>

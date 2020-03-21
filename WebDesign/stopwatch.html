@@ -6,6 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <style>
+      body {
+        background: lightblue;
+        text-align: center;
+      }
+    </style>
     <title>Stopwatch</title>
   </head>
   <body>
@@ -24,19 +30,20 @@
       let timeVal = 0;
 
       stop.addEventListener('click', () => {
-				start = false
+        pause.innerText = 'Pause';
+        start = false;
         timeVal = 0;
       });
 
       pause.addEventListener('click', () => {
-				if (start) {
-				  start = false
-					pause.innerText = 'Unpause'
-				} else if (!start) {
-					start = true
-					pause.innerText = 'Pause'
-					startTimer()
-				}
+        if (start) {
+          start = false;
+          pause.innerText = 'Unpause';
+        } else if (!start) {
+          start = true;
+          pause.innerText = 'Pause';
+          startTimer();
+        }
       });
 
       startButton.addEventListener('click', () => {
@@ -48,7 +55,9 @@
       });
 
       const startTimer = () => {
-				if (!start) {return}
+        if (!start) {
+          return;
+        }
         setTimeout(() => {
           timeVal = timeVal + 10;
           display(timeVal);

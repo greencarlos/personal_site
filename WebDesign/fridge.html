@@ -1,117 +1,141 @@
-<!DOCTYPE.html>
+<!DOCTYPE .html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Magnets</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Magnets</title>
 
-		<!-- JQuery Library -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JQuery Library -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
 
-	<!-- CSS Styles -->
-<style>
+    <!-- CSS Styles -->
+    <style>
+      img {
+        height: 400px;
+        width: 400px;
+      }
 
-img {
-	height: 400px;
-	width: 400px;
-}
+      body {
+        background: lightblue url(IMAGES/fridge2.png) no-repeat fixed;
+        background-color: lightblue;
+        background-size: auto;
+      }
 
-body {
-	background: lightblue url(IMAGES/fridge2.png) no-repeat fixed;
-	background-color: lightblue;
-	background-size: auto;
-}
+      .letter {
+        width: 30px;
+        height: 30px;
+        border-style: solid;
+        padding: 2px;
+        float: left;
+        margin: 2px;
+      }
 
-.letter {
-	width: 30px;
-	height: 30px;
-  border-style: solid;
-	padding: 2px;
-	float: left;
-	margin: 2px;
-}
+      .letter-button-color {
+        color: darkcyan;
+      }
 
-.letter-button-color {
-	color: darkcyan;
-}
+      .fridge-color {
+        color: darkcyan;
+      }
 
-.fridge-color {
-	color: darkcyan;
-}
+      #display {
+        margin-top: 78px;
+        height: 500px;
+        width: 220px;
+        margin-left: 60px;
+      }
 
-#display {
-	margin-top: 78px;
-	height: 500px;
-	width: 220px;
-	margin-left: 60px;
-}
+      #buttons {
+        padding-top: 60px;
+      }
 
-#buttons {
-	padding-top: 60px;
-}
+      #clear {
+        margin-left: 20px;
+        font-size: 25px;
+        color: black;
+        border-style: solid;
+        width: 100px;
+      }
 
-#clear {
-	margin-left: 20px;
-	font-size: 25px;
-	color: black;
-	border-style: solid;
-	width: 100px;
-}
+      h1 {
+        text-align: right;
+      }
 
-h1{
-	text-align: right;
-}
+      a {
+        text-align: right;
+      }
+    </style>
+  </head>
 
-a {
-	text-align: right
-}
+  <body>
+    <a href="http://carlosgreenpersonalsite.com" target="_blank">
+      <p>
+        Back to the homepage
+      </p>
+    </a>
 
-</style>
-</head>
+    <h1>Add some buttons to the fridge!</h1>
 
-<body>
+    <div id="display"></div>
+    <div id="buttons"></div>
+    <button id="clear">Clear Fridge</button>
 
-  <a href="http://carlosgreenpersonalsite.com" target="_blank">
-    <p>
-  	  Back to the homepage
-	  </p>
-  </a>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var letters = [
+          'A',
+          'B',
+          'C',
+          'D',
+          'E',
+          'F',
+          'G',
+          'H',
+          'I',
+          'J',
+          'K',
+          'L',
+          'M',
+          'N',
+          'O',
+          'P',
+          'Q',
+          'R',
+          'S',
+          'T',
+          'U',
+          'V',
+          'W',
+          'X',
+          'Y',
+          'Z',
+          '_',
+        ];
 
-	<h1>Add some buttons to the fridge!</h1>
+        // Create Buttons
+        for (var i = 0; i < letters.length; i++) {
+          var letterBtn = $('<button>');
+          letterBtn.addClass('letter-button letter letter-button-clolor');
+          letterBtn.attr('data-letter', letters[i]);
+          letterBtn.text(letters[i]);
+          $('#buttons').append(letterBtn);
+        }
 
-	<div id="display"></div>
-	<div id="buttons"></div>
-	<button id="clear">Clear Fridge</button>
+        // Add buttons
+        $('.letter-button').on('click', function() {
+          var fridgeMagnet = $('<div>');
+          fridgeMagnet.addClass('letter fridge-color');
+          fridgeMagnet.text($(this).attr('data-letter'));
+          $('#display').append(fridgeMagnet);
+        });
 
-	<script type="text/javascript">
-
-		$(document).ready(function(){
-var letters = [
-"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"
-];
-
-			// Create Buttons
-			for (var i = 0; i < letters.length; i++) {
-				var letterBtn = $("<button>")
-				letterBtn.addClass("letter-button letter letter-button-clolor");
-				letterBtn.attr("data-letter", letters[i]);
-				letterBtn.text(letters[i]);
-				$("#buttons").append(letterBtn);
-			}
-
-			// Add buttons
-			$(".letter-button").on("click", function(){
-				var fridgeMagnet = $("<div>");
-				fridgeMagnet.addClass("letter fridge-color");
-				fridgeMagnet.text($(this).attr("data-letter"));
-				$("#display").append(fridgeMagnet);
-			}) 
-
-			// Clear buttons
-			$("#clear").on("click", function() {
-				$("#display").empty();
-			})
-
-		}) 
-	</script>
-</body>
+        // Clear buttons
+        $('#clear').on('click', function() {
+          $('#display').empty();
+        });
+      });
+    </script>
+  </body>
 </html>

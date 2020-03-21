@@ -6,13 +6,25 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <style>
+      body {
+        background: lightblue;
+        text-align: center;
+      }
+    </style>
 
     <title>Blinker</title>
   </head>
   <body>
-    <input type="text" class="textVal" />
-    <input type="number" class="numberVal" />Times per Second
-    <p class="message">Flashing Lights</p>
+    Message: 
+		<br/>
+		<input type="text" class="textVal" />
+		<br/>
+		<br/>
+		Times per Second: 
+		<br/>
+		<input type="number" class="numberVal" />
+    <h2 class="message">Flashing Lights</h2>
 
     <script>
       const num = document.querySelector('.numberVal');
