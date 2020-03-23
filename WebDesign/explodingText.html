@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body {
+        background: lightblue;
+				text-align: center;
+      }
+    </style>
+
+    <title>explodingText.html</title>
+  </head>
+  <body>
+		<h1>Type something and press Enter</h1>
+    <input class="type" type="text" />
+		<br/>
+    <canvas class="canvas" width="800" height="500"></canvas>
+
+    <script>
+      const canvas = document.querySelector('.canvas');
+      const type = document.querySelector('.type');
+      let index = 0;
+      const colors = ['pink', 'yellow', 'lightgreen', 'lightblue', 'orange'];
+
+      const context = canvas.getContext('2d');
+      context.fillStyle = 'purple';
+      context.fillRect(0, 0, 800, 500);
+
+      type.addEventListener('keyup', e => {
+        if (e.key === 'Enter') {
+          const value = type.value;
+          const letters = value.split('');
+
+          index === colors.length - 1 ? (index = 0) : (index += 1);
+
+          context.fillStyle = colors[index];
+          context.fillRect(0, 0, 800, 500);
+          context.font = '30px Comic Sans MS';
+          context.fillStyle = 'black';
+
+          letters.forEach(e => {
+            const xCoord = Math.floor(Math.random() * 500);
+            const yCoord = Math.floor(Math.random() * 500);
+
+            console.log('X:', xCoord, 'Y:', yCoord);
+            context.fillText(e, xCoord, yCoord);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

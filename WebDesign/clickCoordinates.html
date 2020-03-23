@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body {
+        background: lightblue;
+				margin: 0 auto;
+      }
+      .container {
+        height: 500px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+		<h1>Click the page for coordinates</h1>
+    <div class="container"></div>
+    <script>
+      const container = document.querySelector('.container');
+      const body = document;
+
+      body.addEventListener('click', e => {
+        container.innerHTML += `<h1>X: ${e.clientX} Y: ${e.clientY}</h1>`;
+      });
+    </script>
+  </body>
+</html>

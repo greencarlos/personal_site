@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <style>
+      body {
+        background: lightblue;
+      }
+    </style>
+
+    <title>memeGenerator.html</title>
+  </head>
+  <body>
+		<h1>Type something and press Enter</h1>
+    <input class="type" type="text" />
+    <video class="video"></video>
+    <canvas class="canvas" width="900" height="900"></canvas>
+
+    <script>
+      const type = document.querySelector('.type');
+      const videoElement = document.querySelector('.video');
+      const canvas = document.querySelector('.canvas');
+      const context = canvas.getContext('2d');
+
+      navigator.mediaDevices
+        .getUserMedia({
+          video: true,
+          audio: true,
+        })
+        .then(stream => {
+          videoElement.srcObject = stream;
+          videoElement.play();
+        });
+
+      type.addEventListener('keyup', e => {
+        if (e.key === 'Enter') {
+          const message = type.value;
+          context.drawImage(videoElement, -10, -10);
+
+          context.font = '50px Comic Sans';
+          context.fillStyle = 'lightgreen';
+          context.fillText(message, 90, 400);
+        }
+      });
+    </script>
+  </body>
+</html>

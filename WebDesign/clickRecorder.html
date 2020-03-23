@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body {
+        background: lightblue;
+				text-align: center;
+      }
+    </style>
+
+    <title>Click Recorder</title>
+  </head>
+  <body>
+    <h1>Click anywhere on the page</h1>
+    <div class="container"></div>
+
+    <script>
+      const container = document.querySelector('.container');
+
+      document.addEventListener('click', e => {
+        console.log('Document has been clicked');
+        container.innerHTML += `<h1>X: ${e.clientX} Y: ${e.clientY}</h1>`;
+      });
+    </script>
+  </body>
+</html>
