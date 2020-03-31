@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>circle.html</title>
+    <style>
+      .screen {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+				z-index: -1;
+        background-color: rgba(200, 255, 0, 1);
+      }
+
+      .circle {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        border: 2px rgba(0, 0, 0, 1) solid;
+        background: rgba(0, 255, 0, 1);
+        position: fixed;
+				z-index: 2;
+      }
+			h1 {
+				text-align: center;
+				color: black;
+				z-index: 1;
+			}
+    </style>
+  </head>
+  <body>
+		<h1>Click on the Screen</h1>
+    <div class="screen"></div>
+    <script>
+      const main = document.querySelector('.screen');
+
+      function Circle(x, y) {
+        y = y - 50;
+        x = x - 50;
+
+        const element = document.createElement('div');
+        element.classList.add('circle');
+        element.style.top = `${y}px`;
+        element.style.left = `${x}px`;
+
+				const moveUp = () => {
+					y -= 20
+					if (y < 0) {
+						return element.remove()
+					}
+					element.style.top = `${y}px`
+					setTimeout(moveUp, 200)
+				}
+				moveUp()
+        main.append(element);
+      }
+
+      main.addEventListener('click', e => {
+        new Circle(e.clientX, e.clientY);
+      });
+    </script>
+  </body>
+</html>
