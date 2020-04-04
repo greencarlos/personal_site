@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      textarea {
+        height: 250px;
+        width: 300px;
+      }
+			body {
+				background-color: lightblue;
+			}
+    </style>
+
+    <title>sentiment.html</title>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+  </head>
+  <body>
+    <h5>Sentiment Analysis</h5>
+    <textarea class="type"></textarea>
+    <button class="analyze">Analyze</button>
+
+    <script>
+      const text = document.querySelector('.type');
+      const analyze = document.querySelector('.analyze');
+      const sentiment = ml5.sentiment('movieReviews', () => {});
+
+      analyze.addEventListener('click', () => {
+        const textVal = text.value;
+
+        const result = sentiment.predict(textVal);
+        if (result.score > 0.8) {
+          alert('👍👍👍');
+				} else {
+					alert('💩💩💩')
+				}
+      });
+    </script>
+  </body>
+</html>
