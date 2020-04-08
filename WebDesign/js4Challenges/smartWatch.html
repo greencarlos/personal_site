@@ -23,8 +23,8 @@
 
       .container {
         border: 5px solid blue;
-				background: black;
-				z-index: -1px;
+        background: black;
+        z-index: -1px;
         position: relative;
         margin: 0 auto;
         top: 325px;
@@ -51,6 +51,9 @@
         text-align: center;
         bottom: 0px;
       }
+      .time {
+        font-size: 60px;
+      }
     </style>
 
     <title>smartWatch.html</title>
@@ -75,6 +78,7 @@
       const lower = document.querySelector('.lowerContainer');
       const hours = d.getHours() % 12;
       const mins = d.getMinutes();
+      const min = mins < 10 ? `0${mins}` : `${mins}`;
 
       const day = [
         'Sunday',
@@ -100,16 +104,17 @@
         'November',
         'December',
       ][d.getMonth()]; // Get Month
+
+      let clicked = false;
+
       lower.innerHTML = `
-        	<h1>
-				${hours}:${mins}
+        	<h1 class="time">
+				${hours}:${min}
 				<br/><br/>
 				<hr/>
 				<br/>${day}<br/>${month}
 				</h1>
 				`;
-
-      let clicked = false;
 
       function Watch() {
         if (clicked === false) {
@@ -122,6 +127,15 @@
           lower.style.height = '100px';
           clicked = false;
         }
+
+        lower.innerHTML = `
+        	<h1 class="time">
+				${hours}:${min}
+				<br/><br/>
+				<hr/>
+				<br/>${day}<br/>${month}
+				</h1>
+				`;
       }
 
       lower.addEventListener('click', () => {
