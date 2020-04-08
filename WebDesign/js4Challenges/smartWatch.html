@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <style>
+      body {
+        background-color: lightblue;
+      }
+      .armWatch {
+        background: url(./smartWatch.jpg);
+        background-size: 100% 100%;
+        position: absolute;
+        height: 1100px;
+        width: 1500px;
+        bottom: 0px;
+        left: 0px;
+      }
+
+      .container {
+        border: 5px solid blue;
+				background: black;
+				z-index: -1px;
+        position: relative;
+        margin: 0 auto;
+        top: 325px;
+        border-radius: 100%;
+        height: 450px;
+        width: 410px;
+        overflow: auto;
+      }
+
+      .iframe {
+        z-index: 0px;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 0px;
+        height: 400px;
+        width: 100%;
+      }
+      .lowerContainer {
+        position: absolute;
+        background: white;
+        height: 100px;
+        width: 100%;
+        z-index: 1px;
+        text-align: center;
+        bottom: 0px;
+      }
+    </style>
+
+    <title>smartWatch.html</title>
+  </head>
+  <body>
+    <div class="armWatch">
+      <div class="container">
+        <iframe
+          class="iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6175407966884!2d-73.987853084594!3d40.74844047932787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1586377575323!5m2!1sen!2sus"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+        <div class="lowerContainer"></div>
+      </div>
+    </div>
+    <script>
+      const d = new Date();
+      const lower = document.querySelector('.lowerContainer');
+      const hours = d.getHours() % 12;
+      const mins = d.getMinutes();
+
+      const day = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ][d.getDay()]; // Get Day
+
+      const month = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ][d.getMonth()]; // Get Month
+      lower.innerHTML = `
+        	<h1>
+				${hours}:${mins}
+				<br/><br/>
+				<hr/>
+				<br/>${day}<br/>${month}
+				</h1>
+				`;
+
+      let clicked = false;
+
+      function Watch() {
+        if (clicked === false) {
+          lower.style.top = '0px';
+          lower.style.height = '450px';
+          clicked = true;
+        } else {
+          lower.style.top = '';
+          lower.style.bottom = '0px';
+          lower.style.height = '100px';
+          clicked = false;
+        }
+      }
+
+      lower.addEventListener('click', () => {
+        Watch();
+      });
+    </script>
+  </body>
+</html>
