@@ -102,7 +102,7 @@ function Item(string, element, index) {
   div.innerHTML = `
 	<div class="left">${left}</div>
 	<div class="right">${right}</div>
-	<div class="title">${string}</div>`; 
+	<div class="title todo todo${index}">${string}</div>`; 
 
   const title = div.querySelector('.title')
   const leftButton = div.querySelector('.left');

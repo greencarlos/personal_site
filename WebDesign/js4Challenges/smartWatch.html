@@ -77,6 +77,8 @@
       const d = new Date();
       const lower = document.querySelector('.lowerContainer');
       const hours = d.getHours() % 12;
+      const hour = hours === 0 ? `12` : hours;
+      console.log(hours, 'hours');
       const mins = d.getMinutes();
       const min = mins < 10 ? `0${mins}` : `${mins}`;
 
@@ -109,7 +111,7 @@
 
       lower.innerHTML = `
         	<h1 class="time">
-				${hours}:${min}
+				${hour}:${min}
 				<br/><br/>
 				<hr/>
 				<br/>${day}<br/>${month}
@@ -130,7 +132,7 @@
 
         lower.innerHTML = `
         	<h1 class="time">
-				${hours}:${min}
+				${hour}:${min}
 				<br/><br/>
 				<hr/>
 				<br/>${day}<br/>${month}
