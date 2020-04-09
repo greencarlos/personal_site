@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+
+    <style>
+      body {
+        background-color: lightblue;
+      }
+      .container {
+        text-align: center;
+      }
+      .star {
+        color: white;
+        font-size: 50px;
+        display: inline-block;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: black;
+      }
+    </style>
+    <title>starsUI.html</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stars User Interface</h1>
+      <i class="star fas fa-star"></i>
+      <i class="star fas fa-star"></i>
+      <i class="star fas fa-star"></i>
+      <i class="star fas fa-star"></i>
+      <i class="star fas fa-star"></i>
+      <h2 class="rating">You are rating 0 stars!</h2>
+    </div>
+  </body>
+  <script>
+    const container = document.querySelector('.container');
+    const stars = document.querySelectorAll('.star');
+    const rating = document.querySelector('.rating');
+    let clicked = false;
+
+    const blueColors = (index, i = 0) => {
+      if (i > index) return;
+      stars[i].style.color = 'blue';
+      return blueColors(index, i + 1);
+    };
+
+    const whiteColors = (index, i = index + 1) => {
+      if (i === stars.length) return;
+      stars[i].style.color = 'white';
+      return whiteColors(index, i + 1);
+    };
+
+    stars.forEach((e, i) => {
+      e.addEventListener('mouseover', () => {
+        rating.innerHTML = `You are rating ${i + 1} stars!`;
+        clicked = false;
+        blueColors(i);
+				whiteColors(i)
+      });
+
+      e.addEventListener('mouseout', () => {
+        if (clicked === false) {
+          e.style.color = 'white';
+        }
+      });
+
+      e.addEventListener('click', () => {
+        rating.innerHTML = `You have given ${i + 1} stars!`;
+        e.style.color = 'blue';
+        clicked = true;
+      });
+    });
+  </script>
+</html>
