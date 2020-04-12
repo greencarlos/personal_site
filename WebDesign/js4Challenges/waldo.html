@@ -8,45 +8,56 @@
     />
 
     <style>
-      .large {
-        background-image: url(./waldo.jpg);
-				background-size: 100% 100%;
-				margin: 0 auto;
-        height: 371px;
-        width: 781px;
+      .scope {
+        z-index: 1;
+        margin: 0 auto;
+        position: absolute;
+        pointer-events: none;
+        -webkit-user-select: none;
       }
-
-			.scope {
-				background-image: url(./scope.jpg);
-				background-size: 100%;
-				margin: 0 auto;
-			}
 
       .small {
-        background-image: url(./waldo.jpg);
-				background-size: 100% 100%;
-				margin: 0 auto;
-        height: 245px;
         width: 464px;
+        height: 245px;
+        margin: 0 auto;
+        background-size: 100% 100%;
+        background-image: url(https://c0d3.com/challenges/assets/fair/small.jpg);
       }
-			body {
-				text-align: center;
-				background-color: lightblue;
-			}
-    </style>
 
+      body {
+        text-align: center;
+        background-color: lightblue;
+      }
+    </style>
     <title>waldo.html</title>
   </head>
   <body>
-		<h1>Where's Waldo?</h1>
-		<h2>Hover your mouse over the image to find Waldo</h2>
+    <h1>Where's Waldo?</h1>
+    <h2>Hover your mouse over the image to find Waldo</h2>
     <div class="small"></div>
-		<!--
-    <h1>Large</h1>
-    <div class="large"></div>
-		<h3>Scope</h3>
-		<div class="scope"></div>
-		<img src="scope.jpg"></div>
-		-->
+    <script>
+      const small = document.querySelector('.small');
+      const scope = document.createElement('img');
+
+      small.focus();
+
+      small.addEventListener('mousemove', evt => {
+        const x = evt.clientX;
+        const y = evt.clientY;
+
+        scope.classList.add('scope');
+        scope.src = 'https://c0d3.com/challenges/assets/fair/scope.png';
+
+        scope.style.top = `${y - 90}px`;
+        scope.style.left = `${x - 90}px`;
+
+        small.append(scope);
+      });
+
+      small.addEventListener('mouseout', evt => {
+        scope.classList.remove('scope');
+        scope.src = '';
+      });
+    </script>
   </body>
 </html>
