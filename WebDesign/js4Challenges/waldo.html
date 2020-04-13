@@ -8,20 +8,30 @@
     />
 
     <style>
-      .scope {
-        z-index: 1;
-        margin: 0 auto;
-        position: absolute;
-        pointer-events: none;
-        -webkit-user-select: none;
-      }
-
-      .small {
+      .smallImg {
         width: 464px;
         height: 245px;
         margin: 0 auto;
         background-size: 100% 100%;
-        background-image: url(./waldo.jpg);
+      }
+
+      .smallContainer {
+        margin: auto;
+        width: 421px;
+        height: 168px;
+        cursor: none;
+      }
+
+      .circleContainer {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        display: none;
+        clip-path: circle(99px at center);
+        pointer-events: none;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background: url(waldo.jpg);
       }
 
       body {
@@ -34,29 +44,49 @@
   <body>
     <h1>Where's Waldo?</h1>
     <h2>Hover your mouse over the image to find Waldo</h2>
-    <div class="small"></div>
+    <div class="container">
+      <div class="smallContainer">
+        <img
+          class="smallImg"
+          src="waldo.jpg"
+        />
+      </div>
+    </div>
+
+    <div class="circleContainer">
+      <img
+        class="circle"
+        src="https://c0d3.com/challenges/assets/fair/scope.png"
+        alt=""
+      />
+    </div>
     <script>
-      const small = document.querySelector('.small');
-      const scope = document.createElement('img');
+      const container = document.querySelector('.container');
+      const circleContainer = document.querySelector('.circleContainer');
+      const smallImg = document.querySelector('.smallImg');
 
-      small.focus();
+      const smallContainer = document.querySelector('.smallContainer');
+      const circle = document.querySelector('.circle');
 
-      small.addEventListener('mousemove', evt => {
-        const x = evt.clientX;
-        const y = evt.clientY;
+      const xRatio = 1263 / 421;
+      const yRatio = 503 / 168;
 
-        scope.classList.add('scope');
-        scope.src = 'https://c0d3.com/challenges/assets/fair/scope.png';
+      smallImg.addEventListener('mousemove', e => {
+        circleContainer.style.display = 'block';
 
-        scope.style.top = `${y - 90}px`;
-        scope.style.left = `${x - 90}px`;
+        const containerX = smallContainer.offsetLeft;
+        const containerY = smallContainer.offsetTop;
+        const offsetX = e.offsetX;
+        const offsetY = e.offsetY;
 
-        small.append(scope);
+				circleContainer.style.left = `${containerX + offsetX - 100}px`;
+				circleContainer.style.top = `${containerY + offsetY - 100}px`;
+				circleContainer.style.backgroundPositionX = `${-1*offsetX * xRatio + 1}px`;
+				circleContainer.style.backgroundPositionY = `${-1*offsetY * yRatio + 1}px`;
       });
 
-      small.addEventListener('mouseout', evt => {
-        scope.classList.remove('scope');
-        scope.src = '';
+      smallImg.addEventListener('mouseout', e => {
+        circleContainer.style.display = 'none';
       });
     </script>
   </body>
