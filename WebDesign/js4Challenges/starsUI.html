@@ -53,24 +53,23 @@
       return blueColors(index, i + 1);
     };
 
-    const whiteColors = (index, i = index + 1) => {
-      if (i === stars.length) return;
+    const whiteColors = (index, i = stars.length - 1) => {
+      if (i === index) return;
       stars[i].style.color = 'white';
-      return whiteColors(index, i + 1);
+      return whiteColors(index, i - 1);
     };
 
     stars.forEach((e, i) => {
       e.addEventListener('mouseover', () => {
         rating.innerHTML = `You are rating ${i + 1} stars!`;
         clicked = false;
+        console.log(i, 'index');
         blueColors(i);
-	whiteColors(i)
+        whiteColors(i);
       });
 
       e.addEventListener('mouseout', () => {
-        if (clicked === false) {
-          e.style.color = 'white';
-        }
+        e.style.color = 'blue';
       });
 
       e.addEventListener('click', () => {
