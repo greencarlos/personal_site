@@ -24,7 +24,7 @@
     <title>lightsOff.html</title>
   </head>
   <body>
-    <h1>lightsOff</h1>
+    <h1>Click the square to turn the lights off</h1>
     <div class="container"></div>
     <script>
       const container = document.querySelector('.container');
@@ -66,16 +66,19 @@
                 e.classList.remove('lightOn');
                 prev.classList.remove('lightOn');
                 next.classList.remove('lightOn');
+							gameOver()
 						} else if (e.classList.contains('lightOn')) {
 							e.classList.remove('lightOn')
 							next.classList.add('lightOn')
 							prev.classList.add('lightOn')
+							gameOver()
 						  } 
             })
           });
         };
 
       render();
+
     </script>
   </body>
 </html>
