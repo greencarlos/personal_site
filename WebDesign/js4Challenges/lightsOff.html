@@ -38,28 +38,29 @@
           return makeRows(row, element, i + 1);
         };
 
-				const Board = (rows, cols, i = 1) => {
+        const Board = (rows, cols, i = 1) => {
           if (i > cols) return;
           const div = document.createElement('div');
           makeRows(rows, div);
           container.append(div);
           return Board(rows, cols, i + 1);
-        }
+        };
 
         Board(2, 2);
 
         const allBoards = document.querySelectorAll('.square');
         const firstLight = Math.floor(Math.random() * allBoards.length);
+        let lights = 1;
 
         allBoards[firstLight].classList.add('lightOn');
-
-        console.log(firstLight, 'firstLight');
 
         allBoards.forEach((e, i) => {
           const prev = i === 0 ? allBoards[i + 2] : allBoards[i - 1];
           const next =
             i === allBoards.length - 1 ? allBoards[i - 2] : allBoards[i + 1];
 
+          // light turned on += 1
+          // light turned off -= 1
           e.addEventListener('click', () => {
             if (
               e.classList.contains('lightOn') &&
@@ -67,12 +68,21 @@
               next.classList.contains('lightOn')
             ) {
               e.classList.remove('lightOn');
+              lights -= 1;
               prev.classList.remove('lightOn');
+              lights -= 1;
               next.classList.remove('lightOn');
+              lights -= 1;
             } else if (e.classList.contains('lightOn')) {
               e.classList.remove('lightOn');
+              lights -= 1;
               next.classList.add('lightOn');
               prev.classList.add('lightOn');
+              lights += 1;
+            }
+            console.log(lights, 'lights');
+            if (lights < 0) {
+              alert('Game Over!');
             }
           });
         });
