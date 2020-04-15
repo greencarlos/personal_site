@@ -29,56 +29,56 @@
     <script>
       const container = document.querySelector('.container');
 
-      const makeRows = (row, element, i = 0) => {
-        if (i === row) return;
-        const div = document.createElement('div');
-        div.classList.add('square');
-        element.append(div);
-        return makeRows(row, element, i + 1);
-      };
-
-      function Board(rows, cols, i = 1) {
-        if (i > cols) return;
-        const div = document.createElement('div');
-        makeRows(rows, div);
-        container.append(div);
-        return Board(rows, cols, i + 1);
-      }
-
-      Board(2, 2);
-
-      const allBoards = document.querySelectorAll('.square');
-      const firstLight = Math.floor(Math.random() * allBoards.length);
-
-      allBoards[firstLight].classList.add('lightOn');
-
-      console.log(firstLight, 'firstLight');
-
-      const render = () => {
-        allBoards.forEach((e, i) => {
-					const prev = (i === 0) ? allBoards[i+2] : allBoards[i-1];
-					const next = (i === allBoards.length - 1) ? allBoards[i-2]: allBoards[i+1] ;
-
-          e.addEventListener('click', () => {
-            if (e.classList.contains('lightOn') &&
-							prev.classList.contains('lightOn') &&
-							next.classList.contains('lightOn')) {
-                e.classList.remove('lightOn');
-                prev.classList.remove('lightOn');
-                next.classList.remove('lightOn');
-							gameOver()
-						} else if (e.classList.contains('lightOn')) {
-							e.classList.remove('lightOn')
-							next.classList.add('lightOn')
-							prev.classList.add('lightOn')
-							gameOver()
-						  } 
-            })
-          });
+      function CreateGame() {
+        const makeRows = (row, element, i = 0) => {
+          if (i === row) return;
+          const div = document.createElement('div');
+          div.classList.add('square');
+          element.append(div);
+          return makeRows(row, element, i + 1);
         };
 
-      render();
+				const Board = (rows, cols, i = 1) => {
+          if (i > cols) return;
+          const div = document.createElement('div');
+          makeRows(rows, div);
+          container.append(div);
+          return Board(rows, cols, i + 1);
+        }
 
+        Board(2, 2);
+
+        const allBoards = document.querySelectorAll('.square');
+        const firstLight = Math.floor(Math.random() * allBoards.length);
+
+        allBoards[firstLight].classList.add('lightOn');
+
+        console.log(firstLight, 'firstLight');
+
+        allBoards.forEach((e, i) => {
+          const prev = i === 0 ? allBoards[i + 2] : allBoards[i - 1];
+          const next =
+            i === allBoards.length - 1 ? allBoards[i - 2] : allBoards[i + 1];
+
+          e.addEventListener('click', () => {
+            if (
+              e.classList.contains('lightOn') &&
+              prev.classList.contains('lightOn') &&
+              next.classList.contains('lightOn')
+            ) {
+              e.classList.remove('lightOn');
+              prev.classList.remove('lightOn');
+              next.classList.remove('lightOn');
+            } else if (e.classList.contains('lightOn')) {
+              e.classList.remove('lightOn');
+              next.classList.add('lightOn');
+              prev.classList.add('lightOn');
+            }
+          });
+        });
+      }
+
+      CreateGame();
     </script>
   </body>
 </html>
