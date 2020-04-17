@@ -6,49 +6,154 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
     <style>
-      h1 {
+      body {
         text-align: center;
       }
 
       .myCanvas {
         z-index: 1;
+        opacity: 25%;
         position: fixed;
+        background: blue;
         border: 1px solid black;
-        background: rgba(0, 0, 0, 0.3);
       }
 
       .container {
         width: 270px;
         height: 270px;
         margin: 0 auto;
-        border: 1px solid blue;
+        border: 1px solid steelblue;
       }
 
-      .boxClass {
+      .box {
         z-index: 0;
         float: left;
         height: 40px;
         width: 40px;
         padding: 5px;
         position: inline-block;
-        border: 2px solid seagreen;
+        border: 2px solid steelblue;
       }
 
-			.lightOn {
-				background: lightblue;
-			}
+      .dummy {
+        z-index: 1;
+        position: fixed;
+      }
+
+      .box.selected {
+        background: dodgerblue;
+      }
     </style>
 
     <title>selection.html</title>
   </head>
   <body>
     <h1>Selection Box</h1>
+		<p><b>Click down and drag the mouse over the grid</b></p>
 
     <div class="myCanvas"></div>
     <div class="container"></div>
 
-    <script src="selection.js"></script>
+    <script>
+      const myCanvas = document.querySelector('.myCanvas');
+      const container = document.querySelector('.container');
+
+      let isDown = false;
+      let startX;
+      let startY;
+      let currentX;
+      let currentY;
+
+      const getRow = (row, j, i = 0, arr = []) => {
+        if (i === row) return arr;
+        arr.push(new Box(i, j));
+        return getRow(row, j, i + 1, arr);
+      };
+
+      const getGrid = (row, col, i = 0, res = []) => {
+        if (i === col) return res;
+        res.push(getRow(row, i));
+        return getGrid(row, col, i + 1, res);
+      };
+
+      const grid = getGrid(5, 5);
+
+      const color = (x1, y1, x2, y2) => {
+        if (
+          x1 <= x2 + 50 &&
+          x1 + myCanvas.offsetWidth >= x2 &&
+          y1 <= y2 + 50 &&
+          y1 + myCanvas.offsetHeight >= y2
+        ) {
+          return true;
+        }
+        return false;
+      };
+
+      function Box(i, j) {
+        const boxEle = document.createElement('div');
+        boxEle.classList.add('box');
+        boxEle.classList.add(`row-${i}`);
+        boxEle.classList.add(`col-${j}`);
+
+        container.append(boxEle);
+      }
+
+      document.addEventListener('mousedown', e => {
+        startX = e.clientX;
+        startY = e.clientY;
+        isDown = true;
+      });
+
+      document.addEventListener('mousemove', e => {
+        if (!isDown) {
+          return;
+        }
+
+        currentX = e.clientX;
+        currentY = e.clientY;
+        myCanvas.style.visibility = 'visible';
+
+        // myCanvas goes down right
+        myCanvas.style.top = startY + 'px';
+        myCanvas.style.left = startX + 'px';
+        myCanvas.style.height = currentY - startY + 'px';
+        myCanvas.style.width = currentX - startX + 'px';
+
+        // myCanvas goes left
+        if (startX > currentX) {
+          myCanvas.style.right = startX + 'px';
+          myCanvas.style.left = currentX + 'px';
+          myCanvas.style.width = startX - currentX + 'px';
+        }
+
+        // myCanvas goes up
+        if (startY > currentY) {
+          myCanvas.style.top = currentY + 'px';
+          myCanvas.style.bottom = startY + 'px';
+          myCanvas.style.height = startY - currentY + 'px';
+        }
+
+        const boxes = container.querySelectorAll('.box');
+
+        boxes.forEach(box => {
+          if (
+            color(myCanvas.offsetLeft, myCanvas.offsetTop, box.offsetLeft, box.offsetTop)
+          ) {
+            box.classList.add('selected');
+          } else box.classList.remove('selected');
+        });
+      });
+
+      document.addEventListener('mouseup', e => {
+        isDown = false;
+        startX = null;
+        startY = null;
+        currentX = null;
+        currentY = null;
+        myCanvas.style.visibility = 'hidden';
+      });
+    </script>
   </body>
 </html>
