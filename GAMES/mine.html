@@ -4,44 +4,44 @@
     <title>step5.html</title>
 
     <style>
-    body {
-      font-family: 'Inconsolata', monospace; 
-			text-align: center;
-    }
+      body {
+        font-family: 'Inconsolata', monospace;
+        text-align: center;
+      }
 
-    .container {
-      display: inline-block;
-    }
+      .container {
+        display: inline-block;
+      }
 
-    .row {
-      height: 50px;
-      width: 50px;
-      background-color: aqua;
-			border: 1px solid black;
-    }
+      .row {
+        height: 50px;
+        width: 50px;
+        background-color: aqua;
+        border: 1px solid black;
+      }
 
-    .col {
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-      line-height: 50px;
-      transition: all 1s;
-      vertical-align: top;
-      display: inline-block;
-    }
+      .col {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        transition: all 1s;
+        vertical-align: top;
+        display: inline-block;
+      }
 
-    .row.hidden {
-      background-color: aqua;
-      cursor: pointer;
-    }
+      .row.hidden {
+        background-color: aqua;
+        cursor: pointer;
+      }
 
-    .row.hidden:hover {
-      background-color: lightgray;
-    }
+      .row.hidden:hover {
+        background-color: lightgray;
+      }
 
-    .row:last-child .col {
-      border-right: none;
-    }
+      .row:last-child .col {
+        border-right: none;
+      }
     </style>
   </head>
   <body>
@@ -73,7 +73,7 @@
           container.append(col);
         }
       };
-/*
+      /*
 Recursively call surrounding boxes when its count is 0.
 */
 
@@ -87,11 +87,15 @@ Recursively call surrounding boxes when its count is 0.
           document.querySelector(`[data-row="${row - 1}"][data-col="${col}"]`),
           document.querySelector(`[data-row="${row - 1}"][data-col="${col}"]`),
           document.querySelector(`[data-row="${row + 1}"][data-col="${col}"]`),
-          document.querySelector(`[data-row="${row + 1}"][data-col="${col - 1}"]`),
-          document.querySelector(`[data-row="${row + 1}"][data-col="${col + 1}"]`),
+          document.querySelector(
+            `[data-row="${row + 1}"][data-col="${col - 1}"]`,
+          ),
+          document.querySelector(
+            `[data-row="${row + 1}"][data-col="${col + 1}"]`,
+          ),
           document.querySelector(`[data-row="${row}"][data-col="${col - 1}"]`),
           document.querySelector(`[data-row="${row}"][data-col="${col + 1}"]`),
-					]
+        ];
       }
 
       function Box(row, col, column) {
@@ -106,9 +110,9 @@ Recursively call surrounding boxes when its count is 0.
 
         box.addEventListener('click', () => {
           if (box.classList.contains('mine')) {
-						box.classList.remove('hidden')
-						box.style.backgroundColor = 'black'
-						console.log(box, 'box')
+            box.classList.remove('hidden');
+            box.style.backgroundColor = 'black';
+            console.log(box, 'box');
             console.log('stepped on a mine game over!');
           } else {
             const adj = Neighbors(row, col);
@@ -121,10 +125,10 @@ Recursively call surrounding boxes when its count is 0.
               }
             });
             if (count === 0) {
-							// recursively call surrounding boxes
-						} else {
+              // recursively call surrounding boxes
+            } else {
               box.innerHTML = count;
-						}
+            }
           }
         });
         column.append(box);
