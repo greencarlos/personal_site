@@ -13,7 +13,7 @@
       }
 
       .armWatch {
-        background: url(./smartWatch.jpg);
+        background: url(../IMAGES/smartWatch.jpg);
         background-size: 100% 100%;
         position: absolute;
         height: 1100px;
@@ -86,9 +86,11 @@
       const lower = document.querySelector('.lowerContainer');
       const hours = d.getHours() % 12;
       const hour = hours === 0 ? `12` : hours;
-      console.log(hours, 'hours');
       const mins = d.getMinutes();
       const min = mins < 10 ? `0${mins}` : `${mins}`;
+
+
+      const year = d.getFullYear()
 
       const day = [
         'Sunday',
@@ -118,11 +120,8 @@
       let clicked = false;
 
       lower.innerHTML = `
-        	<h1 class="time">
+        <h1 class="time">
 				${hour}:${min}
-				<br/><br/>
-				<hr/>
-				<br/>${day}<br/>${month}
 				</h1>
 				`;
 
@@ -139,11 +138,12 @@
         }
 
         lower.innerHTML = `
-        	<h1 class="time">
+        <h1 class="time">
 				${hour}:${min}
-				<br/><br/>
-				<hr/>
-				<br/>${day}<br/>${month}
+				<br/> <br/>
+				${day}
+				<br/>
+				${month}, ${year}
 				</h1>
 				`;
       }
