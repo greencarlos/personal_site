@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>step3.html</title>
+    <title>step4.html</title>
 
     <style>
     body {
-      font-family: 'Inconsolata', monospace;
-      text-align: center;
+      font-family: 'Inconsolata', monospace; 
+			text-align: center;
     }
 
     .container {
@@ -16,21 +16,17 @@
     .row {
       height: 50px;
       width: 50px;
-      border: 1px solid black;
       background-color: aqua;
     }
 
     .col {
-      display: inline-block;
       width: 50px;
       height: 50px;
-      border-right: 2px solid black;
-      border-bottom: 2px solid black;
-      vertical-align: top;
-      color: block;
       font-size: 20px;
       line-height: 50px;
       transition: all 1s;
+      vertical-align: top;
+      display: inline-block;
     }
 
     .row.hidden {
@@ -43,8 +39,8 @@
     }
 
     .row:last-child .col {
-        border-right: none;
-      }
+      border-right: none;
+    }
     </style>
   </head>
   <body>
@@ -54,7 +50,7 @@
       </a>
     </p>
 
-    <h1>Minesweeper!</h1>
+    <h1>Minesweeper</h1>
     <div class="container"></div>
 
     <script>
@@ -77,9 +73,7 @@
         }
       };
 /*
-Write a function that returns the array of neighbors
-when you click on a non-bomb box,
-then display the number of bombs around that box.
+Recursively call surrounding boxes when its count is 0.
 */
 
       function Neighbors(row, col) {
@@ -90,10 +84,13 @@ then display the number of bombs around that box.
         box.style.backgroundColor = 'grey';
         return [
           document.querySelector(`[data-row="${row - 1}"][data-col="${col}"]`),
+          document.querySelector(`[data-row="${row - 1}"][data-col="${col}"]`),
           document.querySelector(`[data-row="${row + 1}"][data-col="${col}"]`),
+          document.querySelector(`[data-row="${row + 1}"][data-col="${col - 1}"]`),
+          document.querySelector(`[data-row="${row + 1}"][data-col="${col + 1}"]`),
           document.querySelector(`[data-row="${row}"][data-col="${col - 1}"]`),
           document.querySelector(`[data-row="${row}"][data-col="${col + 1}"]`),
-        ];
+					]
       }
 
       function Box(row, col, column) {
@@ -108,11 +105,12 @@ then display the number of bombs around that box.
 
         box.addEventListener('click', () => {
           if (box.classList.contains('mine')) {
+						box.classList.remove('hidden')
+						box.style.backgroundColor = 'black'
+						console.log(box, 'box')
             console.log('stepped on a mine game over!');
           } else {
             const adj = Neighbors(row, col);
-            console.log();
-            console.log(adj, 'adj');
             let count = 0;
             adj.forEach(e => {
               if (e === null) {
@@ -121,16 +119,18 @@ then display the number of bombs around that box.
                 count += 1;
               }
             });
-            if (count > 0) {
+            if (count === 0) {
+							// recursively call surrounding boxes
+						} else {
               box.innerHTML = count;
-            }
+						}
           }
         });
         column.append(box);
       }
 
       const tenByTen = new Minesweeper(10, 10);
-      console.log(tenByTen.board, 'board');
+      // console.log(tenByTen.board, 'board');
     </script>
   </body>
 </html>
