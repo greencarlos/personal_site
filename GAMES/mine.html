@@ -12,7 +12,7 @@
       .container {
         display: inline-block;
       }
-.row {
+      .row {
         height: 50px;
         width: 50px;
         background-color: aqua;
@@ -87,10 +87,18 @@ Recursively call surrounding boxes when its count is 0.
           document.querySelector(`[data-row="${row + 1}"][data-col="${col}"]`),
           document.querySelector(`[data-row="${row}"][data-col="${col - 1}"]`),
           document.querySelector(`[data-row="${row}"][data-col="${col + 1}"]`),
-          document.querySelector(`[data-row="${row - 1}"][data-col="${col - 1}"]`),
-          document.querySelector(`[data-row="${row - 1}"][data-col="${col + 1}"]`),
-          document.querySelector(`[data-row="${row + 1}"][data-col="${col - 1}"]`),
-          document.querySelector(`[data-row="${row + 1}"][data-col="${col + 1}"]`),
+          document.querySelector(
+            `[data-row="${row - 1}"][data-col="${col - 1}"]`,
+          ),
+          document.querySelector(
+            `[data-row="${row - 1}"][data-col="${col + 1}"]`,
+          ),
+          document.querySelector(
+            `[data-row="${row + 1}"][data-col="${col - 1}"]`,
+          ),
+          document.querySelector(
+            `[data-row="${row + 1}"][data-col="${col + 1}"]`,
+          ),
         ];
       }
 
@@ -100,7 +108,7 @@ Recursively call surrounding boxes when its count is 0.
         box.classList.add('hidden');
         box.setAttribute('data-row', row);
         box.setAttribute('data-col', col);
-				if ((Math.random() * 100) < 10) {
+        if (Math.random() * 100 < 10) {
           box.classList.add('mine');
         }
 
