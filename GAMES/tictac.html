@@ -7,57 +7,120 @@
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <!-- Personal CSS -->
-  <link rel="stylesheet" href="./CSS/tictac.css">
+    <style>
+      body {
+        background: lightblue;
+        margin: 20px;
+      }
 
-  <!-- React -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-  <!-- JSX -->
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js" ></script>
+      ol,
+      ul {
+        padding-left: 30px;
+        color: black;
+      }
 
-  <!-- Require JS Client side -->
-  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-  <script src="https://requirejs.org/docs/release/2.3.6/r.js"></script>
+      .board-row:after {
+        clear: both;
+        content: '';
+        display: table;
+      }
 
-    <link rel="stylesheet" href="index.css">
+      .status {
+        margin-bottom: 10px;
+      }
+
+      .square {
+        background: #black;
+        border: 1px solid #999;
+        float: left;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 34px;
+        height: 34px;
+        margin-right: -1px;
+        margin-top: -1px;
+        padding: 0;
+        width: 34px;
+      }
+
+      .square:focus {
+        outline: none;
+      }
+
+      .kbd-navigation .square:focus {
+        background: #ddd;
+      }
+
+      .game {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .game-info {
+        margin: 35px;
+      }
+    </style>
+
+    <!-- React -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- Require JS Client side -->
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.6/r.js"></script>
+
+    <link rel="stylesheet" href="index.css" />
     <title>Tic Tac Toe</title>
   </head>
   <body>
-<div id="errors" style="background: #c00;color: #fff;display: none;margin: -20px -20px 20px;padding: 20px;white-space: pre-wrap;"></div>
+    <div
+      id="errors"
+      style="background: #c00;color: #fff;display: none;margin: -20px -20px 20px;padding: 20px;white-space: pre-wrap;"
+    ></div>
 
     <h1>Tic Tac Toe</h1>
     <div id="root"></div>
     <script>
-    window.addEventListener('mousedown', function(e) {
-  document.body.classList.add('mouse-navigation');
-  document.body.classList.remove('kbd-navigation');
-});
-window.addEventListener('keydown', function(e) {
-  if (e.keyCode === 9) {
-    document.body.classList.add('kbd-navigation');
-    document.body.classList.remove('mouse-navigation');
-  }
-});
-window.addEventListener('click', function(e) {
-  if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
-    e.preventDefault();
-  }
-});
-window.onerror = function(message, source, line, col, error) {
-  var text = error ? error.stack || error : message + ' (at ' + source + ':' + line + ':' + col + ')';
-  errors.textContent += text + '\n';
-  errors.style.display = '';
-};
-console.error = (function(old) {
-  return function error() {
-    errors.textContent += Array.prototype.slice.call(arguments).join(' ') + '\n';
-    errors.style.display = '';
-    old.apply(this, arguments);
-  }
-})(console.error);
+      window.addEventListener('mousedown', function(e) {
+        document.body.classList.add('mouse-navigation');
+        document.body.classList.remove('kbd-navigation');
+      });
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 9) {
+          document.body.classList.add('kbd-navigation');
+          document.body.classList.remove('mouse-navigation');
+        }
+      });
+      window.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
+          e.preventDefault();
+        }
+      });
+      window.onerror = function(message, source, line, col, error) {
+        var text = error
+          ? error.stack || error
+          : message + ' (at ' + source + ':' + line + ':' + col + ')';
+        errors.textContent += text + '\n';
+        errors.style.display = '';
+      };
+      console.error = (function(old) {
+        return function error() {
+          errors.textContent +=
+            Array.prototype.slice.call(arguments).join(' ') + '\n';
+          errors.style.display = '';
+          old.apply(this, arguments);
+        };
+      })(console.error);
     </script>
 
-  <script src="../lib/TicTac.js" type="text/javascript"></script>
+    <script src="../lib/TicTac.js" type="text/javascript"></script>
   </body>
 </html>

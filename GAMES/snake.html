@@ -1,118 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <!-- Personal Css -->
-    <link rel="stylesheet" href="CSS/snake.css" type="text/css"/>
+    <style>
+      body {
+        background-color: lightblue;
+        text-align: center;
+      }
+    </style>
 
     <title>Snake!</title>
   </head>
   <body>
+    <p><a href="http://carlosgreenpersonalsite.com">Back to the homepage</a></p>
 
- <p><a href="http://carlosgreenpersonalsite.com">Back to the homepage</a></p>
+    <h1>Snake Game</h1>
 
-   <h1>Snake Game</h1>
+    <!--https://pastebin.com/Z3zhb7cy -->
+    <canvas id="gc" width="400" height="400"></canvas>
 
-  <!--https://pastebin.com/Z3zhb7cy -->
-  <canvas id="gc" width="400" height="400"></canvas>
-
-  <p id="high">High Score: </p>
+    <p id="high">High Score:</p>
 
     <script>
-window.onload=function() {
-  canv = document.getElementById("gc");
-  ctx = canv.getContext("2d");
-  document.addEventListener("keydown", keyPush);
-  setInterval(game, 1000/15);
-}
+      window.onload = function() {
+        canv = document.getElementById('gc');
+        ctx = canv.getContext('2d');
+        document.addEventListener('keydown', keyPush);
+        setInterval(game, 1000 / 15);
+      };
 
-const high = document.getElementById("high");
+      const high = document.getElementById('high');
 
-let px=py=10;
-let gs=tc=20;
-let ax=ay=15;
-let xv=yv=0;
-const trail = [];
-let tail = 5;
-let score = 0;
-let highScore = 0;
+      let px = (py = 10);
+      let gs = (tc = 20);
+      let ax = (ay = 15);
+      let xv = (yv = 0);
+      const trail = [];
+      let tail = 5;
+      let score = 0;
+      let highScore = 0;
 
-function game() {
-  px+=xv;
-  py+=yv;
-  if (px<0) {
-    px= tc -1;
-  }
-  if (px>tc-1) {
-    px=0;
-  }
-  if (py<0) {
-    py=tc-1;
-  }
-  if (py>tc-1) {
-    py=0;
-  }
-  ctx.fillStyle="black";
-  ctx.fillRect(0,0,canv.width,canv.height);
+      function game() {
+        px += xv;
+        py += yv;
+        if (px < 0) {
+          px = tc - 1;
+        }
+        if (px > tc - 1) {
+          px = 0;
+        }
+        if (py < 0) {
+          py = tc - 1;
+        }
+        if (py > tc - 1) {
+          py = 0;
+        }
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canv.width, canv.height);
 
-  ctx.fillStyle="lightgreen";
-  for (var i = 0; i < trail.length; i++) {
-    ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
-    if (trail[i].x==px && trail[i].y==py) {
-    tail=5;
-    score = 0;
-    if (score > highScore) {
-      score = highScore	    
-      high.innerHTML = highScore
-    }	    
+        ctx.fillStyle = 'lightgreen';
+        for (var i = 0; i < trail.length; i++) {
+          ctx.fillRect(trail[i].x * gs, trail[i].y * gs, gs - 2, gs - 2);
+          if (trail[i].x == px && trail[i].y == py) {
+            tail = 5;
+            score = 0;
+            if (score > highScore) {
+              score = highScore;
+              high.innerHTML = highScore;
+            }
 
-    console.log(score)	    
-    console.log(highScore)	    
-    }
-  }
-  trail.push({x:px,y:py});
-  while(trail.length>tail) {
-    trail.shift()
-  }
+            console.log(score);
+            console.log(highScore);
+          }
+        }
+        trail.push({x: px, y: py});
+        while (trail.length > tail) {
+          trail.shift();
+        }
 
-  if (ax==px && ay==py) {
-    score++;	  
-    console.log(score)	  
-    tail++;
-    ax=Math.floor(Math.random()*tc)
-    ay=Math.floor(Math.random()*tc)
-  }
-  ctx.fillStyle="lightblue";
-  ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
-}
+        if (ax == px && ay == py) {
+          score++;
+          console.log(score);
+          tail++;
+          ax = Math.floor(Math.random() * tc);
+          ay = Math.floor(Math.random() * tc);
+        }
+        ctx.fillStyle = 'lightblue';
+        ctx.fillRect(ax * gs, ay * gs, gs - 2, gs - 2);
+      }
 
-function keyPush(evt) {
-  switch(evt.keyCode) {
-// arrow left
-  case 37:
-    xv=-1;yv=0;
-    break;
+      function keyPush(evt) {
+        switch (evt.keyCode) {
+          // arrow left
+          case 37:
+            xv = -1;
+            yv = 0;
+            break;
 
-// arrow up
-  case 38:
-    xv=0;yv=-1;
-    break;
+          // arrow up
+          case 38:
+            xv = 0;
+            yv = -1;
+            break;
 
-// arrow right
-  case 39:
-    xv=1;yv=0;
-    break;
+          // arrow right
+          case 39:
+            xv = 1;
+            yv = 0;
+            break;
 
-// arrow down
-  case 40:
-    xv=0;yv=1;
-    break;
-  }
-}
+          // arrow down
+          case 40:
+            xv = 0;
+            yv = 1;
+            break;
+        }
+      }
     </script>
   </body>
 </html>
