@@ -1,144 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>step5.html</title>
-
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>mine.html</title>
     <style>
       body {
-        font-family: 'Inconsolata', monospace;
+        font-family: "Inconsolata", monospace;
         text-align: center;
       }
 
       .container {
-        display: inline-block;
+        width: 500px;
+        margin: 0 auto;
       }
-      .row {
+
+      .box {
         height: 50px;
         width: 50px;
-        background-color: aqua;
         border: 1px solid black;
-      }
-
-      .col {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        transition: all 1s;
-        vertical-align: top;
+				background-color: #D3D3D3;
         display: inline-block;
+        box-sizing: border-box;
+        vertical-align: top;
       }
 
-      .row.hidden {
-        background-color: aqua;
-        cursor: pointer;
+      .box:hover {
+        background-color: white;
       }
 
-      .row.hidden:hover {
-        background-color: lightgray;
+      .box:last-child .col {
+        border-bottom: none;
       }
 
-      .row:last-child .col {
+      .box.col:last-child {
         border-right: none;
       }
     </style>
   </head>
   <body>
-    <p>
-      <a href="http://carlosgreenpersonalsite.com">
-        Back to the homepage
-      </a>
-    </p>
-
     <h1>Minesweeper</h1>
     <div class="container"></div>
 
     <script>
-      const container = document.querySelector('.container');
+      const container = document.querySelector(".container");
+      let revealCounter = 0;
 
-      var Minesweeper = function(row, col) {
-        this.board = [];
-        this.createBoard(row, col);
-      };
+      function Box(row, col) {
+        let hasBomb = false;
+        const box = document.createElement("div");
+        box.classList.add("box");
 
-      Minesweeper.prototype.createBoard = function(rows, cols) {
-        container.innerHTML = '';
-        for (let i = 0; i < cols; i++) {
-          const col = document.createElement('div');
-          col.classList.add('col');
-          for (let j = 0; j < rows; j++) {
-            this.board.push(new Box(i, j, col));
-          }
-          container.append(col);
-        }
-      };
-      /*
-Recursively call surrounding boxes when its count is 0.
-*/
-
-      function Neighbors(row, col) {
-        const box = document.querySelector(
-          `[data-row="${row}"][data-col="${col}"]`,
-        );
-        if (box.classList.contains('mine')) return;
-        box.style.backgroundColor = 'grey';
-        return [
-          document.querySelector(`[data-row="${row - 1}"][data-col="${col}"]`),
-          document.querySelector(`[data-row="${row + 1}"][data-col="${col}"]`),
-          document.querySelector(`[data-row="${row}"][data-col="${col - 1}"]`),
-          document.querySelector(`[data-row="${row}"][data-col="${col + 1}"]`),
-          document.querySelector(
-            `[data-row="${row - 1}"][data-col="${col - 1}"]`,
-          ),
-          document.querySelector(
-            `[data-row="${row - 1}"][data-col="${col + 1}"]`,
-          ),
-          document.querySelector(
-            `[data-row="${row + 1}"][data-col="${col - 1}"]`,
-          ),
-          document.querySelector(
-            `[data-row="${row + 1}"][data-col="${col + 1}"]`,
-          ),
-        ];
-      }
-
-      function Box(row, col, column) {
-        const box = document.createElement('div');
-        box.classList.add('row');
-        box.classList.add('hidden');
-        box.setAttribute('data-row', row);
-        box.setAttribute('data-col', col);
-        if (Math.random() * 100 < 10) {
-          box.classList.add('mine');
-        }
-
-        box.addEventListener('click', () => {
-          if (box.classList.contains('mine')) {
-            box.classList.remove('hidden');
-            box.style.backgroundColor = 'black';
-            console.log('stepped on a mine game over!');
-          } else {
-            const adj = Neighbors(row, col);
-            let count = 0;
-            adj.forEach(e => {
-              if (e === null) {
-                count += 0;
-              } else if (e.classList.contains('mine')) {
-                count += 1;
-              }
-            });
-            if (count === 0) {
-              // recursively call surrounding boxes
-            } else {
-              box.innerHTML = count;
-            }
-          }
+        box.addEventListener("contextmenu", e => {
+          e.preventDefault();
+          box.style.backgroundColor = "lightblue";
         });
-        column.append(box);
+
+        this.isBomb = function() {
+          return hasBomb;
+        };
+
+        this.setBomb = function() {
+          hasBomb = true;
+        };
+
+        this.reveal = function() {
+          if (hasBomb || box.innerHTML) {
+            return;
+          }
+
+          revealCounter += 1;
+          box.style.backgroundColor = "white";
+          if (revealCounter === 90) {
+            alert("You Win!");
+            return location.reload();
+          }
+
+          let count = 0;
+          const neighbors = [];
+
+          // top left
+          if (board[row - 1] && board[row - 1][col - 1]) {
+            neighbors.push(board[row - 1][col - 1]);
+          }
+          // top
+          if (board[row - 1] && board[row - 1][col]) {
+            neighbors.push(board[row - 1][col]);
+          }
+          // top right
+          if (board[row - 1] && board[row - 1][col + 1]) {
+            neighbors.push(board[row - 1][col + 1]);
+          }
+
+          // right
+          if (board[row] && board[row][col + 1]) {
+            neighbors.push(board[row][col + 1]);
+          }
+
+          // bottom right
+          if (board[row + 1] && board[row + 1][col + 1]) {
+            neighbors.push(board[row + 1][col + 1]);
+          }
+
+          // bottom
+          if (board[row + 1] && board[row + 1][col]) {
+            neighbors.push(board[row + 1][col]);
+          }
+
+          // bottom left
+          if (board[row + 1] && board[row + 1][col - 1]) {
+            neighbors.push(board[row + 1][col - 1]);
+          }
+
+          // left
+          if (board[row] && board[row][col - 1]) {
+            neighbors.push(board[row][col - 1]);
+          }
+
+          neighbors.forEach(e => {
+            if (e.isBomb()) {
+              count += 1;
+            }
+          });
+
+          box.innerHTML = count;
+
+          if (count === 0) {
+            neighbors.forEach(e => {
+              e.reveal();
+            });
+          }
+        };
+
+        box.addEventListener("click", () => {
+          if (hasBomb) {
+            alert("you lost");
+            return location.reload();
+          }
+          box.style.backgroundColor = "white";
+          this.reveal();
+        });
+
+        container.append(box);
       }
 
-      const tenByTen = new Minesweeper(10, 10);
-      // console.log(tenByTen.board, 'board');
+      const createRows = (row, i = 0, result = []) => {
+        if (i === row) return result;
+        result.push(createColumns(i, row));
+        return createRows(row, i + 1, result);
+      };
+
+      const createColumns = (row, col, i = 0, result = []) => {
+        if (i === col) return result;
+        result.push(new Box(row, i));
+        return createColumns(row, col, i + 1, result);
+      };
+
+      const board = createRows(10);
+
+      const createBombs = (maxBombs, i = 0) => {
+        if (i === maxBombs) return;
+        const row = Math.floor(Math.random() * 10);
+        const col = Math.floor(Math.random() * 10);
+
+        if (board[row][col].isBomb()) {
+          return createBombs(maxBombs, i);
+        }
+
+        board[row][col].setBomb();
+        return createBombs(maxBombs, i + 1);
+      };
+
+      createBombs(10);
     </script>
   </body>
 </html>
