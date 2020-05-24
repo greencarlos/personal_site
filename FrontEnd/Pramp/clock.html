@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hand Clock Solution</title>
+    <style>
+      body {
+        background: lightblue;
+      }
+      .clock {
+        border: 5px solid black;
+				margin: 0 auto;
+				background: white;
+        border-radius: 60%;
+        width: 20rem;
+        height: 20rem;
+        z-index: -1;
+      }
+      .clock-face {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transform: translateY(0px);
+      }
+      .hand {
+        position: absolute;
+        top: 50%;
+        width: 50%;
+        height: 6px;
+        transform-origin: 100%;
+        transform: rotate(90deg);
+      }
+      .hours {
+        z-index: 0;
+        background: linear-gradient(
+          to right,
+          rgba(255, 0, 0, 0) 0%,
+          rgba(255, 0, 0, 0) 30%,
+          black 30%,
+          black 100%
+        );
+        border: 2px solid red;
+				background: red;
+      }
+      .minutes {
+        z-index: 1;
+        background: linear-gradient(
+          to right,
+          rgba(255, 0, 0, 0) 0%,
+          rgba(255, 0, 0, 0) 30%,
+          black 30%,
+          black 100%
+        );
+        border: 2px solid green;
+				background: green;
+      }
+      .seconds {
+        z-index: 2;
+        background: linear-gradient(
+          to right,
+          rgba(255, 0, 0, 0) 0%,
+          rgba(255, 0, 0, 0) 30%,
+          black 30%,
+          black 100%
+        );
+        border: 2px solid blue;
+				background: blue;
+      }
+    </style>
+  </head>
+  <body>
+		<h1>Real Time Clock</h1>
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hours hand">Hours</div>
+        <div class="minutes hand">Minutes</div>
+        <div class="seconds hand">Seconds</div>
+      </div>
+    </div>
+    <script>
+      const hoursEle = document.querySelector('.hours');
+      const minutesEle = document.querySelector('.minutes');
+      const secondsEle = document.querySelector('.seconds');
+
+      function setRotation(element, degrees) {
+        element.style.transform = `rotate(${degrees + 90}deg)`;
+      }
+
+      const updateClock = () => {
+        const now = new Date();
+        const hours = now.getHours();
+        const mins = now.getMinutes();
+        const secs = now.getSeconds();
+
+        const secsRotate = (secs / 60) * 360;
+        const minsRotate = (mins / 60) * 360 + (secs / 60) * 6;
+        const hoursRotate = (hours / 60) * 360 + (mins / 60) * 30;
+
+        setRotation(secondsEle, secsRotate);
+        setRotation(minutesEle, minsRotate);
+        setRotation(hoursEle, hoursRotate);
+      };
+
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>

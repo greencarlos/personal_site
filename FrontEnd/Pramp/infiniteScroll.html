@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Infinite Scroll</title>
+    <style>
+      body {
+        margin: 0 auto;
+				background: lightblue;
+      }
+      .container {
+        width: 750px;
+				margin: 0 auto;
+      }
+			h1 {
+				text-align: center;
+			}
+    </style>
+  </head>
+  <body>
+		<h1>Infinite Scrolling</h1>
+    <div class="container"></div>
+
+    <script>
+      const container = document.querySelector('.container');
+
+      const addImages = (i = 0) => {
+        if (i === 20) return;
+        const rando1 = Math.floor(Math.random() * 100);
+        const rando2 = Math.floor(Math.random() * 100);
+        const rando3 = Math.floor(Math.random() * 100);
+
+        const image1 = document.createElement('img');
+        const image2 = document.createElement('img');
+        const image3 = document.createElement('img');
+        const br = document.createElement('br');
+
+        image1.src = `http://api.adorable.io/avatars/250/${rando1}`;
+        image2.src = `http://api.adorable.io/avatars/250/${rando2}`;
+        image3.src = `http://api.adorable.io/avatars/250/${rando3}`;
+
+        container.append(image1, image2, image3, br);
+        return addImages(i + 1);
+      };
+
+      addImages();
+
+      document.addEventListener('scroll', evt => {
+        const viewHeight = document.documentElement.clientHeight;
+        const scrollY = window.scrollY;
+        const totalClientHeight = document.body.clientHeight;
+        const threshold = viewHeight + scrollY > totalClientHeight - viewHeight;
+
+        if (threshold) {
+          console.log('threshold reached!');
+          addImages();
+        }
+      });
+    </script>
+  </body>
+</html>

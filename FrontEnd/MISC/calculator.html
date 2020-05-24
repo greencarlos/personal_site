@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        background: lightblue;
+      }
+			h1 {
+				text-align: center;
+			}
+
+			.display {
+				width: 300px;
+				height: 50px;
+				margin: 0 auto;
+				background: white;
+				border: 1px solid black;
+			}
+
+      .calculator {
+        height: 400px;
+        width: 300px;
+        border: 1px solid black;
+        margin: 0 auto;
+				background: white;
+      }
+
+      button {
+        height: 80px;
+        width: 75px;
+      }
+
+      .equal {
+        width: 300px;
+        text-align: center;
+				font-size: 60px;
+      }
+
+      .row {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+		<h1>Calculator</h1>
+    <h1 class="display">0</h1>
+    <div class="calculator">
+      <div class="row">
+        <button class="operator">+</button>
+        <button class="operator">-</button>
+        <button class="operator">*</button>
+        <button class="operator">/</button>
+      </div>
+      <div class="row">
+        <button class="num">0</button>
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+      </div>
+      <div class="row">
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button class="num">7</button>
+      </div>
+      <div class="row">
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="dec">.</button>
+        <button class="clear">C</button>
+      </div>
+      <div class="row">
+        <button class="equal">=</button>
+      </div>
+    </div>
+
+    <script>
+      const display = document.querySelector('.display');
+      const operators = document.querySelectorAll('.operator');
+      const nums = document.querySelectorAll('.num');
+
+      const decimal = document.querySelector('.dec');
+      const clear = document.querySelector('.clear');
+      const equal = document.querySelector('.equal');
+
+      let prevNum = '';
+      let curNum = '';
+      let operator = '';
+
+      clear.addEventListener('click', () => {
+        display.innerHTML = 0;
+        prevNum = '';
+        curNum = '';
+        operator = '';
+      });
+
+      equal.addEventListener('click', () => {
+        const num1 = Number(prevNum);
+        const num2 = Number(curNum);
+        let result = 0;
+
+        if (operator === '+') {
+          result = num1 + num2;
+        } else if (operator === '-') {
+          result = num1 - num2;
+        } else if (operator === '*') {
+          result = num1 * num2;
+        } else {
+          result = num1 / num2;
+        }
+
+        display.innerHTML = `${num1} ${operator} ${num2} = ${result}`;
+        prevNum = '';
+        curNum = '';
+        operator = '';
+      });
+
+      decimal.addEventListener('click', () => {
+        if (operator) {
+          curNum += '.';
+          display.innerHTML = `${prevNum} ${operator} ${curNum}`;
+        } else {
+          prevNum += '.';
+          display.innerHTML = prevNum;
+        }
+      });
+
+      nums.forEach(number => {
+        number.addEventListener('click', () => {
+          if (operator) {
+            curNum += number.innerHTML;
+            display.innerHTML = `${prevNum} ${operator} ${curNum}`;
+          } else {
+            prevNum += number.innerHTML;
+            display.innerHTML = prevNum;
+          }
+        });
+      });
+
+      operators.forEach(op => {
+        op.addEventListener('click', () => {
+          const value = op.innerHTML;
+
+          if (value === '+') {
+            operator = '+';
+            curNum = '';
+          } else if (value === '-') {
+            operator = '-';
+            curNum = '';
+          } else if (value === '/') {
+            operator = '/';
+            curNum = '';
+          } else if (value === '*') {
+            operator = '*';
+          }
+
+          display.innerHTML = `${prevNum} ${operator}`;
+        });
+      });
+    </script>
+  </body>
+</html>
