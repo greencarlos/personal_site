@@ -12,9 +12,9 @@
       }
       .board {
         width: auto;
-				width: 180px;
+        width: 180px;
         margin: 0 auto;
-				height: 180px;
+        height: 180px;
       }
       .row {
         display: flex;
@@ -23,7 +23,7 @@
         height: 60px;
         width: 60px;
         display: flex;
-				background: white;
+        background: white;
         justify-content: center;
         text-align: center;
         font-size: 50px;
@@ -144,8 +144,8 @@
         if (+num >= 3) {
           console.log(num, 'num');
           board.innerHTML = '';
-					board.style.height = `${+num * 61}px`
-					board.style.width = `${+num * 61}px`
+          board.style.height = `${+num * 61}px`;
+          board.style.width = `${+num * 61}px`;
           grid = makeGrid(+num, +num);
         }
       };

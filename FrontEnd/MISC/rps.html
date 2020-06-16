@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Rock, Paper, Scissors</title>
+    <!-- 
+      Stolen from: https://www.rpsgame.org/
+     -->
+    <style>
+      body {
+        text-align: center;
+				background-color: lightblue;
+      }
+      .row {
+        display: flex;
+      }
+      img {
+        height: 50px;
+        width: 50px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Player's Score: <span class="playerScore">0</span></h1>
+    <h1>Computer's Score: <span class="computerScore">0</span></h1>
+
+    <h2>Choose one:</h2>
+    <div class="row">
+      <img class="option" src="../IMAGES/rock.svg" value="rock" />
+      <img class="option" src="../IMAGES/paper.svg" value="paper" />
+      <img class="option" src="../IMAGES/scissors.svg" value="scissors" />
+    </div>
+
+    <p class="display">Your turn!</p>
+    <p class="result"></p>
+
+    <script>
+      const display = document.querySelector('.display');
+      const result = document.querySelector('.result');
+      const optionElements = document.querySelectorAll('.option');
+      const options = ['rock', 'paper', 'scissors'];
+
+      const playerScore = document.querySelector('.playerScore');
+      let playerTotal = 0;
+
+      const computerScore = document.querySelector('.computerScore');
+      let computerTotal = 0;
+
+      const dict = {
+        rock: 'scissors',
+        scissors: 'paper',
+        paper: 'rock',
+      };
+
+      const playerChoice = element => {
+        display.innerHTML = `You have choosen ${element}`;
+        computerChoice(element);
+      };
+
+      const computerChoice = element => {
+        const computer = Math.floor(Math.random() * 3)
+				display.innerHTML += `, computer choose ${options[computer]}.`
+        resultCalc(element, options[computer]);
+      };
+
+      const resultCalc = (player, computer) => {
+        if (player === computer) {
+          result.innerHTML = `It's a tie!`;
+        } else if (dict[player] === computer) {
+          result.innerHTML = `You win!`;
+          playerTotal += 1;
+          playerScore.innerHTML = playerTotal;
+        } else if (dict[computer] === player) {
+          result.innerHTML = `You lost!`;
+          computerTotal += 1;
+          computerScore.innerHTML = computerTotal;
+        }
+      };
+
+      optionElements.forEach((option, i) => {
+        option.addEventListener('click', () => {
+          playerChoice(options[i]);
+        });
+      });
+    </script>
+  </body>
+</html>
