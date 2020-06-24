@@ -3,18 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
-body {
-	background-color: lightblue;
-}
+      body {
+        background-color: lightblue;
+      }
       .license {
         width: 95%;
         height: 400px;
         overflow-y: scroll;
         border: 2px solid black;
-				background-color: white;
+        background-color: white;
       }
       .agree {
         height: 50px;
@@ -501,7 +500,7 @@ body {
     <script>
       const license = document.querySelector('.license');
       const agreeButton = document.querySelector('.agree');
-      agreeButton.disabled = true
+      agreeButton.disabled = true;
 
       license.addEventListener('scroll', e => {
         console.log(
