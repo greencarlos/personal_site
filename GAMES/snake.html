@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -23,28 +22,25 @@
     <h1>Snake Game</h1>
 
     <!--https://pastebin.com/Z3zhb7cy -->
-    <canvas id="gc" width="400" height="400"></canvas>
+    <canvas class="gc" width="400" height="400"></canvas>
 
-    <p id="high">High Score:</p>
+    <br />
+    High Score:
+    <div class="score">0</div>
 
     <script>
-      window.onload = function() {
-        canv = document.getElementById('gc');
-        ctx = canv.getContext('2d');
-        document.addEventListener('keydown', keyPush);
-        setInterval(game, 1000 / 15);
-      };
-
-      const high = document.getElementById('high');
+      const canv = document.querySelector('.gc');
+      const ctx = canv.getContext('2d');
+      const scoreEle = document.querySelector('.score');
 
       let px = (py = 10);
       let gs = (tc = 20);
       let ax = (ay = 15);
       let xv = (yv = 0);
-      const trail = [];
       let tail = 5;
       let score = 0;
       let highScore = 0;
+      const trail = [];
 
       function game() {
         px += xv;
@@ -70,13 +66,6 @@
           if (trail[i].x == px && trail[i].y == py) {
             tail = 5;
             score = 0;
-            if (score > highScore) {
-              score = highScore;
-              high.innerHTML = highScore;
-            }
-
-            console.log(score);
-            console.log(highScore);
           }
         }
         trail.push({x: px, y: py});
@@ -86,7 +75,13 @@
 
         if (ax == px && ay == py) {
           score++;
-          console.log(score);
+          console.log(score, 'current score');
+
+          if (score > highScore) {
+            highScore = score;
+            scoreEle.innerHTML = highScore;
+          }
+
           tail++;
           ax = Math.floor(Math.random() * tc);
           ay = Math.floor(Math.random() * tc);
@@ -122,6 +117,9 @@
             break;
         }
       }
+
+      document.addEventListener('keydown', keyPush);
+      setInterval(game, 3000 / 15);
     </script>
   </body>
 </html>
