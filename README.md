@@ -2,7 +2,7 @@
 personal portfolio website
 
 check it out here:
-https://carlosgreenpersonalsite.com
+https://carlosgreen.site
 LinkedIn, Resume, Email and most of my contact info should be on the site.
 
 https://mochajs.org/
