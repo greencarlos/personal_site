@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+
+		<title>React Kanban Board</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <style>
+      .row {
+        display: flex;
+      }
+
+      .kanbanRow {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .todoContainer {
+        border: 1px solid black;
+        width: 20vw;
+      }
+
+      .board {
+        width: 20vw;
+        border: 1px solid black;
+      }
+
+      .todo {
+        margin-top: 0px;
+      }
+
+      .title {
+        text-align: center;
+      }
+    </style>
+
+    <title>React</title>
+  </head>
+  <body>
+    <div class="app"></div>
+
+    <script type="text/babel">
+      const titleInfo = [
+        {title: 'Todo', color: 'lightblue'},
+        {title: 'Doing', color: 'lightgreen'},
+        {title: 'Done', color: 'orange'},
+        {title: 'Approved', color: 'blueviolet'},
+      ];
+
+      const Board = props => {
+        const [todoValue, setTodoValue] = React.useState('');
+        const [todos, setTodos] = React.useState(props.data);
+
+        const boardId = props.boardId;
+        const {title, color} = titleInfo[boardId];
+
+        const addTodo = () => {
+          const newDataValues = [...todos, todoValue];
+          setTodos(newDataValues);
+          setTodoValue('');
+          props.onDataChange(newDataValues);
+        };
+
+        const updateTextArea = e => {
+          setTodoValue(e.target.value);
+        };
+
+        const components = todos.map((todo, i) => {
+          const deleteTodo = () => {
+            const result = confirm(`Are you sure you want to delete ${todo}?`);
+            if (!result) {
+              return;
+            }
+
+            const newDataValues = [...todos];
+            newDataValues.splice(i, 1);
+            setTodos(newDataValues);
+            props.onDataChange(newDataValues);
+          };
+
+          const moveLeft = () => {
+            const newDataValues = [...todos];
+            newDataValues.splice(i, 1);
+            setTodos(newDataValues);
+            props.onDataChange(newDataValues);
+            props.moveLeft(todo);
+          };
+
+          const moveRight = () => {
+            const newDataValues = [...todos];
+            newDataValues.splice(i, 1);
+            setTodos(newDataValues);
+            props.onDataChange(newDataValues);
+            props.moveRight(todo);
+          };
+
+          let leftArrow = '';
+          let rightArrow = '';
+          if (boardId > 0) {
+            leftArrow = (
+              <div className="left" onClick={moveLeft}>
+                &lt;
+              </div>
+            );
+          }
+          if (boardId < 3) {
+            rightArrow = (
+              <div className="right" onClick={moveRight}>
+                &gt;
+              </div>
+            );
+          }
+
+          return (
+            <div className="todoContainer kanbanRow" key={i}>
+              {leftArrow}
+              <h4 className="title todo" onClick={deleteTodo}>
+                {todo}
+              </h4>
+              {rightArrow}
+            </div>
+          );
+        });
+
+        return (
+          <div className="todoListContainer">
+            <h1 className="title" style={{backgroundColor: color}}>
+              {title}
+            </h1>
+            <div className="inputContainer">
+              <textarea onChange={updateTextArea}></textarea>
+              <button onClick={addTodo}>Submit</button>
+              {components}
+            </div>
+          </div>
+        );
+      };
+
+      const Kanban = props => {
+        let initialBoardsData = [[], [], [], []];
+        if (props.data && props.data.length === 4) {
+          initialBoardsData = props.data;
+        }
+
+        const [boardsData, setBoardsData] = React.useState(initialBoardsData);
+
+        const boards = boardsData.map((boardInfo, i) => {
+          const onDataChange = newData => {
+            boardsData[i] = newData;
+            window.localStorage.setItem('kanban', JSON.stringify(boardsData));
+          };
+
+          const moveRight = value => {
+            boardsData[i + 1].push(value);
+            setBoardsData([...boardsData]);
+            window.localStorage.setItem('kanban', JSON.stringify(boardsData));
+          };
+
+          const moveLeft = value => {
+            boardsData[i - 1].push(value);
+            setBoardsData([...boardsData]);
+            window.localStorage.setItem('kanban', JSON.stringify(boardsData));
+          };
+
+          return (
+            <Board
+              data={boardInfo}
+              key={i}
+              boardId={i}
+              onDataChange={onDataChange}
+              moveLeft={moveLeft}
+              moveRight={moveRight}
+            />
+          );
+        });
+
+        return <div className="kanbanRow">{boards}</div>;
+      };
+
+      const App = () => {
+        const kanbanData = JSON.parse(
+          window.localStorage.getItem('kanban') || '[]',
+        );
+
+        return <Kanban data={kanbanData} />;
+      };
+
+      ReactDOM.render(<App />, document.querySelector('.app'));
+    </script>
+  </body>
+</html>

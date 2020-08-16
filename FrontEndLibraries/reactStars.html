@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+
+    <title>React Stars</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <style>
+      body {
+				background-color: lightblue;
+      }
+
+      .row {
+        display: flex;
+      }
+
+      .fas {
+        color: blue;
+      }
+
+      .star {
+        font-size: 60px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+
+      .fa-star {
+        cursor: pointer;
+      }
+    </style>
+
+    <title>React</title>
+  </head>
+  <body>
+    <div class="app"></div>
+
+    <script type="text/babel">
+      const Stars = () => {
+        const [value, setValue] = React.useState(0);
+
+        const stars = [1, 2, 3, 4, 5].map((star, i) => {
+          let iconClass = 'far';
+          if (star <= value) {
+            iconClass = 'fas';
+          }
+
+          return (
+            <i
+              className={`${iconClass} fa-star star`}
+              key={star}
+              onMouseMove={() => {
+                setValue(star);
+              }}></i>
+          );
+        });
+
+        return (
+          <div className="row">
+            {stars}
+            You are giving {value} stars
+          </div>
+        );
+      };
+
+      const App = () => {
+        return <Stars />;
+      };
+
+      ReactDOM.render(<App />, document.querySelector('.app'));
+    </script>
+  </body>
+</html>
