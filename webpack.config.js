@@ -4,7 +4,6 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    TODO:'./src/TODO/todo_index.js',
     likeButton: './src/likeButton.js'
   },
   output: {
