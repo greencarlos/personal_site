@@ -1,34 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-  <!-- Personal CSS -->
-  <link rel="stylesheet" href="./CSS/todo.css">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="./CSS/todo.css" />
 
-  <!-- Materialize Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
-  <!-- React -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin async></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin async></script>
-  <!-- JSX -->
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js" async></script>
-
-  <!-- Require JS Client side -->
-  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js" async></script>
-  <script src="https://requirejs.org/docs/release/2.3.6/r.js" async></script>
 
     <title>Todo App</title>
-
   </head>
   <body>
- <p><a href="http://carlosgreenpersonalsite.com" target="_blank">Back to the homepage</a></p>
+    <p>
+      <a href="http://carlosgreenpersonalsite.com" target="_blank"
+        >Back to the homepage</a
+      >
+    </p>
 
     <div style="color:black" id="root"></div>
 
- <script src="../lib/TODO.js" type="text/javascript" async></script>
- </body>
+    <script type="text/babel">
+      const Todos = ({todos, deleteTodo}) => {
+        const todoList = todos.length ? (
+          todos.map(todo => {
+            return (
+              <div className="collection-item" key={todo.id}>
+                <span
+                  onClick={() => {
+                    deleteTodo(todo.id);
+                  }}>
+                  {todo.content}
+                </span>
+              </div>
+            );
+          })
+        ) : (
+          <p className="center">You have nothing left todo!</p>
+        );
+        return <div className="todos collection">{todoList}</div>;
+      };
+
+      class AddTodo extends React.Component {
+        constructor(props) {
+          super(props);
+          (this.state = {
+            content: '',
+          }),
+            (this.handleChange = e => {
+              this.setState({
+                content: e.target.value,
+              });
+            }),
+            (this.handleSubmit = e => {
+              e.preventDefault();
+              this.props.addTodo(this.state);
+            });
+        }
+
+        render() {
+          return (
+            <div>
+              <form onSubmit={this.handleSubmit}>
+                <label>Add new todo:</label>
+                <input
+                  type="text"
+                  onChange={this.handleChange}
+                  value={this.state.content}
+                />
+              </form>
+            </div>
+          );
+        }
+      }
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          (this.state = {
+            todos: [
+              {id: 1, content: 'buy some milk'},
+              {id: 2, content: 'play mario kart'},
+            ],
+          }),
+            (this.deleteTodo = id => {
+              const todos = this.state.todos.filter(todo => {
+                return todo.id !== id;
+              });
+              this.setState({
+                todos,
+              });
+            });
+          this.addTodo = todo => {
+            todo.id = Math.random();
+            let todos = [...this.state.todos, todo];
+            this.setState({
+              todos,
+            });
+          };
+        }
+
+        render() {
+          return (
+            <div className="todo-app container">
+              <h1 className="center">Todo List</h1>
+              <p>(Click on a TODO to delete it)</p>
+              <Todos
+                todos={this.state.todos}
+                deleteTodo={this.deleteTodo}
+                createTodo={this.createTodo}
+              />
+              <AddTodo addTodo={this.addTodo} />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
 </html>
