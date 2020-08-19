@@ -6,8 +6,19 @@ body {
 
 h1 {
   color: black;
+	font-size: 60px;
 }
 
 form {
   color: black;
+}
+
+input {
+	width: 50vw;
+	text-align: center;
+}
+
+h4 {
+	font-size: 20px;
+	color: midnightblue;
 }

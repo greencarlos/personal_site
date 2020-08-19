@@ -15,14 +15,13 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
-
     <title>Todo App</title>
   </head>
   <body>
     <p>
-      <a href="http://carlosgreenpersonalsite.com" target="_blank"
-        >Back to the homepage</a
-      >
+      <a href="http://carlosgreenpersonalsite.com" target="_blank">
+        Back to the homepage
+      </a>
     </p>
 
     <div style="color:black" id="root"></div>
@@ -30,16 +29,16 @@
     <script type="text/babel">
       const Todos = ({todos, deleteTodo}) => {
         const todoList = todos.length ? (
-          todos.map(todo => {
+          todos.map((todo, index) => {
             return (
-              <div className="collection-item" key={todo.id}>
+              <h4 className="collection-item" key={todo.id}>
                 <span
                   onClick={() => {
                     deleteTodo(todo.id);
                   }}>
-                  {todo.content}
+                  {index + 1}: {todo.content}
                 </span>
-              </div>
+              </h4>
             );
           })
         ) : (
@@ -69,7 +68,8 @@
           return (
             <div>
               <form onSubmit={this.handleSubmit}>
-                <label>Add new todo:</label>
+                <label>Add Todo:</label>
+                <br />
                 <input
                   type="text"
                   onChange={this.handleChange}
@@ -86,8 +86,10 @@
           super(props);
           (this.state = {
             todos: [
-              {id: 1, content: 'buy some milk'},
-              {id: 2, content: 'play mario kart'},
+              {id: 1, content: 'Buy Milk'},
+              {id: 2, content: 'Buy Cheese'},
+              {id: 3, content: 'Buy Eggs'},
+              {id: 4, content: 'Learn React'},
             ],
           }),
             (this.deleteTodo = id => {
@@ -110,14 +112,14 @@
         render() {
           return (
             <div className="todo-app container">
-              <h1 className="center">Todo List</h1>
-              <p>(Click on a TODO to delete it)</p>
+              <h1 className="center">React Todo List</h1>
+              <p>Click a todo to delete it</p>
+              <AddTodo addTodo={this.addTodo} />
               <Todos
                 todos={this.state.todos}
                 deleteTodo={this.deleteTodo}
                 createTodo={this.createTodo}
               />
-              <AddTodo addTodo={this.addTodo} />
             </div>
           );
         }
