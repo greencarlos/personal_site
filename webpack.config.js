@@ -19,6 +19,5 @@ module.exports = {
   mode: 'development',
   plugins: [
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({template: 'front-end/todo.html'}),
   ]
 }

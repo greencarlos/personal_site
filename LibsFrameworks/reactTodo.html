@@ -27,105 +27,104 @@
     <div style="color:black" id="root"></div>
 
     <script type="text/babel">
-      const Todos = ({todos, deleteTodo}) => {
-        const todoList = todos.length ? (
-          todos.map((todo, index) => {
-            return (
-              <h4 className="collection-item" key={todo.id}>
-                <span
-                  onClick={() => {
-                    deleteTodo(todo.id);
-                  }}>
-                  {index + 1}: {todo.content}
-                </span>
-              </h4>
-            );
-          })
-        ) : (
-          <p className="center">You have nothing left todo!</p>
-        );
-        return <div className="todos collection">{todoList}</div>;
-      };
 
-      class AddTodo extends React.Component {
-        constructor(props) {
-          super(props);
-          (this.state = {
-            content: '',
-          }),
-            (this.handleChange = e => {
-              this.setState({
-                content: e.target.value,
-              });
-            }),
-            (this.handleSubmit = e => {
-              e.preventDefault();
-              this.props.addTodo(this.state);
-            });
-        }
+		const Todos = ({todos, deleteTodo}) => {
+			const todoList = todos.length ? (
+				todos.map((todo, index) => {
+					return (
+						<h4 className="collection-item" key={index}>
+							<span
+								onClick={() => {
+									deleteTodo(todo.id);
+								}}>
+								{todo.id}: {todo.content}
+							</span>
+						</h4>
+					);
+				})
+			) : (
+				<p className="center">
+			  	You have nothing left todo!
+				</p>
+			);
 
-        render() {
-          return (
-            <div>
-              <form onSubmit={this.handleSubmit}>
-                <label>Add Todo:</label>
-                <br />
-                <input
-                  type="text"
-                  onChange={this.handleChange}
-                  value={this.state.content}
-                />
-              </form>
-            </div>
-          );
-        }
-      }
+			return (
+			 <div className="todos collection">
+		     {todoList}
+			 </div>
+		  )
+		};
 
-      class App extends React.Component {
-        constructor(props) {
-          super(props);
-          (this.state = {
-            todos: [
-              {id: 1, content: 'Buy Milk'},
-              {id: 2, content: 'Buy Cheese'},
-              {id: 3, content: 'Buy Eggs'},
-              {id: 4, content: 'Learn React'},
-            ],
-          }),
-            (this.deleteTodo = id => {
-              const todos = this.state.todos.filter(todo => {
-                return todo.id !== id;
-              });
-              this.setState({
-                todos,
-              });
-            });
-          this.addTodo = todo => {
-            todo.id = Math.random();
-            let todos = [...this.state.todos, todo];
-            this.setState({
-              todos,
-            });
-          };
-        }
+		function AddTodo(props) {
+			const [content, setContent] = React.useState('')
 
-        render() {
-          return (
-            <div className="todo-app container">
-              <h1 className="center">React Todo List</h1>
-              <p>Click a todo to delete it</p>
-              <AddTodo addTodo={this.addTodo} />
-              <Todos
-                todos={this.state.todos}
-                deleteTodo={this.deleteTodo}
-                createTodo={this.createTodo}
-              />
-            </div>
-          );
-        }
-      }
+			const handleChange = e => {
+				setContent(e.target.value)
+			}
 
-      ReactDOM.render(<App />, document.getElementById('root'));
+			const handleSubmit = e => {
+				e.preventDefault()
+				props.addTodo(content)
+			}
+
+				return (
+					<div>
+						<form onSubmit={handleSubmit}>
+							<label>Add Todo:</label>
+							<br />
+								<input
+								type="text"
+								onChange={handleChange}
+								value={content}
+								/>
+						</form>
+					</div>
+				  );
+				}
+
+		function App(props) {
+			const todosState = [
+				{id: 1, content: 'Buy Milk'},
+				{id: 2, content: 'Buy Cheese'},
+				{id: 3, content: 'Buy Eggs'},
+				{id: 4, content: 'Learn React Hooks'},
+			]
+
+				const [todos, setTodos] = React.useState(todosState)
+
+				const deleteTodo = id => {
+					const removedTodo = todos.filter(todo => {
+						return todo.id !== id
+					})
+
+					const updatedTodos = removedTodo.map((todo, i) => {
+						todo.id = i + 1
+						return todo 
+					}) 
+
+					setTodos(updatedTodos)
+				}
+
+				const addTodo = todo => {
+				  const newTodo = {id: todos.length + 1, content: todo}
+					const updatedTodos = [...todos, newTodo]
+					setTodos(updatedTodos)
+				}
+
+				return (
+					<div className="todo-app container">
+						<h1 className="center">React Todo List</h1>
+						<p>Click a todo to delete it</p>
+						<AddTodo addTodo={addTodo} />
+						<Todos
+							todos={todos}
+							deleteTodo={deleteTodo}
+						/>
+					</div>
+				);
+			}
+
+		ReactDOM.render(<App />, document.getElementById('root'));
     </script>
   </body>
 </html>
