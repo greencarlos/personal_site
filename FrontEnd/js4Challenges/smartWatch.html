@@ -84,11 +84,11 @@
       const hours = now.getHours();
       const mins = now.getMinutes();
       const day = now.getDate();
-      console.log(day, 'day');
 
-      const hour = hours === 0 ? `12` : hours % 12;
+      console.log('hours', hours);
+      const hour = hours === 0 ? `12` : hours;
       const min = mins < 10 ? `0${mins}` : `${mins}`;
-      const minute = hours > 12 ? `${min} pm` : ` ${min} am`;
+      const minute = hours > 12 ? `${min} pm` : `${min} am`;
 
       const year = now.getFullYear();
 
