@@ -1,9 +1,8 @@
 # personal_site
-personal portfolio website
-
-check it out here:
 https://carlosgreenpersonalsite.com
-LinkedIn, Resume, Email and most of my contact info should be on the site.
+
+LinkedIn, Resume, Email 
+and most of my contact info should be on the site.
 
 https://mochajs.org/
 Testing with mocha:
