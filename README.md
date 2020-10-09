@@ -1,6 +1,6 @@
 # Portfolio Website
 
-# HACKTOBERFEST!!!
+## Hacktoberfest!!!
 
 LinkedIn, Resume, Email 
 and most of my contact info should be on the site.
