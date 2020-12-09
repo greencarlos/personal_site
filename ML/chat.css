@@ -1,0 +1,54 @@
+body {
+  background: lightblue;
+}
+
+b {
+  position: absolute;
+  right: 0;
+}
+
+.responseBtn {
+  height: 20px;
+  width: 50px;
+  text-align: center;
+}
+
+.container {
+  border: 1px solid black;
+  background: white;
+  overflow: scroll;
+  position: fixed;
+  height: 400px;
+  width: 300px;
+  bottom: 0;
+  right: 0;
+}
+
+.train {
+  justify-content: space-evenly;
+  border: 1px solid blue;
+  visibility: hidden;
+  display: flex;
+}
+
+.user {
+  justify-content: space-evenly;
+  border: 1px solid purple;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+}
+
+.userMessage {
+  position: relative;
+  bottom: 0;
+  right: 0;
+}
+
+.submit {
+  position: relative;
+  background: orange;
+  bottom: 0;
+  right: 0;
+}
