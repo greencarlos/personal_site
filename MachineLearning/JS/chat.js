@@ -9,7 +9,6 @@ const noBtn = train.querySelector('.noBtn');
 const dialog = container.querySelector('.dialogBox')
 
 const debounce = (fn, time, timeout) => {
-	console.log('debounce called')
 	return () => {
 		const funcCall = () => fn()
 
@@ -24,7 +23,6 @@ const wasHelpful = debounce(helpful, 15000)
 
 yesBtn.addEventListener('click', trainBot);
 noBtn.addEventListener('click', trainBot);
-
 userMessage.addEventListener('keyup', wasHelpful)
 
 submit.addEventListener('click', () => {
@@ -34,6 +32,6 @@ submit.addEventListener('click', () => {
   setTimeout(() => {
     dialog.innerHTML += `
 		  <br/> <p><i>48</i></p>
-			`;
+		`;
   }, 2000);
 });
