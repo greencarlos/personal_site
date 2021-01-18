@@ -16,6 +16,7 @@ const debounce = (fn, time, timeout) => {
     timeout = setTimeout(funcCall, time);
   };
 };
+
 const helpful = () => (train.style.visibility = 'visible');
 const trainBot = () => (train.style.visibility = 'hidden');
 const wasHelpful = debounce(helpful, 5000);
@@ -84,10 +85,9 @@ submit.addEventListener('click', () => {
 				</em>
 		 </p>
 		`;
+  }, 5000);
 
-		setTimeout(() => {
-			dialog.innerHTML += `<p><em>...</em></p>`;
-		}, 2000);
-  }, 2000);
-
+  setTimeout(() => {
+    dialog.innerHTML += `<p><em>...</em></p>`;
+  }, 15000);
 });
