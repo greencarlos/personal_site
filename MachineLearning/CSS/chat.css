@@ -18,8 +18,8 @@ b {
   background: white;
   overflow: scroll;
   position: fixed;
-  height: 500px;
-  width: 400px;
+  height: 400px;
+  width: 300px;
   bottom: 0;
   right: 0;
 }
