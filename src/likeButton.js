@@ -18,7 +18,7 @@ class LikeButton extends React.Component {
         {
           onClick: () => this.setState({ count: this.state.count + 1 }),
         },
-        `Thank you! You've clicked: ${this.state.count} times`
+        `Thank you! You've clicked: ${this.state.count} time(s)`
       );
     }
 
