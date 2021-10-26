@@ -1,976 +1,1004 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=2.0,user-scalable=2"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-
-    <meta
-      name="keywords"
-      content="carlos, green, carlos green, carlosgreen, website, personal, site, portfolio"
-    />
-
-    <link rel="icon" href="IMAGES/favicon.ico" />
-    <link rel="stylesheet" href="CSS/index.css" />
-
-    <!-- Clicky Analytics -->
-    <script>
-      var clicky_site_ids = clicky_site_ids || [];
-      clicky_site_ids.push(101271886);
-    </script>
-    <script async src="//static.getclicky.com/js"></script>
-
-    <!-- React -->
-    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-    <title>Carlos Green</title>
-  </head>
-  <body>
-    <h1>Carlos Green</h1>
-
-    <img class="img1" src="IMAGES/profile2.jpg" alt="profile picture" loading="lazy"/>
-    <img class="img2" src="IMAGES/mern.jpg" alt="M.E.R.N. image" loading="lazlazyy"/>
-
-    <br />
-    <br />
-
-    <p>
-      I'm passionate about the web and
-      <a class="Black" href="#front-end">front-end</a> technologies.
-
-      <br />
-      I'm proficient in
-      <a class="Black" href="#front-end">Javascript</a>,
-      <a class="Black" href="#front-end"> HTML</a>,
-      <a class="Black" href="#front-end">CSS</a> and the
-
-      <a class="Mongo" href="#back-end">M</a>.
-      <a class="Express" href="#back-end">E</a>.
-      <a class="React" href="#lib-frame">R</a>.
-      <a class="Node" href="#back-end">N</a>. tech stack.
-      <br />
-
-      (
-      <a class="Mongo" href="https://www.mongodb.com/" target="_blank">
-        MongoDB </a
-      >,
-      <a class="Express" href="https://expressjs.com/" target="_blank">
-        Express </a
-      >,
-      <a class="React" href="https://reactjs.org/" target="_blank">ReactJS</a>,
-      <a class="Node" href="https://nodejs.org/en/" target="_blank">NodeJS</a>
-      )
-    </p>
-
-    <br />
-    <br />
-
-    <div class="white" id="like"></div>
-    <br />
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-1">
-          <a class="white" href="PDFS/Resume.pdf" target="_blank">
-            Resume
-          </a>
-        </div>
-
-        <div class="col-md-1">
-          <a
-            class="white"
-            href="https://www.linkedin.com/in/carlos-green-4ba9b8169"
-            target="_blank"
-          >
-            LinkedIn
-          </a>
-        </div>
-
-        <div class="col-md-1">
-          <a class="white" href="https://github.com/greenc123" target="_blank">
-            Github
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <br />
-      <br />
-
-      <br />
-
-      <h2 class="Black">Online Games</h2>
-
-      <div class="row">
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/tictac.html">
-            Tic Tac Toe
-            <img src="GAMES/images/tictactoe.jpg" alt="tictactoe" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/snake.html">
-            Snake
-            <img src="GAMES/images/snake.jpg" alt="snake" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/tetris.html">
-            Tetris
-            <img src="GAMES/images/tetris.jpg" alt="tetris" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/pong.html">
-            Pong
-            <img src="GAMES/images/pong.jpg" alt="pong" loading="lazy"/>
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <br />
-
-      <div class="row">
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/breakout.html">
-            Breakout
-            <img src="GAMES/images/breakout.jpg" alt="breakout" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/mine.html">
-            MineSweeper
-            <img src="GAMES/images/minesweeper.jpg" alt="minesweeper" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/slider.html">
-            Slider
-            <img src="GAMES/images/slider.jpg" alt="slider" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/2048.html">
-            2048
-            <img src="GAMES/images/2048.jpg" alt="2048" loading="lazy"/>
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <br />
-
-      <div class="row">
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/memory.html">
-            Memory Game
-            <img src="GAMES/images/memory.jpg" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/whack-a-mole.html">
-            Whack A Mole
-            <img src="GAMES/images/whack-a-mole.jpg" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/connect4.html">
-            Connect Four
-            <img src="GAMES/images/connect4.jpg" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/spaceInvaders.html">
-            Space Invaders
-            <img src="GAMES/images/spaceInvaders.jpg" loading="lazy"/>
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <br />
-
-      <div class="row">
-        <div class="col-md-2">
-          <a class="lightblue" href="GAMES/frogger.html">
-            Frogger
-            <img src="GAMES/images/frogger.jpg" loading="lazy"/>
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <h2>
-        Front End (
-
-        <a
-          id="front-end"
-          class="Black"
-          href="https://www.w3schools.com/html/default.asp"
-          target="_blank"
-        >
-          HTML </a
-        >,
-
-        <a
-          class="Black"
-          href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-          target="_blank"
-        >
-          CSS
-        </a>
-        and
-
-        <a
-          class="Black"
-          href="https://developer.mozilla.org/en-US/docs/Web/javascript"
-          target="_blank"
-        >
-          JavasScript</a
-        >
-        )
-      </h2>
-
-      <!-- JS4 Challenges -->
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="lightblue"
-            href="FrontEnd/js4Challenges/kanban.html"
-            target="_blank"
-          >
-            Kanban Board
-            <br />
-            <img src="FrontEnd/IMAGES/kanban.jpg" alt="kanban" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="lightblue"
-            href="FrontEnd/js4Challenges/waldo.html"
-            target="_blank"
-          >
-            Where is Waldo?
-            <br />
-            <img src="FrontEnd/IMAGES/whereWaldo.jpg" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="lightblue"
-            href="FrontEnd/js4Challenges/smartWatch.html"
-            target="_blank"
-          >
-            Smart Watch UI
-            <br />
-            <img src="FrontEnd/IMAGES/smartWatch.jpg" loading="lazy"/>
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <br />
-
-      <div class="row">
-        <div class="col-md-3">
-          <a class="lightblue" href="FrontEnd/js4Challenges/lightsOff.html">
-            Lights Off
-            <br />
-            <img src="FrontEnd/IMAGES/lightsOff.jpg" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="lightblue" href="FrontEnd/js4Challenges/starsUI.html">
-            Stars UI
-            <br />
-            <img src="FrontEnd/IMAGES/starsUI.jpg" loading="lazy"/>
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="lightblue" href="FrontEnd/js4Challenges/selection.html">
-            Selection Box
-            <br />
-            <img src="FrontEnd/IMAGES/selection.jpg" loading="lazy"/>
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <br />
-
-      <!-- JS2 Exercises -->
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/closure.html"
-            target="_blank"
-          >
-            Closure UI
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/helloString.html"
-            target="_blank"
-          >
-            Hello String
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/stringBreaker.html"
-            target="_blank"
-          >
-            String Breaker
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/houseOfPrimes.html"
-            target="_blank"
-          >
-            House of Primes
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/delayedType.html"
-            target="_blank"
-          >
-            Delayed Typing
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/stopwatch.html"
-            target="_blank"
-          >
-            Stopwatch
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/blinker.html"
-            target="_blank"
-          >
-            Blinker
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/countdown.html"
-            target="_blank"
-          >
-            Countdown
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/chatInput.html"
-            target="_blank"
-          >
-            Chat Input
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js2Exercises/letterFilter.html"
-            target="_blank"
-          >
-            Letter Filter
-          </a>
-        </div>
-
-        <!-- JS3 Exercises -->
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js3Exercises/dynamicSelect.html"
-            target="_blank"
-          >
-            Dynamic Select
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js3Exercises/vanillaTodo.html"
-            target="_blank"
-          >
-            Vanilla Todo
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js3Exercises/storyBook.html"
-            target="_blank"
-          >
-            StoryBook
-          </a>
-        </div>
-
-        <!-- JS4 Exercises -->
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/clickCoordinates.html"
-            target="_blank"
-          >
-            Click Coordinates
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/hoverCoordinates.html"
-            target="_blank"
-          >
-            Hover Coordinates
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/typewritter.html"
-            target="_blank"
-          >
-            Typewritter
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/hoverVideo.html"
-            target="_blank"
-          >
-            Hover to play video
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/memeGenerator.html"
-            target="_blank"
-          >
-            Meme Generator
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/explodingText.html"
-            target="_blank"
-          >
-            Exploding Text
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/todoExample.html"
-            target="_blank"
-          >
-            Todo Example
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/socialMediaProfile.html"
-            target="_blank"
-          >
-            Social Media Profile
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/JS4Exercises/counterClicker.html"
-            target="_blank"
-          >
-            Counter Clicker
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/JS4Exercises/register.html"
-            target="_blank"
-          >
-            Guest Registration
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/JS4Exercises/clickRecorder.html"
-            target="_blank"
-          >
-            Click Recorder
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/js4Exercises/circle.html"
-            target="_blank"
-          >
-            Floating Circles
-          </a>
-        </div>
-
-        <!-- MISC FrontEnd -->
-        <div class="col-md-3">
-          <a class="white" href="FrontEnd/MISC/modal.html" target="_blank">
-            Super Simple Modal
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="white" href="FrontEnd/MISC/tribute.html" target="_blank">
-            Marcus Aurelius Tribute Page
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a class="white" href="FrontEnd/MISC/calculator.html" target="_blank">
-            Calculator
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="white" href="FrontEnd/MISC/fridge.html" target="_blank">
-            Fridge Magnet Game
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/FrontEndPramp/searchAutoComplete.html"
-            target="_blank"
-          >
-            Auto Complete Search
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/MISC/userLicense.html"
-            target="_blank"
-          >
-            User License Agreement
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="white" href="FrontEnd/Pramp/clock.html" target="_blank">
-            Real Time Clock
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a
-            class="white"
-            href="FrontEnd/Pramp/infiniteScroll.html"
-            target="_blank"
-          >
-            Infinite Scrolling
-          </a>
-        </div>
-      </div>
-      <!-- row -->
-
-      <div class="row">
-        <div class="col-md-3">
-          <a class="white" href="FrontEnd/MISC/rps.html" target="_blank">
-            Vanilla Rock Paper Scissors
-          </a>
-        </div>
-
-        <div class="col-md-3">
-          <a class="white" href="FrontEnd/MISC/tree.html" target="_blank">
-            Recursion Tree
-          </a>
-        </div>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=2.0,user-scalable=2"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+
+		<meta
+			name="keywords"
+			content="carlos, green, carlos green, carlosgreen, website, personal, site, portfolio"
+		/>
+
+		<link rel="icon" href="IMAGES/favicon.ico" />
+		<link rel="stylesheet" href="CSS/index.css" />
+
+		<!-- Clicky Analytics -->
+		<script>
+			var clicky_site_ids = clicky_site_ids || [];
+			clicky_site_ids.push(101271886);
+		</script>
+		<script async src="//static.getclicky.com/js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GTYG61WKTZ"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GTYG61WKTZ");
+		</script>
+
+		<!-- React -->
+		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+		<title>Carlos Green</title>
+	</head>
+	<body>
+		<h1>Carlos Green</h1>
+
+		<img
+			class="img1"
+			src="IMAGES/profile2.jpg"
+			alt="profile picture"
+			loading="lazy"
+		/>
+		<img
+			class="img2"
+			src="IMAGES/mern.jpg"
+			alt="M.E.R.N. image"
+			loading="lazlazyy"
+		/>
+
+		<br />
+		<br />
+
+		<p>
+			I'm passionate about the web and
+			<a class="Black" href="#front-end">front-end</a> technologies.
+
+			<br />
+			I'm proficient in
+			<a class="Black" href="#front-end">Javascript</a>,
+			<a class="Black" href="#front-end"> HTML</a>,
+			<a class="Black" href="#front-end">CSS</a> and the
+
+			<a class="Mongo" href="#back-end">M</a>.
+			<a class="Express" href="#back-end">E</a>.
+			<a class="React" href="#lib-frame">R</a>.
+			<a class="Node" href="#back-end">N</a>. tech stack.
+			<br />
+
+			(
+			<a class="Mongo" href="https://www.mongodb.com/" target="_blank">
+				MongoDB </a
+			>,
+			<a class="Express" href="https://expressjs.com/" target="_blank">
+				Express </a
+			>,
+			<a class="React" href="https://reactjs.org/" target="_blank">ReactJS</a>,
+			<a class="Node" href="https://nodejs.org/en/" target="_blank">NodeJS</a>
+			)
+		</p>
+
+		<br />
+		<br />
+
+		<div class="white" id="like"></div>
+		<br />
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+					<a class="white" href="PDFS/Resume.pdf" target="_blank"> Resume </a>
+				</div>
+
+				<div class="col-md-1">
+					<a
+						class="white"
+						href="https://www.linkedin.com/in/carlos-green-4ba9b8169"
+						target="_blank"
+					>
+						LinkedIn
+					</a>
+				</div>
+
+				<div class="col-md-1">
+					<a class="white" href="https://github.com/greenc123" target="_blank">
+						Github
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<br />
+			<br />
+
+			<br />
+
+			<h2 class="Black">Online Games</h2>
+
+			<div class="row">
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/tictac.html">
+						Tic Tac Toe
+						<img
+							src="GAMES/images/tictactoe.jpg"
+							alt="tictactoe"
+							loading="lazy"
+						/>
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/snake.html">
+						Snake
+						<img src="GAMES/images/snake.jpg" alt="snake" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/tetris.html">
+						Tetris
+						<img src="GAMES/images/tetris.jpg" alt="tetris" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/pong.html">
+						Pong
+						<img src="GAMES/images/pong.jpg" alt="pong" loading="lazy" />
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<br />
+
+			<div class="row">
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/breakout.html">
+						Breakout
+						<img
+							src="GAMES/images/breakout.jpg"
+							alt="breakout"
+							loading="lazy"
+						/>
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/mine.html">
+						MineSweeper
+						<img
+							src="GAMES/images/minesweeper.jpg"
+							alt="minesweeper"
+							loading="lazy"
+						/>
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/slider.html">
+						Slider
+						<img src="GAMES/images/slider.jpg" alt="slider" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/2048.html">
+						2048
+						<img src="GAMES/images/2048.jpg" alt="2048" loading="lazy" />
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<br />
+
+			<div class="row">
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/memory.html">
+						Memory Game
+						<img src="GAMES/images/memory.jpg" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/whack-a-mole.html">
+						Whack A Mole
+						<img src="GAMES/images/whack-a-mole.jpg" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/connect4.html">
+						Connect Four
+						<img src="GAMES/images/connect4.jpg" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/spaceInvaders.html">
+						Space Invaders
+						<img src="GAMES/images/spaceInvaders.jpg" loading="lazy" />
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<br />
+
+			<div class="row">
+				<div class="col-md-2">
+					<a class="lightblue" href="GAMES/frogger.html">
+						Frogger
+						<img src="GAMES/images/frogger.jpg" loading="lazy" />
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+			<h2>
+				Front End (
+
+				<a
+					id="front-end"
+					class="Black"
+					href="https://www.w3schools.com/html/default.asp"
+					target="_blank"
+				>
+					HTML </a
+				>,
+
+				<a
+					class="Black"
+					href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+					target="_blank"
+				>
+					CSS
+				</a>
+				and
+
+				<a
+					class="Black"
+					href="https://developer.mozilla.org/en-US/docs/Web/javascript"
+					target="_blank"
+				>
+					JavasScript</a
+				>
+				)
+			</h2>
+
+			<!-- JS4 Challenges -->
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="lightblue"
+						href="FrontEnd/js4Challenges/kanban.html"
+						target="_blank"
+					>
+						Kanban Board
+						<br />
+						<img src="FrontEnd/IMAGES/kanban.jpg" alt="kanban" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="lightblue"
+						href="FrontEnd/js4Challenges/waldo.html"
+						target="_blank"
+					>
+						Where is Waldo?
+						<br />
+						<img src="FrontEnd/IMAGES/whereWaldo.jpg" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="lightblue"
+						href="FrontEnd/js4Challenges/smartWatch.html"
+						target="_blank"
+					>
+						Smart Watch UI
+						<br />
+						<img src="FrontEnd/IMAGES/smartWatch.jpg" loading="lazy" />
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<br />
+
+			<div class="row">
+				<div class="col-md-3">
+					<a class="lightblue" href="FrontEnd/js4Challenges/lightsOff.html">
+						Lights Off
+						<br />
+						<img src="FrontEnd/IMAGES/lightsOff.jpg" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a class="lightblue" href="FrontEnd/js4Challenges/starsUI.html">
+						Stars UI
+						<br />
+						<img src="FrontEnd/IMAGES/starsUI.jpg" loading="lazy" />
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a class="lightblue" href="FrontEnd/js4Challenges/selection.html">
+						Selection Box
+						<br />
+						<img src="FrontEnd/IMAGES/selection.jpg" loading="lazy" />
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<br />
+
+			<!-- JS2 Exercises -->
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/closure.html"
+						target="_blank"
+					>
+						Closure UI
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/helloString.html"
+						target="_blank"
+					>
+						Hello String
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/stringBreaker.html"
+						target="_blank"
+					>
+						String Breaker
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/houseOfPrimes.html"
+						target="_blank"
+					>
+						House of Primes
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/delayedType.html"
+						target="_blank"
+					>
+						Delayed Typing
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/stopwatch.html"
+						target="_blank"
+					>
+						Stopwatch
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/blinker.html"
+						target="_blank"
+					>
+						Blinker
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/countdown.html"
+						target="_blank"
+					>
+						Countdown
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/chatInput.html"
+						target="_blank"
+					>
+						Chat Input
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js2Exercises/letterFilter.html"
+						target="_blank"
+					>
+						Letter Filter
+					</a>
+				</div>
+
+				<!-- JS3 Exercises -->
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js3Exercises/dynamicSelect.html"
+						target="_blank"
+					>
+						Dynamic Select
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js3Exercises/vanillaTodo.html"
+						target="_blank"
+					>
+						Vanilla Todo
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js3Exercises/storyBook.html"
+						target="_blank"
+					>
+						StoryBook
+					</a>
+				</div>
+
+				<!-- JS4 Exercises -->
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/clickCoordinates.html"
+						target="_blank"
+					>
+						Click Coordinates
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/hoverCoordinates.html"
+						target="_blank"
+					>
+						Hover Coordinates
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/typewritter.html"
+						target="_blank"
+					>
+						Typewritter
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/hoverVideo.html"
+						target="_blank"
+					>
+						Hover to play video
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/memeGenerator.html"
+						target="_blank"
+					>
+						Meme Generator
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/explodingText.html"
+						target="_blank"
+					>
+						Exploding Text
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/todoExample.html"
+						target="_blank"
+					>
+						Todo Example
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/socialMediaProfile.html"
+						target="_blank"
+					>
+						Social Media Profile
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/JS4Exercises/counterClicker.html"
+						target="_blank"
+					>
+						Counter Clicker
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/JS4Exercises/register.html"
+						target="_blank"
+					>
+						Guest Registration
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/JS4Exercises/clickRecorder.html"
+						target="_blank"
+					>
+						Click Recorder
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/js4Exercises/circle.html"
+						target="_blank"
+					>
+						Floating Circles
+					</a>
+				</div>
+
+				<!-- MISC FrontEnd -->
+				<div class="col-md-3">
+					<a class="white" href="FrontEnd/MISC/modal.html" target="_blank">
+						Super Simple Modal
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a class="white" href="FrontEnd/MISC/tribute.html" target="_blank">
+						Marcus Aurelius Tribute Page
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a class="white" href="FrontEnd/MISC/calculator.html" target="_blank">
+						Calculator
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a class="white" href="FrontEnd/MISC/fridge.html" target="_blank">
+						Fridge Magnet Game
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/FrontEndPramp/searchAutoComplete.html"
+						target="_blank"
+					>
+						Auto Complete Search
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/MISC/userLicense.html"
+						target="_blank"
+					>
+						User License Agreement
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a class="white" href="FrontEnd/Pramp/clock.html" target="_blank">
+						Real Time Clock
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a
+						class="white"
+						href="FrontEnd/Pramp/infiniteScroll.html"
+						target="_blank"
+					>
+						Infinite Scrolling
+					</a>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="row">
+				<div class="col-md-3">
+					<a class="white" href="FrontEnd/MISC/rps.html" target="_blank">
+						Vanilla Rock Paper Scissors
+					</a>
+				</div>
+
+				<div class="col-md-3">
+					<a class="white" href="FrontEnd/MISC/tree.html" target="_blank">
+						Recursion Tree
+					</a>
+				</div>
 
 				<div class="col-md-3">
 					<a class="white" href="FrontEnd/MISC/paint.html" target="_blank">
 						Paint
 					</a>
 				</div>
-      </div>
-      <!-- row -->
-    </div>
-    <!-- container -->
+			</div>
+			<!-- row -->
+		</div>
+		<!-- container -->
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 
-    <!-- Libraries and Frameworks -->
-    <h2 id="lib-frame">
-      Libraries and Frameworks
-      <br />
-      (
-      <a class="React" href="https://reactjs.org/" target="_blank">ReactJS</a>,
-      <a class="React" href="https://reactnative.dev/" target="_blank">
-        React Native </a
-      >, <a class="white" href="https://jquery.com/" target="_blank">JQuery</a>,
-      <a class="Boot" href="https://getbootstrap.com/" target="_blank">
-        Bootstrap
-      </a>
-      )
-    </h2>
+		<!-- Libraries and Frameworks -->
+		<h2 id="lib-frame">
+			Libraries and Frameworks
+			<br />
+			(
+			<a class="React" href="https://reactjs.org/" target="_blank">ReactJS</a>,
+			<a class="React" href="https://reactnative.dev/" target="_blank">
+				React Native </a
+			>, <a class="white" href="https://jquery.com/" target="_blank">JQuery</a>,
+			<a class="Boot" href="https://getbootstrap.com/" target="_blank">
+				Bootstrap
+			</a>
+			)
+		</h2>
 
-    <!-- React Todo list -->
-    <ul>
-      <li>
-        <a class="white" href="LibsFrameworks/reactTodo.html" target="_blank">
-          React Todo App
-        </a>
-      </li>
+		<!-- React Todo list -->
+		<ul>
+			<li>
+				<a class="white" href="LibsFrameworks/reactTodo.html" target="_blank">
+					React Todo App
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="LibsFrameworks/reactStars.html" target="_blank">
-          React Stars UI
-        </a>
-      </li>
+			<li>
+				<a class="white" href="LibsFrameworks/reactStars.html" target="_blank">
+					React Stars UI
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="LibsFrameworks/reactKanban.html" target="_blank">
-          React Kanban Board
-        </a>
-      </li>
+			<li>
+				<a class="white" href="LibsFrameworks/reactKanban.html" target="_blank">
+					React Kanban Board
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="LibsFrameworks/gif.html" target="_blank">
-          JQuery Giphfy API
-        </a>
-      </li>
+			<li>
+				<a class="white" href="LibsFrameworks/gif.html" target="_blank">
+					JQuery Giphfy API
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="LibsFrameworks/rockpaper.html" target="_blank">
-          JQuery Rock Paper Scissors
-        </a>
-      </li>
+			<li>
+				<a class="white" href="LibsFrameworks/rockpaper.html" target="_blank">
+					JQuery Rock Paper Scissors
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="LibsFrameworks/train.html" target="_blank">
-          JQuery Train Schedules
-        </a>
-      </li>
-    </ul>
+			<li>
+				<a class="white" href="LibsFrameworks/train.html" target="_blank">
+					JQuery Train Schedules
+				</a>
+			</li>
+		</ul>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 
-    <!-- Machine Learning -->
-    <h2>
-      Machine Learning
-      <br />
-      (
-      <a class="orange" href="https://www.tensorflow.org/js" target="_blank">
-        TensorFlowJS </a
-      >,
+		<!-- Machine Learning -->
+		<h2>
+			Machine Learning
+			<br />
+			(
+			<a class="orange" href="https://www.tensorflow.org/js" target="_blank">
+				TensorFlowJS </a
+			>,
 
-      <a class="purple" href="https://ml5js.org/" target="_target"> ml5.js </a>,
+			<a class="purple" href="https://ml5js.org/" target="_target"> ml5.js </a>,
 
-      <a class="orange" href="https://brain.js.org/" target="_target">
-        BrainJS
-      </a>
-      )
-    </h2>
+			<a class="orange" href="https://brain.js.org/" target="_target">
+				BrainJS
+			</a>
+			)
+		</h2>
 
-    <ul>
-      <li>
-        <a class="white" href="MachineLearning/sentiment.html" target="_target">
-          Sentiment Analysis
-        </a>
-      </li>
+		<ul>
+			<li>
+				<a class="white" href="MachineLearning/sentiment.html" target="_target">
+					Sentiment Analysis
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="MachineLearning/chat.html" target="_target">
-          AI Chatbot
-        </a>
-      </li>
-    </ul>
+			<li>
+				<a class="white" href="MachineLearning/chat.html" target="_target">
+					AI Chatbot
+				</a>
+			</li>
+		</ul>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 
-    <!-- Back End -->
-    <h2 id="back-end">
-      Back End
-      <br />
-      ( <a class="Npm" href="https://www.npmjs.com/" target="_blank">Npm</a>,
+		<!-- Back End -->
+		<h2 id="back-end">
+			Back End
+			<br />
+			( <a class="Npm" href="https://www.npmjs.com/" target="_blank">Npm</a>,
 
-      <a class="Node" href="https://nodejs.org/en/" target="_blank">NodeJS</a>,
+			<a class="Node" href="https://nodejs.org/en/" target="_blank">NodeJS</a>,
 
-      <a class="Express" href="https://expressjs.com" target="_blank">
-        Express </a
-      >,
+			<a class="Express" href="https://expressjs.com" target="_blank">
+				Express </a
+			>,
 
-      <a class="Mongo" href="https://www.mongodb.com/" target="_blank">
-        MongoDB
-      </a>
-      ,
+			<a class="Mongo" href="https://www.mongodb.com/" target="_blank">
+				MongoDB
+			</a>
+			,
 
-      <a class="Mongoose" href="https://mongoosejs.com/" target="_blank">
-        Mongoose
-      </a>
-      and
-      <a class="Black" href="https://deno.land/" target="_blank">Deno</a>
-      )
-    </h2>
+			<a class="Mongoose" href="https://mongoosejs.com/" target="_blank">
+				Mongoose
+			</a>
+			and
+			<a class="Black" href="https://deno.land/" target="_blank">Deno</a>
+			)
+		</h2>
 
-      <li>
-        <a
-          class="white"
-          href="https://learndatabases.dev/"
-          target="_blank"
-        >
-				Learn Databases.dev
-        </a>
-      </li>
-    </ul>
+		<ul>
+			<li>
+				<a class="white" href="https://learndatabases.dev/" target="_blank">
+					Learn Databases.dev
+				</a>
+			</li>
+		</ul>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 
-    <!-- Security, Testing and Quality Assurance Projects -->
-    <h2>
-      Security, Testing and Quality Assurance
-      <br />
-      (
-      <a class="Gray" href="https://helmetjs.github.io/" target="_blank">
-        HelmetJS </a
-      >,
+		<!-- Security, Testing and Quality Assurance Projects -->
+		<h2>
+			Security, Testing and Quality Assurance
+			<br />
+			(
+			<a class="Gray" href="https://helmetjs.github.io/" target="_blank">
+				HelmetJS </a
+			>,
 
-      <a class="Mocha" href="https://mochajs.org/" target="_blank"> Mocha </a>,
+			<a class="Mocha" href="https://mochajs.org/" target="_blank"> Mocha </a>,
 
-      <a class="Jest" href="https://jestjs.io/" target="_blank"> Jest</a> and
+			<a class="Jest" href="https://jestjs.io/" target="_blank"> Jest</a> and
 
-      <a class="white" href="https://www.chaijs.com/" target="_blank"> Chai</a>
-      )
-    </h2>
+			<a class="white" href="https://www.chaijs.com/" target="_blank"> Chai</a>
+			)
+		</h2>
 
-    <ul>
-      <li>
-        <a class="white" href="TDD/test.html" target="_blank">
-          Arithemtic TDD
-        </a>
-      </li>
-    </ul>
+		<ul>
+			<li>
+				<a class="white" href="TDD/test.html" target="_blank">
+					Arithemtic TDD
+				</a>
+			</li>
+		</ul>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 
-    <!-- Data Visualization FreeCodeCamp -->
-    <h2>
-      Data Visualization
-      <br />
-      ( <a class="orange" href="https://d3js.org/" target="_blank">D3</a>,
-      <a class="Black" href="https://www.w3.org/TR/SVG2/">SVG</a>,
-      <a class="Black" href="https://www.json.org/" target="_blank">JSON</a>
-      and
-      <a
-        class="Black"
-        href="https://en.wikipedia.org/wiki/Ajax_(programming)"
-        target="_blank"
-        >AJAX</a
-      >)
-    </h2>
+		<!-- Data Visualization FreeCodeCamp -->
+		<h2>
+			Data Visualization
+			<br />
+			( <a class="orange" href="https://d3js.org/" target="_blank">D3</a>,
+			<a class="Black" href="https://www.w3.org/TR/SVG2/">SVG</a>,
+			<a class="Black" href="https://www.json.org/" target="_blank">JSON</a>
+			and
+			<a
+				class="Black"
+				href="https://en.wikipedia.org/wiki/Ajax_(programming)"
+				target="_blank"
+				>AJAX</a
+			>)
+		</h2>
 
-    <!-- Random color visualization -->
-    <ul>
-      <li>
-        <a class="white" href="DataVisual/colors.html" target="_blank">
-          SVG Color Visualization
-        </a>
-      </li>
+		<!-- Random color visualization -->
+		<ul>
+			<li>
+				<a class="white" href="DataVisual/colors.html" target="_blank">
+					SVG Color Visualization
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="DataVisual/loadingSVG.html" target="_blank">
-          SVG Loading Screen
-        </a>
-      </li>
-    </ul>
+			<li>
+				<a class="white" href="DataVisual/loadingSVG.html" target="_blank">
+					SVG Loading Screen
+				</a>
+			</li>
+		</ul>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 
-    <h2>
-      Miscellaneous
-    </h2>
+		<h2>Miscellaneous</h2>
 
-    <ul>
-      <li>
-        <a class="white" href="https://dev.to/zonxa14" target="_">
-          Dev.to
-        </a>
-      </li>
+		<ul>
+			<li>
+				<a class="white" href="https://dev.to/zonxa14" target="_"> Dev.to </a>
+			</li>
 
-      <li>
-        <a
-          class="white"
-          href="https://devpost.com/greenc123?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
-          target="_"
-        >
-          Devpost
-        </a>
-      </li>
+			<li>
+				<a
+					class="white"
+					href="https://devpost.com/greenc123?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+					target="_"
+				>
+					Devpost
+				</a>
+			</li>
 
-      <li>
-        <a class="white" href="https://leetcode.com/greenc123/" target="_">
-          LeetCode
-        </a>
-      </li>
+			<li>
+				<a class="white" href="https://leetcode.com/greenc123/" target="_">
+					LeetCode
+				</a>
+			</li>
 
-      <li>
-        <a
-          class="white"
-          href="https://stackoverflow.com/users/9747305/carlos-green"
-          target="_"
-        >
-          Stack Overflow
-        </a>
-      </li>
+			<li>
+				<a
+					class="white"
+					href="https://stackoverflow.com/users/9747305/carlos-green"
+					target="_"
+				>
+					Stack Overflow
+				</a>
+			</li>
 
-      <li>
-        <a
-          class="white"
-          href="https://www.youtube.com/channel/UC8OL5sar9vDOQujZPDcAPAQ"
-          target="_"
-        >
-          YouTube Channel
-        </a>
-      </li>
-    </ul>
+			<li>
+				<a
+					class="white"
+					href="https://www.youtube.com/channel/UC8OL5sar9vDOQujZPDcAPAQ"
+					target="_"
+				>
+					YouTube Channel
+				</a>
+			</li>
+		</ul>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 
-    <!-- Personal JS -->
-    <!-- Write code in the src folder then compile to lib -->
-    <!-- npm run build -->
-    <!-- npm run create -->
-    <script src="lib/likeButton.js" type="text/javascript"></script>
-  </body>
+		<!-- Personal JS -->
+		<!-- Write code in the src folder then compile to lib -->
+		<!-- npm run build -->
+		<!-- npm run create -->
+		<script src="lib/likeButton.js" type="text/javascript"></script>
+	</body>
 </html>
