@@ -1,109 +1,129 @@
 <title>Paint</title>
 <style>
-  body {
-    height: 300px;
+	body {
+		height: 300px;
 		display: flex;
-    background: beige;
+		background: beige;
 		align-items: center;
 		justify-content: center;
-  }
+	}
 
-  .dot {
-    height: 8px;
-    width: 8px;
-    border-radius: 4px;
-    background: teal;
-    position: absolute;
-  }
+	.dot {
+		height: 8px;
+		width: 8px;
+		border-radius: 100%;
+		background: teal;
+		position: absolute;
+	}
 
-  .square {
-    height: 8px;
-    width: 8px;
-    background: teal;
-    position: absolute;
-  }
+	.triangle {
+		position: absolute;
+		background-color: transparent !important;
+		border-bottom: 50% solid transparent !important;
+		border-left: 20% solid transparent !important;
+		border-right: 20% solid transparent !important;
+	}
 
-  .container {
-    width: 20%;
-    text-align: center;
-    border: 1px solid black;
+	.square {
+		height: 8px;
+		width: 8px;
+		background: teal;
+		position: absolute;
+	}
+
+	.container {
+		width: 20%;
+		text-align: center;
+		border: 1px solid black;
 		z-index: 10;
-  }
+	}
 
-  .option {
-    position: row;
-  }
+	.option {
+		position: row;
+	}
 </style>
 
 <div class="container">
-  <h1>Paint with your mouse</h1>
+	<h1>Paint with your mouse</h1>
 
-  <p class="option">
-    Change color:
-    <button class="orange">Orange</button>
-    <button class="purple">Purple</button>
-    <button class="teal">Teal</button>
-  </p>
+	<p class="option">
+		Change color:
+		<button class="orange">Orange</button>
+		<button class="purple">Purple</button>
+		<button class="teal">Teal</button>
+	</p>
 
-  <p class="option">
-    Change shape:
-    <button class="sq">Square</button>
-    <button class="dt">Dot</button>
-  </p>
+	<p class="option">
+		Change shape:
+		<button class="sq">Square</button>
+		<button class="dt">Dot</button>
+		<button class="tri">Triangle</button>
+	</p>
 
-  <p class="option">
-    Change size:
-    <button class="small">Small</button>
-    <button class="medium">Medium</button>
-    <button class="large">Large</button>
-  </p>
+	<p class="option">
+		Change size:
+		<button class="small">Small</button>
+		<button class="medium">Medium</button>
+		<button class="large">Large</button>
+	</p>
 </div>
 
 <script>
-  const container = document.querySelector('.container');
-  const square = document.querySelector('.sq');
-  const dot = document.querySelector('.dt');
+	const container = document.querySelector(".container");
 
-  const orange = document.querySelector('.orange');
-  const purple = document.querySelector('.purple');
-  const teal = document.querySelector('.teal');
+	const square = document.querySelector(".sq");
+	const dot = document.querySelector(".dt");
+	const triangle = document.querySelector(".tri");
 
-  const small = document.querySelector('.small');
-  const medium = document.querySelector('.medium');
-  const large = document.querySelector('.large');
+	const orange = document.querySelector(".orange");
+	const purple = document.querySelector(".purple");
+	const teal = document.querySelector(".teal");
 
-  let inContainer = false;
-  let color = 'teal';
-  let className = 'dot';
-  let size = 8;
+	const small = document.querySelector(".small");
+	const medium = document.querySelector(".medium");
+	const large = document.querySelector(".large");
 
-  const followMouse = evt => {
-    if (inContainer) return;
-    let ele = document.createElement('div');
-    ele.className = className;
-    ele.style.background = color;
+	let inContainer = false;
+	let color = "teal";
+	let className = "dot";
+	let size = 8;
 
-    ele.style.left = evt.pageX - 4 + 'px';
-    ele.style.top = evt.pageY - 4 + 'px';
+	const followMouse = (evt) => {
+		if (inContainer) return;
 
-    ele.style.height = `${size}px`;
-    ele.style.width = `${size}px`;
+		let ele = document.createElement("div");
+		ele.className = className;
+		ele.style.background = color;
 
-    document.body.appendChild(ele);
-  };
+		if (className === "triangle") {
+			ele.style.height = "0";
+			ele.style.width = "0";
 
-  orange.addEventListener('click', () => (color = 'orange'));
-  purple.addEventListener('click', () => (color = 'purple'));
-  teal.addEventListener('click', () => (color = 'teal'));
+			ele.style.borderLeft = `${size}px solid transparent`;
+			ele.style.borderRight = `${size}px solid transparent`;
+			ele.style.borderBottom = `${size}px solid ${color}`;
+		} else {
+			ele.style.height = `${size}px`;
+			ele.style.width = `${size}px`;
+		}
+		ele.style.left = evt.pageX - 4 + "px";
+		ele.style.top = evt.pageY - 4 + "px";
+		document.body.appendChild(ele);
+	};
 
-  square.addEventListener('click', () => (className = 'square'));
-  dot.addEventListener('click', () => (className = 'dot'));
+	orange.addEventListener("click", () => (color = "orange"));
+	purple.addEventListener("click", () => (color = "purple"));
+	teal.addEventListener("click", () => (color = "teal"));
 
-  small.addEventListener('click', () => (size = 8));
-  medium.addEventListener('click', () => (size = 40));
-  large.addEventListener('click', () => (size = 80));
+	square.addEventListener("click", () => (className = "square"));
+	dot.addEventListener("click", () => (className = "dot"));
+	triangle.addEventListener("click", () => (className = "triangle"));
 
-  container.addEventListener('mouseenter', () => (inContainer = true));
-  container.addEventListener('mouseleave', () => (inContainer = false));
-  window.addEventListener('mousemove', evt => followMouse(evt));
+	small.addEventListener("click", () => (size = 8));
+	medium.addEventListener("click", () => (size = 40));
+	large.addEventListener("click", () => (size = 80));
+
+	container.addEventListener("mouseenter", () => (inContainer = true));
+	container.addEventListener("mouseleave", () => (inContainer = false));
+	window.addEventListener("mousemove", (evt) => followMouse(evt));
 </script>
