@@ -1,13 +1,9 @@
-# Portfolio Website
+# [Portfolio Website](https://carlosgreenpersonalsite.com)
+--
+LinkedIn, Resume, Email, contact info for employers and related tech profiles.
 
-LinkedIn, Resume, Email 
-and most of my contact info should be on the site.
-https://carlosgreenpersonalsite.com
-
-https://mochajs.org/
-Testing with mocha:
-npm test
+Testing with [mocha](https://mochajs.org):
+`npm test`
 
 Compiling: 
-npm run build
-npm run deploy
+`npm run build && npm run deploy`
