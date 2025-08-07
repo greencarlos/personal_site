@@ -47,8 +47,7 @@
 		<!-- React -->
 		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
 		<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script> <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
 		<title>Carlos Green</title>
 	</head>
@@ -1006,6 +1005,12 @@
 		<br />
 		<br />
 
+		<aside>
+			<h2>Looking for more?</h2>
+			<p>This is the main page for a lot of my programming or coding side projects</p>
+			<p>You can check out all of my Software Projects on the following sites by clicking my digital footprint links</p>
+		</aside>
+
 		<h2>Digital Footprints</h2>
 		<div class="row">
 			<div class="col-md-3">
@@ -1097,16 +1102,31 @@
 		<!-- npm run create -->
 		<script>
 			console.log(
-				"%c Congrats! \n You found the developer console..",
-				"font-size:70px; color:green;"
+				"%c Congrats!",
+				"font-size:100px; color:darkgreen;"
 			);
 			setTimeout(() => {
 				console.log(
-					"%c You should check out the rest of my site tho... \n It took some me a while to build",
+				"%c You found the developer console..",
+				"font-size:50px; color:green;"
+					)
+			}, 2000)
+			setTimeout(() => {
+				console.log(
+					"%c You should check out the rest of my site tho...",
+					"font-size:30px; color:lightgreen;"
+				);
+			}, 4000);
+			setTimeout(() => {
+				console.log(
+					"%c It took me a while to build....",
 					"font-size:20px; color:lightgreen;"
 				);
-			}, 2000);
+			}, 8000);
 		</script>
 		<script src="lib/likeButton.js" type="text/javascript"></script>
+		<footer>
+			<p>&copy; 2025 Carlos Green Coding. All rights reserved.</p>
+		</footer>
 	</body>
 </html>
