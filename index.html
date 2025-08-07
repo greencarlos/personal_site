@@ -9,9 +9,12 @@
 
 		<link
 			rel="stylesheet"
+			rel="preload"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 			crossorigin="anonymous"
+			onload="this.onload=null;this.rel='stylesheet'"
+			onload="if(media!=='all')media='all'"
 		/>
 
 		<meta
@@ -19,8 +22,20 @@
 			content="carlos, green, carlos green, carlosgreen, website, personal, site, portfolio"
 		/>
 
-		<link rel="icon" href="IMAGES/favicon.ico" />
-		<link rel="stylesheet" href="CSS/index.css" />
+		<link
+			rel="icon"
+			rel="preload"
+			href="IMAGES/favicon.ico"
+			onload="this.onload=null;this.rel='stylesheet'"
+			onload="if(media!=='all')media='all'"
+		/>
+		<link
+			rel="stylesheet"
+			rel="preload"
+			href="CSS/index.css"
+			onload="this.onload=null;this.rel='stylesheet'"
+			onload="if(media!=='all')media='all'"
+		/>
 
 		<!-- Clicky Analytics -->
 		<script>
@@ -68,13 +83,13 @@
 			class="img1"
 			src="IMAGES/profile2.jpg"
 			alt="profile picture"
-			loading="lazy"
+			rel="preload"
 		/>
 		<img
 			class="img2"
 			src="IMAGES/mern.jpg"
 			alt="M.E.R.N. image"
-			loading="lazy"
+			rel="preload"
 		/>
 
 		<br />
@@ -154,9 +169,9 @@
 					<a class="lightblue" href="GAMES/tictac.html">
 						Tic Tac Toe
 						<img
-							src="GAMES/images/tictactoe.jpg"
+							src="images/tictactoe.jpg"
 							alt="tictactoe"
-							loading="lazy"
+						  rel="preload"
 						/>
 					</a>
 				</div>
@@ -164,21 +179,21 @@
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/snake.html">
 						Snake
-						<img src="GAMES/images/snake.jpg" alt="snake" loading="lazy" />
+						<img src="images/snake.jpg" alt="snake"  rel="preload" />
 					</a>
 				</div>
 
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/tetris.html">
 						Tetris
-						<img src="GAMES/images/tetris.jpg" alt="tetris" loading="lazy" />
+						<img src="images/tetris.jpg" alt="tetris" rel="preload" />
 					</a>
 				</div>
 
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/pong.html">
 						Pong
-						<img src="GAMES/images/pong.jpg" alt="pong" loading="lazy" />
+						<img src="images/pong.jpg" alt="pong" rel="preload" />
 					</a>
 				</div>
 			</div>
@@ -191,9 +206,9 @@
 					<a class="lightblue" href="GAMES/breakout.html">
 						Breakout
 						<img
-							src="GAMES/images/breakout.jpg"
+							src="images/breakout.jpg"
 							alt="breakout"
-							loading="lazy"
+							rel="preload"
 						/>
 					</a>
 				</div>
@@ -202,9 +217,9 @@
 					<a class="lightblue" href="GAMES/mine.html">
 						MineSweeper
 						<img
-							src="GAMES/images/minesweeper.jpg"
+							src="images/minesweeper.jpg"
 							alt="minesweeper"
-							loading="lazy"
+							rel="preload"
 						/>
 					</a>
 				</div>
@@ -212,14 +227,14 @@
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/slider.html">
 						Slider
-						<img src="GAMES/images/slider.jpg" alt="slider" loading="lazy" />
+						<img src="images/slider.jpg" alt="slider" rel="preload" />
 					</a>
 				</div>
 
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/2048.html">
 						2048
-						<img src="GAMES/images/2048.jpg" alt="2048" loading="lazy" />
+						<img src="images/2048.jpg" alt="2048" rel="preload" />
 					</a>
 				</div>
 			</div>
@@ -231,28 +246,28 @@
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/memory.html">
 						Memory Game
-						<img src="GAMES/images/memory.jpg" loading="lazy" />
+						<img src="images/memory.jpg" loading="lazy" />
 					</a>
 				</div>
 
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/whack-a-mole.html">
 						Whack A Mole
-						<img src="GAMES/images/whack-a-mole.jpg" loading="lazy" />
+						<img src="images/whack-a-mole.jpg" loading="lazy" />
 					</a>
 				</div>
 
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/connect4.html">
 						Connect Four
-						<img src="GAMES/images/connect4.jpg" loading="lazy" />
+						<img src="images/connect4.jpg" loading="lazy" />
 					</a>
 				</div>
 
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/spaceInvaders.html">
 						Space Invaders
-						<img src="GAMES/images/spaceInvaders.jpg" loading="lazy" />
+						<img src="images/spaceInvaders.jpg" loading="lazy" />
 					</a>
 				</div>
 			</div>
@@ -264,7 +279,7 @@
 				<div class="col-md-2">
 					<a class="lightblue" href="GAMES/frogger.html">
 						Frogger
-						<img src="GAMES/images/frogger.jpg" loading="lazy" />
+						<img src="images/frogger.jpg" loading="lazy" />
 					</a>
 				</div>
 			</div>
@@ -317,7 +332,7 @@
 					>
 						Kanban Board
 						<br />
-						<img src="FrontEnd/IMAGES/kanban.jpg" alt="kanban" loading="lazy" />
+						<img src="IMAGES/kanban.jpg" alt="kanban" loading="lazy" />
 					</a>
 				</div>
 
@@ -329,7 +344,7 @@
 					>
 						Where is Waldo?
 						<br />
-						<img src="FrontEnd/IMAGES/whereWaldo.jpg" loading="lazy" />
+						<img src="IMAGES/whereWaldo.jpg" loading="lazy" />
 					</a>
 				</div>
 
@@ -341,7 +356,7 @@
 					>
 						Smart Watch UI
 						<br />
-						<img src="FrontEnd/IMAGES/smartWatch.jpg" loading="lazy" />
+						<img src="IMAGES/smartWatch.jpg" loading="lazy" />
 					</a>
 				</div>
 			</div>
@@ -358,7 +373,7 @@
 					>
 						Lights Off
 						<br />
-						<img src="FrontEnd/IMAGES/lightsOff.jpg" loading="lazy" />
+						<img src="IMAGES/lightsOff.jpg" loading="lazy" />
 					</a>
 				</div>
 
@@ -370,7 +385,7 @@
 					>
 						Stars UI
 						<br />
-						<img src="FrontEnd/IMAGES/starsUI.jpg" loading="lazy" />
+						<img src="IMAGES/starsUI.jpg" loading="lazy" />
 					</a>
 				</div>
 
@@ -382,7 +397,7 @@
 					>
 						Selection Box
 						<br />
-						<img src="FrontEnd/IMAGES/selection.jpg" loading="lazy" />
+						<img src="IMAGES/selection.jpg" loading="lazy" />
 					</a>
 				</div>
 			</div>
