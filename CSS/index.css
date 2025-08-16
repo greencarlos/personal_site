@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 img {
   width: 150px;
   height: 100px;
@@ -77,6 +86,7 @@ li {
 .Black {
 	color: black;
 	font-weight: bold;
+	animation: fadeIn 10s ease-in-out;
 }
 
 .Gray {
@@ -137,4 +147,14 @@ li {
 
 .col-md-2 {
 	width: 200px;
+}
+
+button:hover {
+	background-color: darkgreen;
+	color: springgreen;
+}
+
+button:active {
+	background-color: seagreen;
+	color: lime;
 }
