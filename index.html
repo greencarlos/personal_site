@@ -176,7 +176,7 @@
 			<div class="col-md-2">
 				<a class="lightblue" href="GAMES/snake.html">
 					Snake
-					<br/>
+					<br />
 					<img src="IMAGES/snake.jpg" alt="snake" rel="preload" />
 				</a>
 			</div>
@@ -1238,6 +1238,10 @@
 		<br />
 		<br />
 
+		<footer>
+			<p id="date"></p>
+		</footer>
+
 		<!-- Personal JS -->
 		<!-- Write code in the src folder then compile to lib -->
 		<!-- npm run build -->
@@ -1264,8 +1268,11 @@
 			}, 8000);
 		</script>
 		<script defer src="lib/likeButton.js" type="text/javascript"></script>
-		<footer>
-			<p>&copy; 2025 Carlos Green Coding. All rights reserved.</p>
-		</footer>
+		<script>
+			const date1 = new Date();
+			document.getElementById("date").textContent = `
+				© ${date1.getUTCFullYear()} Carlos Green Coding. All rights reserved.
+				`;
+		</script>
 	</body>
 </html>
