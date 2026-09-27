@@ -1105,14 +1105,7 @@
 
 		<aside>
 			<h2>Looking for more?</h2>
-			<p>
-				This is the main page for a lot of my programming or coding side
-				projects
-			</p>
-			<p>
-				You can check out all of my Software Projects on the following sites by
-				clicking my digital footprint links
-			</p>
+			<p>Check out of my other Software Projects on the following sites:</p>
 		</aside>
 
 		<br />
@@ -1270,6 +1263,7 @@
 		<!-- npm run build -->
 		<!-- npm run create -->
 		<script>
+			const date = new Date();
 			console.log("%c Congrats!", "font-size:100px; color:darkgreen;");
 			setTimeout(() => {
 				console.log(
@@ -1290,7 +1284,7 @@
 				);
 			}, 8000);
 			document.getElementById("date").textContent = `
-				© ${date1.getUTCFullYear()} Carlos Green Coding. All rights reserved.
+				© ${date.getUTCFullYear()} Carlos Green Coding. All rights reserved.
 				`;
 		</script>
 		<script defer src="lib/likeButton.js" type="text/javascript"></script>
